@@ -1,0 +1,11 @@
+building 1000000-vertex file (streaming to disk) ...
+file size:                44000116 bytes (42.0 MiB)
+parse time:                  0.134 s
+iterate time:                0.511 s
+total time:                  0.646 s
+peak RSS before:          13279232 bytes (12.7 MiB)
+peak RSS after:           57450496 bytes (54.8 MiB)
+peak RSS delta:           44171264 bytes (42.1 MiB)
+delta / file size:            1.00 x
+checksum=-438.935754 index_sum=499999500000
+PASS: peak memory stays within 1.5x of file size

@@ -1,0 +1,3 @@
+interleaved vs planar: 1024 vertices, 8192 components compared component-wise, 1023 indices: EXACT MATCH
+interleaved vs mixed: 1024 vertices, 8192 components compared component-wise, 1023 indices: EXACT MATCH
+roundtrip.vxb: to_bytes() == original bytes: BYTE-IDENTICAL

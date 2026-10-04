@@ -1,0 +1,5 @@
+# 越界索引报告: fixtures/oob_index.vxb
+
+INVALID fixtures/oob_index.vxb
+  IndexBoundsError: index out of range: primitive #1 (triangles), corner 2: index 9999 >= vertex_count 4
+  IndexBoundsError: index out of range: primitive #2 (triangles), corner 1: index 12345 >= vertex_count 4

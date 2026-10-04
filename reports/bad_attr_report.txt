@@ -1,0 +1,4 @@
+# 属性长度不匹配报告: fixtures/bad_attr_length.vxb
+
+INVALID fixtures/bad_attr_length.vxb
+  AttributeDataError: attribute 'position': declared data overruns data section at vertex 2 (byte offset 24, need data through byte 36, data section has 24 bytes)
