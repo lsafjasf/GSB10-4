@@ -1,0 +1,8 @@
+VXL1 out-of-bounds index report
+file: data/oob.vxl
+vertex_count: 12
+offending indices in file: 12 (index[2]) and 999 (index[5])
+
+parser verdict: REJECTED
+error: primitive #0 (triangles) index[2] = 12: no such vertex (vertex_count=12); rejected before any vertex data was read
+note: the index was rejected during validation, before any vertex data was dereferenced; no neighbouring data was read.
