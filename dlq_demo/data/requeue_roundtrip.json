@@ -1,0 +1,95 @@
+{
+  "policy": {
+    "max_attempts": 5,
+    "max_requeues": 1
+  },
+  "dead_letter_snapshot": {
+    "message_id": "order-123",
+    "origin_queue": "orders.created",
+    "payload_b64_is_original": true,
+    "payload_hex": "7b226f726465725f6964223a226f2d39222c22616d6f756e74223a34322c2263757272656e6379223a22434e59227d",
+    "headers": {
+      "trace-id": "abcdef",
+      "content-type": "application/json"
+    },
+    "attempts": 5,
+    "failure_records": [
+      {
+        "attempt": 1,
+        "code": "timeout",
+        "category": "retryable",
+        "detail": "attempt 1 timed out",
+        "failed_at": 0.0
+      },
+      {
+        "attempt": 2,
+        "code": "timeout",
+        "category": "retryable",
+        "detail": "attempt 2 timed out",
+        "failed_at": 0.07499084222795038
+      },
+      {
+        "attempt": 3,
+        "code": "timeout",
+        "category": "retryable",
+        "detail": "attempt 3 timed out",
+        "failed_at": 0.14744664606831281
+      },
+      {
+        "attempt": 4,
+        "code": "timeout",
+        "category": "retryable",
+        "detail": "attempt 4 timed out",
+        "failed_at": 2.3333715881185615
+      },
+      {
+        "attempt": 5,
+        "code": "timeout",
+        "category": "retryable",
+        "detail": "attempt 5 timed out",
+        "failed_at": 9.897702173186278
+      }
+    ]
+  },
+  "requeue_result": {
+    "accepted": true
+  },
+  "after_requeue": {
+    "phase": "pending",
+    "attempts_reset_to": 0,
+    "requeues": 1,
+    "history_records_retained": 5,
+    "delivered_to_queue": "orders.created",
+    "payload_hex": "7b226f726465725f6964223a226f2d39222c22616d6f756e74223a34322c2263757272656e6379223a22434e59227d",
+    "headers": {
+      "trace-id": "abcdef",
+      "content-type": "application/json"
+    }
+  },
+  "final": {
+    "delivered_on_attempt": 1,
+    "acked": true,
+    "phase": "succeeded"
+  },
+  "independent_oracle_cross_check": {
+    "expected_retry_instants_cycle1": [
+      0.07499084222795038,
+      0.14744664606831281,
+      2.3333715881185615,
+      9.897702173186278
+    ],
+    "library_retry_instants_cycle1": [
+      0.07499084222795038,
+      0.14744664606831281,
+      2.3333715881185615,
+      9.897702173186278
+    ],
+    "expected_attempts_when_dead": 5,
+    "expected_failure_records_when_dead": 5,
+    "expected_attempts_after_requeue": 0,
+    "expected_history_after_requeue": 5,
+    "expected_requeues": 1,
+    "expected_final_ack": true,
+    "all_equal": true
+  }
+}

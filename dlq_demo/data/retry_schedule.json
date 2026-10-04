@@ -1,0 +1,95 @@
+{
+  "policy": {
+    "max_attempts": 5,
+    "base_delay": 1.0,
+    "multiplier": 2.0,
+    "max_delay": 60.0,
+    "jitter": "full: U(0, min(cap, base*2^(attempt-1)))",
+    "rng_seed": "per message: sha-independent str seed f'{seed}|{message_id}|{attempt}'"
+  },
+  "m1_full_jitter": [
+    {
+      "retry_no": 1,
+      "cap_before_jitter": 1.0,
+      "delay": 0.20325894405109435,
+      "instant": 0.20325894405109435
+    },
+    {
+      "retry_no": 2,
+      "cap_before_jitter": 2.0,
+      "delay": 0.24805652250638022,
+      "instant": 0.45131546655747456
+    },
+    {
+      "retry_no": 3,
+      "cap_before_jitter": 4.0,
+      "delay": 1.332620314827032,
+      "instant": 1.7839357813845065
+    },
+    {
+      "retry_no": 4,
+      "cap_before_jitter": 8.0,
+      "delay": 1.4332737729552987,
+      "instant": 3.217209554339805
+    }
+  ],
+  "m1_full_jitter_independent_oracle": [
+    {
+      "retry_no": 1,
+      "cap_before_jitter": 1.0,
+      "delay": 0.20325894405109435,
+      "instant": 0.20325894405109435
+    },
+    {
+      "retry_no": 2,
+      "cap_before_jitter": 2.0,
+      "delay": 0.24805652250638022,
+      "instant": 0.45131546655747456
+    },
+    {
+      "retry_no": 3,
+      "cap_before_jitter": 4.0,
+      "delay": 1.332620314827032,
+      "instant": 1.7839357813845065
+    },
+    {
+      "retry_no": 4,
+      "cap_before_jitter": 8.0,
+      "delay": 1.4332737729552987,
+      "instant": 3.217209554339805
+    }
+  ],
+  "m1_under_20_interleaved_messages": [
+    0.20325894405109435,
+    0.45131546655747456,
+    1.7839357813845065,
+    3.217209554339805
+  ],
+  "m1_no_jitter_pure_backoff": [
+    {
+      "retry_no": 1,
+      "cap_before_jitter": 1.0,
+      "delay": 1.0,
+      "instant": 1.0
+    },
+    {
+      "retry_no": 2,
+      "cap_before_jitter": 2.0,
+      "delay": 2.0,
+      "instant": 3.0
+    },
+    {
+      "retry_no": 3,
+      "cap_before_jitter": 4.0,
+      "delay": 4.0,
+      "instant": 7.0
+    },
+    {
+      "retry_no": 4,
+      "cap_before_jitter": 8.0,
+      "delay": 8.0,
+      "instant": 15.0
+    }
+  ],
+  "cross_check_equal": true
+}

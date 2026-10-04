@@ -1,0 +1,29 @@
+{
+  "messages": 100000,
+  "payload_bytes_per_message": 256,
+  "policy": {
+    "max_attempts": 5,
+    "jitter": false
+  },
+  "classification": {
+    "seconds": 0.013,
+    "per_message_us": 0.13,
+    "messages_per_second": 7703316,
+    "retryable": 70000,
+    "non_retryable": 30000
+  },
+  "end_to_end": {
+    "seconds": 5.0614,
+    "per_message_us": 50.614,
+    "attempts_total": 380000,
+    "failure_records_total": 380000
+  },
+  "dead_letter_table_memory": {
+    "bytes": 185133855,
+    "mib": 176.56,
+    "per_message_bytes": 1851.3,
+    "blocks": 2281989,
+    "note": "tracemalloc delta; includes messages, states, failure records, dicts, heap"
+  },
+  "dead_count": 100000
+}
