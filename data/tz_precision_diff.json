@@ -1,0 +1,101 @@
+{
+  "description": "时区与精度统一前后差异：所有端点统一为 UTC、微秒精度；亚微秒部分截断（T3），无时区输入假定 UTC（T2）",
+  "entries": [
+    {
+      "index": 0,
+      "input": {
+        "start": "2026-01-01T08:00:00+08:00",
+        "end": "2026-01-01T09:00:00+08:00"
+      },
+      "normalized": {
+        "start": "2026-01-01T00:00:00+00:00",
+        "end": "2026-01-01T01:00:00+00:00"
+      },
+      "start_tz_assumed_utc": false,
+      "end_tz_assumed_utc": false,
+      "start_sub_micro_truncated": null,
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    },
+    {
+      "index": 1,
+      "input": {
+        "start": "2026-01-01T00:30:00Z",
+        "end": "2026-01-01T01:00:00Z"
+      },
+      "normalized": {
+        "start": "2026-01-01T00:30:00+00:00",
+        "end": "2026-01-01T01:00:00+00:00"
+      },
+      "start_tz_assumed_utc": false,
+      "end_tz_assumed_utc": false,
+      "start_sub_micro_truncated": null,
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    },
+    {
+      "index": 2,
+      "input": {
+        "start": "2026-01-01T02:00:00",
+        "end": "2026-01-01T03:00:00"
+      },
+      "normalized": {
+        "start": "2026-01-01T02:00:00+00:00",
+        "end": "2026-01-01T03:00:00+00:00"
+      },
+      "start_tz_assumed_utc": true,
+      "end_tz_assumed_utc": true,
+      "start_sub_micro_truncated": null,
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    },
+    {
+      "index": 3,
+      "input": {
+        "start": "2026-01-01T03:00:00.123456789Z",
+        "end": "2026-01-01T04:00:00Z"
+      },
+      "normalized": {
+        "start": "2026-01-01T03:00:00.123456+00:00",
+        "end": "2026-01-01T04:00:00+00:00"
+      },
+      "start_tz_assumed_utc": false,
+      "end_tz_assumed_utc": false,
+      "start_sub_micro_truncated": "789",
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    },
+    {
+      "index": 4,
+      "input": {
+        "start": "1767225600.1234567",
+        "end": "1767229200.5"
+      },
+      "normalized": {
+        "start": "2026-01-01T00:00:00.123456+00:00",
+        "end": "2026-01-01T01:00:00.500000+00:00"
+      },
+      "start_tz_assumed_utc": false,
+      "end_tz_assumed_utc": false,
+      "start_sub_micro_truncated": "float 亚微秒尾数 0.75 us",
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    },
+    {
+      "index": 5,
+      "input": {
+        "start": "2026-01-01T12:00:00+08:00",
+        "end": "2026-01-01T08:30:00+04:00"
+      },
+      "normalized": {
+        "start": "2026-01-01T04:00:00+00:00",
+        "end": "2026-01-01T04:30:00+00:00"
+      },
+      "start_tz_assumed_utc": false,
+      "end_tz_assumed_utc": false,
+      "start_sub_micro_truncated": null,
+      "end_sub_micro_truncated": null,
+      "negative_action": null
+    }
+  ]
+}

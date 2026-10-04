@@ -1,0 +1,189 @@
+{
+  "description": "零长度区间（点）在各情形下的合并结果；规则编号见 RULES.md R5-R7",
+  "scenarios": [
+    {
+      "scenario": "点落在正长度区间内部（R5 吸收）",
+      "input": [
+        [
+          0,
+          10
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "scenario": "点恰在区间左端点（R6 吸收）",
+      "input": [
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "scenario": "点恰在区间右端点（R7 不吸收，点保留）",
+      "input": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "scenario": "点在所有区间之外（保留为独立点）",
+      "input": [
+        [
+          0,
+          1
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          0,
+          1
+        ],
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "scenario": "两个相同的点（去重为一个）",
+      "input": [
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "scenario": "两个不同的点（都保留）",
+      "input": [
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "scenario": "点夹在两相接区间之间（touch=False 时被右区间左端吸收）",
+      "input": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "merge_touching": false,
+      "result": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "scenario": "点夹在两相接区间之间（touch=True 时先合并再被吸收）",
+      "input": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "merge_touching": true,
+      "result": [
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ]
+}

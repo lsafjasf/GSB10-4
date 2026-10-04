@@ -1,0 +1,24 @@
+{
+  "n": 1000000,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "runs": [
+    {
+      "merge_touching": false,
+      "output_count": 913494,
+      "best_elapsed_seconds": 5.325,
+      "avg_elapsed_seconds": 5.466,
+      "tracemalloc_peak_mb": 184.6,
+      "process_maxrss_mb": 792.6
+    },
+    {
+      "merge_touching": true,
+      "output_count": 913494,
+      "best_elapsed_seconds": 5.397,
+      "avg_elapsed_seconds": 5.487,
+      "tracemalloc_peak_mb": 184.5,
+      "process_maxrss_mb": 855.8
+    }
+  ],
+  "process_maxrss_note": "ru_maxrss 为进程级峰值（含解释器与输入数据），基准前为 173.7 MB"
+}
