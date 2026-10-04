@@ -1,0 +1,118 @@
+{
+  "_comment": "逐条手工核对的对拍数据。fixture 由 tools/gen_fixture.py build_diff_fixture 生成。每条 expect 为人工沿回退链手工推导的结果。path_suffix 用 posix 风格后缀比对。corrupt=链上被跳过的坏文件数。",
+  "theme": "maintheme",
+  "cases": [
+    {
+      "id": "L1-exact-size",
+      "query": {"name": "exact16", "size": 16, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "maintheme/16x16/apps/exact16.png", "corrupt": 0}
+    },
+    {
+      "id": "L2-larger-size",
+      "query": {"name": "multi", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 2,
+                 "level_name": "larger-size",
+                 "path_suffix": "maintheme/48x48/apps/multi.png", "corrupt": 0}
+    },
+    {
+      "id": "L3-smaller-size-nearest",
+      "query": {"name": "multi", "size": 64, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 3,
+                 "level_name": "smaller-size",
+                 "path_suffix": "maintheme/48x48/apps/multi.png", "corrupt": 0}
+    },
+    {
+      "id": "L3-only-low-res-needs-second-probe",
+      "query": {"name": "onlylow", "size": 48, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 3,
+                 "level_name": "smaller-size",
+                 "path_suffix": "maintheme/16x16/apps/onlylow.png", "corrupt": 0}
+    },
+    {
+      "id": "L2-only-high-res",
+      "query": {"name": "onlyhigh", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 2,
+                 "level_name": "larger-size",
+                 "path_suffix": "maintheme/48x48/apps/onlyhigh.png", "corrupt": 0}
+    },
+    {
+      "id": "L4-scalable",
+      "query": {"name": "vec", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 4,
+                 "level_name": "scalable",
+                 "path_suffix": "maintheme/scalable/apps/vec.svg", "corrupt": 0}
+    },
+    {
+      "id": "L5-unthemed-root",
+      "query": {"name": "rooticon", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 5,
+                 "level_name": "unthemed",
+                 "path_suffix": "maintheme/rooticon.png", "corrupt": 0}
+    },
+    {
+      "id": "L6-inherited",
+      "query": {"name": "fromparent", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "inherited", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "parenttheme/32x32/apps/fromparent.png",
+                 "corrupt": 0}
+    },
+    {
+      "id": "L7-hicolor-last-resort",
+      "query": {"name": "fallback", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "hicolor", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "hicolor/32x32/apps/fallback.png", "corrupt": 0}
+    },
+    {
+      "id": "all-missing-clean",
+      "query": {"name": "ghost", "size": 32, "context": "apps"},
+      "expect": {"status": "missing", "corrupt": 0}
+    },
+    {
+      "id": "corrupt-at-L1-falls-through-to-L2",
+      "query": {"name": "broken", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 2,
+                 "level_name": "larger-size",
+                 "path_suffix": "maintheme/48x48/apps/broken.png", "corrupt": 1}
+    },
+    {
+      "id": "all-corrupt-missing-but-reported",
+      "query": {"name": "allbroken", "size": 32, "context": "apps"},
+      "expect": {"status": "missing", "corrupt": 2}
+    },
+    {
+      "id": "uppercase-extension-matches",
+      "query": {"name": "caseext", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "maintheme/32x32/apps/caseext.PNG", "corrupt": 0}
+    },
+    {
+      "id": "mixed-case-extensions-lowercase-wins",
+      "query": {"name": "both", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "maintheme/32x32/apps/both.png", "corrupt": 0}
+    },
+    {
+      "id": "extension-priority-png-before-svg",
+      "query": {"name": "prio", "size": 32, "context": "apps"},
+      "expect": {"status": "hit", "stage": "main", "level": 1,
+                 "level_name": "exact-size",
+                 "path_suffix": "maintheme/32x32/apps/prio.png", "corrupt": 0}
+    },
+    {
+      "id": "context-dir-case-sensitive-miss",
+      "query": {"name": "wrongcase", "size": 32, "context": "apps"},
+      "expect": {"status": "missing", "corrupt": 0}
+    },
+    {
+      "id": "size-dir-case-sensitive-miss",
+      "query": {"name": "casedir", "size": 48, "context": "apps"},
+      "expect": {"status": "missing", "corrupt": 0}
+    }
+  ]
+}
