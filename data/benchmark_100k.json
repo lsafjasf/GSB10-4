@@ -1,0 +1,32 @@
+{
+  "requests": 100000,
+  "budget_ms_per_request": 100.0,
+  "scenario_mix": "70% 正常；每段 10% 挂死；排队 U(0,10)ms；各段 2 次尝试+退避",
+  "wall_time_s": 2.1677,
+  "per_request_us": 21.677,
+  "run_chain_only_us": 17.041,
+  "status_counts": {
+    "ok": 70054,
+    "exhausted": 10003,
+    "stage_timeout": 19943,
+    "stage_error": 0
+  },
+  "exhausted_ratio": 0.10003,
+  "timeout_like_ratio": 0.29946,
+  "ok_ratio": 0.70054,
+  "reason_counts": {
+    "ok": 70054,
+    "attempts_exhausted_with_budget_remaining": 19943,
+    "global_deadline_after_attempt_timeout": 10003
+  },
+  "virtual_elapsed_ms": {
+    "max": 100.0,
+    "p50": 37.0424,
+    "p95": 100.0,
+    "p99": 100.0
+  },
+  "invariant": "max virtual elapsed 100.0000ms <= 100.0ms（任何请求都未超过总预算，重试未放大总时长）",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "machine": "x86_64"
+}

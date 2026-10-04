@@ -1,0 +1,512 @@
+[
+  {
+    "scenario": "retry_exhaustion",
+    "note": "3 次尝试共享同一份 100ms 预算；朴素方案(每次独立 35ms)会用 35+5+35+10+35=120ms",
+    "budget_ms": 100,
+    "status": "exhausted",
+    "reason": "global_deadline_after_attempt_timeout",
+    "elapsed_ms": 100.0,
+    "remaining_ms": 0.0,
+    "attempts_by_stage": [
+      3
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 1
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 0.0,
+        "stage": "S",
+        "index": 0,
+        "remaining_ms": 100.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 0.0,
+        "stage": "S",
+        "attempt": 1,
+        "grant_ms": 33.333333,
+        "attempts_left": 2
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 33.333333,
+        "stage": "S",
+        "attempt": 1,
+        "used_ms": 33.333333
+      },
+      {
+        "kind": "backoff",
+        "at_ms": 33.333333,
+        "stage": "S",
+        "requested_ms": 5
+      },
+      {
+        "kind": "backoff_done",
+        "at_ms": 38.333333,
+        "stage": "S",
+        "slept_ms": 5.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 38.333333,
+        "stage": "S",
+        "attempt": 2,
+        "grant_ms": 30.833333,
+        "attempts_left": 1
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 69.166667,
+        "stage": "S",
+        "attempt": 2,
+        "used_ms": 30.833333
+      },
+      {
+        "kind": "backoff",
+        "at_ms": 69.166667,
+        "stage": "S",
+        "requested_ms": 10
+      },
+      {
+        "kind": "backoff_done",
+        "at_ms": 79.166667,
+        "stage": "S",
+        "slept_ms": 10.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 79.166667,
+        "stage": "S",
+        "attempt": 3,
+        "grant_ms": 20.833333,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 100.0,
+        "stage": "S",
+        "attempt": 3,
+        "used_ms": 20.833333
+      },
+      {
+        "kind": "deadline_hit",
+        "at_ms": 100.0,
+        "stage": "S"
+      }
+    ],
+    "naive_total_ms": 120
+  },
+  {
+    "scenario": "retry_then_success",
+    "note": "第 1 次超时(50ms 切片)，退避 5ms，第 2 次 10ms 成功",
+    "budget_ms": 100,
+    "status": "ok",
+    "reason": "",
+    "elapsed_ms": 65.0,
+    "remaining_ms": 35.0,
+    "attempts_by_stage": [
+      2
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 1
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 0.0,
+        "stage": "S",
+        "index": 0,
+        "remaining_ms": 100.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 0.0,
+        "stage": "S",
+        "attempt": 1,
+        "grant_ms": 50.0,
+        "attempts_left": 1
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 50.0,
+        "stage": "S",
+        "attempt": 1,
+        "used_ms": 50.0
+      },
+      {
+        "kind": "backoff",
+        "at_ms": 50.0,
+        "stage": "S",
+        "requested_ms": 5.0
+      },
+      {
+        "kind": "backoff_done",
+        "at_ms": 55.0,
+        "stage": "S",
+        "slept_ms": 5.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 55.0,
+        "stage": "S",
+        "attempt": 2,
+        "grant_ms": 45.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 65.0,
+        "stage": "S",
+        "attempt": 2,
+        "used_ms": 10.0
+      },
+      {
+        "kind": "chain_ok",
+        "at_ms": 65.0,
+        "remaining_ms": 35.0
+      }
+    ]
+  },
+  {
+    "scenario": "all_success_with_queue",
+    "note": "排队 15ms 计入预算；三段等权各分 40ms 切片，未用完的留给后段",
+    "budget_ms": 120,
+    "status": "ok",
+    "reason": "",
+    "elapsed_ms": 90.0,
+    "remaining_ms": 30.0,
+    "attempts_by_stage": [
+      1,
+      1,
+      1
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 120.0,
+        "stages": 3
+      },
+      {
+        "kind": "queue_wait",
+        "at_ms": 0.0,
+        "requested_ms": 15
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 15.0,
+        "stage": "A",
+        "index": 0,
+        "remaining_ms": 105.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 15.0,
+        "stage": "A",
+        "attempt": 1,
+        "grant_ms": 35.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 35.0,
+        "stage": "A",
+        "attempt": 1,
+        "used_ms": 20.0
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 35.0,
+        "stage": "B",
+        "index": 1,
+        "remaining_ms": 85.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 35.0,
+        "stage": "B",
+        "attempt": 1,
+        "grant_ms": 42.5,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 60.0,
+        "stage": "B",
+        "attempt": 1,
+        "used_ms": 25.0
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 60.0,
+        "stage": "C",
+        "index": 2,
+        "remaining_ms": 60.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 60.0,
+        "stage": "C",
+        "attempt": 1,
+        "grant_ms": 60.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 90.0,
+        "stage": "C",
+        "attempt": 1,
+        "used_ms": 30.0
+      },
+      {
+        "kind": "chain_ok",
+        "at_ms": 90.0,
+        "remaining_ms": 30.0
+      }
+    ]
+  },
+  {
+    "scenario": "first_stage_timeout",
+    "note": "首段挂死，授权被硬上限压到 20ms；显式 stage_timeout，B/C 不进入",
+    "budget_ms": 100,
+    "status": "stage_timeout",
+    "reason": "attempts_exhausted_with_budget_remaining",
+    "elapsed_ms": 20.0,
+    "remaining_ms": 80.0,
+    "attempts_by_stage": [
+      1
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 3
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 0.0,
+        "stage": "A",
+        "index": 0,
+        "remaining_ms": 100.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 0.0,
+        "stage": "A",
+        "attempt": 1,
+        "grant_ms": 20,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 20.0,
+        "stage": "A",
+        "attempt": 1,
+        "used_ms": 20.0
+      }
+    ]
+  },
+  {
+    "scenario": "last_stage_timeout",
+    "note": "末段挂死其 25ms 硬上限；显式 stage_timeout，剩余 15ms 如实上报",
+    "budget_ms": 100,
+    "status": "stage_timeout",
+    "reason": "attempts_exhausted_with_budget_remaining",
+    "elapsed_ms": 85.0,
+    "remaining_ms": 15.0,
+    "attempts_by_stage": [
+      1,
+      1,
+      1
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 3
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 0.0,
+        "stage": "A",
+        "index": 0,
+        "remaining_ms": 100.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 0.0,
+        "stage": "A",
+        "attempt": 1,
+        "grant_ms": 33.333333,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 30.0,
+        "stage": "A",
+        "attempt": 1,
+        "used_ms": 30.0
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 30.0,
+        "stage": "B",
+        "index": 1,
+        "remaining_ms": 70.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 30.0,
+        "stage": "B",
+        "attempt": 1,
+        "grant_ms": 35.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 60.0,
+        "stage": "B",
+        "attempt": 1,
+        "used_ms": 30.0
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 60.0,
+        "stage": "C",
+        "index": 2,
+        "remaining_ms": 40.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 60.0,
+        "stage": "C",
+        "attempt": 1,
+        "grant_ms": 25,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_timeout",
+        "at_ms": 85.0,
+        "stage": "C",
+        "attempt": 1,
+        "used_ms": 25.0
+      }
+    ]
+  },
+  {
+    "scenario": "queue_starvation",
+    "note": "排队 100ms 吃光预算；首段开始前即显式 exhausted，不发起任何调用",
+    "budget_ms": 100,
+    "status": "exhausted",
+    "reason": "budget_exhausted_before_stage",
+    "elapsed_ms": 100.0,
+    "remaining_ms": 0.0,
+    "attempts_by_stage": [],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 1
+      },
+      {
+        "kind": "queue_wait",
+        "at_ms": 0.0,
+        "requested_ms": 100
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 100.0,
+        "stage": "A",
+        "index": 0,
+        "remaining_ms": 0.0
+      },
+      {
+        "kind": "stop_before_stage",
+        "at_ms": 100.0,
+        "stage": "A",
+        "reason": "budget_exhausted"
+      }
+    ]
+  },
+  {
+    "scenario": "clock_rollback",
+    "note": "A 后时钟在 B 内从 40 回拨到 10，B 工作 30ms；包络口径下回拨窗口不计，elapsed=40，预算不会被放大",
+    "budget_ms": 100,
+    "status": "ok",
+    "reason": "",
+    "elapsed_ms": 40.0,
+    "remaining_ms": 60.0,
+    "attempts_by_stage": [
+      1,
+      1
+    ],
+    "events": [
+      {
+        "kind": "chain_start",
+        "at_ms": 0.0,
+        "total_ms": 100.0,
+        "stages": 2
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 0.0,
+        "stage": "A",
+        "index": 0,
+        "remaining_ms": 100.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 0.0,
+        "stage": "A",
+        "attempt": 1,
+        "grant_ms": 50.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 40.0,
+        "stage": "A",
+        "attempt": 1,
+        "used_ms": 40.0
+      },
+      {
+        "kind": "stage_enter",
+        "at_ms": 40.0,
+        "stage": "B",
+        "index": 1,
+        "remaining_ms": 60.0
+      },
+      {
+        "kind": "attempt_start",
+        "at_ms": 40.0,
+        "stage": "B",
+        "attempt": 1,
+        "grant_ms": 60.0,
+        "attempts_left": 0
+      },
+      {
+        "kind": "attempt_ok",
+        "at_ms": 40.0,
+        "stage": "B",
+        "attempt": 1,
+        "used_ms": 0.0
+      },
+      {
+        "kind": "chain_ok",
+        "at_ms": 40.0,
+        "remaining_ms": 60.0
+      }
+    ]
+  }
+]
