@@ -1,0 +1,6 @@
+OUT-OF-BOUNDS REPORT
+violations: 1
+the shift was rejected; output file was NOT written and no cue was truncated
+
+cue             new_start        new_end          original_interval
+fixtures/case_oob_in.srt#1      -9000ms               end -8000ms  [00:00:01,000, 00:00:02,000)
