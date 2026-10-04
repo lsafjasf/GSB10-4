@@ -1,0 +1,35 @@
+{
+  "input_entries": 200000,
+  "real_files": 50000,
+  "build_tree_seconds": 2.383,
+  "canonical": {
+    "unique": 50000,
+    "duplicates": 150000,
+    "errors": 0,
+    "min_seconds": 1.2438,
+    "median_seconds": 1.5966,
+    "throughput_entries_per_sec": 125264,
+    "first_occurrence_form_distribution": {
+      "lexical": 12490,
+      "via-link": 12595,
+      "relative": 12500,
+      "absolute": 12415
+    }
+  },
+  "naive_string": {
+    "unique": 200000,
+    "min_seconds": 0.1112,
+    "median_seconds": 0.1165
+  },
+  "difference": {
+    "unique_count_gap": 150000,
+    "per_entry_judgment_disagreements": 150000,
+    "note": "朴素按原始字符串判重,4 种写法被当成 4 个文件;规范按 (dev,inode) 判重,收敛为 1 个文件。"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seed": 20261005,
+    "rounds": 3
+  }
+}
