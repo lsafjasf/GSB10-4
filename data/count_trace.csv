@@ -1,0 +1,10 @@
+step,ack_seq,status,released,base,unacked,window_used,acked_ahead
+1,2,accepted,0,1,4,5,1
+2,2,duplicate,0,1,4,5,1
+3,1,accepted,2,3,3,3,0
+4,2,duplicate,0,3,3,3,0
+5,3,accepted,1,4,2,2,0
+6,3,duplicate,0,4,2,2,0
+7,5,accepted,0,4,1,2,1
+8,4,accepted,2,6,0,0,0
+9,4,duplicate,0,6,0,0,0

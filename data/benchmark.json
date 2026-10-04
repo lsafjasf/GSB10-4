@@ -1,0 +1,75 @@
+{
+  "cases": {
+    "in_order": {
+      "accepted_acks": 1000000,
+      "ack_ops_per_second": 894806.4043072074,
+      "ack_seconds": 1.1175601730010385,
+      "advance_events": 1000000,
+      "duplicate_acks": 0,
+      "max_unacked": 100000,
+      "max_window_used": 100000,
+      "nanoseconds_per_operation": 809.295715497683,
+      "operations_per_second": 1235642.2761796557,
+      "seconds": 1.618591430995366,
+      "send_ops_per_second": 1995883.4584554438,
+      "send_seconds": 0.5010312579943275
+    },
+    "out_of_order": {
+      "accepted_acks": 1000000,
+      "ack_ops_per_second": 715470.2115042015,
+      "ack_seconds": 1.3976822290023847,
+      "advance_events": 118,
+      "duplicate_acks": 0,
+      "max_unacked": 100000,
+      "max_window_used": 100000,
+      "nanoseconds_per_operation": 961.5886730016427,
+      "operations_per_second": 1039945.6941172722,
+      "seconds": 1.9231773460032855,
+      "send_ops_per_second": 1902967.2544003597,
+      "send_seconds": 0.5254951170009008
+    }
+  },
+  "config": {
+    "messages": 1000000,
+    "payload": null,
+    "seed": 20261005,
+    "window_capacity": 100000
+  },
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "memory": {
+    "process_ru_maxrss_kib": 43964,
+    "samples": [
+      {
+        "after_acks": 0,
+        "bytes": 9643176
+      },
+      {
+        "after_acks": 1,
+        "bytes": 9643160
+      },
+      {
+        "after_acks": 25000,
+        "bytes": 11340300
+      },
+      {
+        "after_acks": 50000,
+        "bytes": 10940300
+      },
+      {
+        "after_acks": 75000,
+        "bytes": 10540216
+      },
+      {
+        "after_acks": 100000,
+        "bytes": 9437480
+      }
+    ],
+    "structural_peak_bytes": 11340300,
+    "structural_peak_mib": 10.814952850341797,
+    "window_capacity": 100000
+  }
+}
