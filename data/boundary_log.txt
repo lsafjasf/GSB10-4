@@ -1,0 +1,13 @@
+# 订阅边界投递结果（按时间顺序）
+# 格式: seq 模式 投递对象 | 说明
+1 broadcast ['a', 'b'] | 订阅者 a,b
+2 unicast   ['a'] | 轮转从 a 开始
+# --- 边界点: subscribe(c) ---
+3 broadcast ['a', 'b', 'c'] | 边界后必须包含 c
+4 unicast   ['b'] | 轮转继续，不受订阅影响
+# --- 边界点: unsubscribe(a) ---
+5 broadcast ['b', 'c'] | 边界后不得再投给 a
+6 unicast   ['c'] | 不得投给已退订的 a
+# --- 边界点: 全部退订 ---
+7 broadcast [] | 空订阅者：不投递不报错
+8 unicast   [] | 空订阅者：单播丢弃

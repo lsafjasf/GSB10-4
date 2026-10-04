@@ -1,0 +1,23 @@
+混合分发基准
+python: 3.12.3  platform: Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+measure window: 仅分发阶段（不含订阅建连）
+
+[scenario 1: all unicast]
+subscribers          : 1000
+dispatches           : 1000000 (0 broadcast, 1000000 unicast)
+callback deliveries  : 1000000
+elapsed wall time    : 6.140 s
+throughput           : 162,866 dispatches/s (162,866 deliveries/s)
+avg per dispatch     : 6.140 us
+peak python heap     : 0.64 MiB (tracemalloc)
+peak process RSS     : 33.07 MiB
+
+[scenario 2: mixed (1% broadcast / 99% unicast)]
+subscribers          : 1000
+dispatches           : 1000000 (10111 broadcast, 989889 unicast)
+callback deliveries  : 11100889
+elapsed wall time    : 9.809 s
+throughput           : 101,947 dispatches/s (1,131,704 deliveries/s)
+avg per dispatch     : 9.809 us
+peak python heap     : 2.32 MiB (tracemalloc)
+peak process RSS     : 33.07 MiB
