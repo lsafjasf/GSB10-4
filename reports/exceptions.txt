@@ -1,0 +1,68 @@
+streamdecode exception report
+
+============================================================
+
+[REJECTED] unknown encoding 'br' (single layer)
+  type   : UnknownEncodingError
+  layer  : 0 (encoding 'br')
+  message: content-encoding layer 0 ('br'): unknown or unsupported content encoding 'br'
+
+[REJECTED] unknown encoding 'zstd' at layer 1 of 'gzip, zstd, deflate'
+  type   : UnknownEncodingError
+  layer  : 1 (encoding 'zstd')
+  message: content-encoding layer 1 ('zstd'): unknown or unsupported content encoding 'zstd'
+
+[REJECTED] reversed order: actual [gzip then deflate], declared 'deflate, gzip'
+  type   : EncodingOrderError
+  layer  : 1 (encoding 'gzip')
+  message: content-encoding layer 1 ('gzip'): stream starts with a 'deflate' signature, but declared Content-Encoding 'deflate, gzip' makes 'gzip' the outermost encoding; the declared order is likely reversed or the header is wrong (did the server mean 'gzip, deflate'?)
+
+[REJECTED] reversed order: actual [deflate then gzip], declared 'gzip, deflate'
+  type   : EncodingOrderError
+  layer  : 1 (encoding 'deflate')
+  message: content-encoding layer 1 ('deflate'): stream starts with a 'gzip' signature, but declared Content-Encoding 'gzip, deflate' makes 'deflate' the outermost encoding; the declared order is likely reversed or the header is wrong (did the server mean 'deflate, gzip'?)
+
+[REJECTED] truncated gzip stream (cut at 50%%)
+  type   : TruncatedStreamError
+  layer  : 0 (encoding 'gzip')
+  message: content-encoding layer 0 ('gzip'): truncated gzip stream: unexpected end of input
+
+[REJECTED] truncated outer 'deflate' layer in 'gzip, deflate'
+  type   : TruncatedStreamError
+  layer  : 1 (encoding 'deflate')
+  message: content-encoding layer 1 ('deflate'): truncated deflate stream: unexpected end of input
+
+[REJECTED] truncated inner 'gzip' layer in 'gzip, deflate' (outer valid)
+  type   : TruncatedStreamError
+  layer  : 0 (encoding 'gzip')
+  message: content-encoding layer 0 ('gzip'): truncated gzip stream: unexpected end of input
+
+[REJECTED] truncated bzip2 stream (last byte removed)
+  type   : TruncatedStreamError
+  layer  : 0 (encoding 'bzip2')
+  message: content-encoding layer 0 ('bzip2'): truncated bzip2 stream: unexpected end of input
+
+[REJECTED] trailing bytes after gzip EOF
+  type   : DecodeError
+  layer  : 0 (encoding 'gzip')
+  message: content-encoding layer 0 ('gzip'): trailing data after end of gzip stream
+
+[REJECTED] declared gzip but body has no gzip signature / is corrupt
+  type   : DecodeError
+  layer  : 0 (encoding 'gzip')
+  message: content-encoding layer 0 ('gzip'): gzip decode error: Error -3 while decompressing data: incorrect header check
+
+[REJECTED] Content-Length too large: declared 603, got 598
+  type   : LengthMismatchError
+  layer  : None (encoding None)
+  message: Content-Length mismatch: declared 603 bytes, received 598 bytes
+
+[REJECTED] Content-Length too small: declared 603, got more
+  type   : LengthMismatchError
+  layer  : None (encoding None)
+  message: Content-Length mismatch: declared 603 bytes, received at least 614 bytes
+
+[REJECTED] malformed Content-Encoding header 'gzip, bad token'
+  type   : ContentEncodingError
+  layer  : 1 (encoding 'bad token')
+  message: content-encoding layer 1 ('bad token'): malformed Content-Encoding token ' bad token'

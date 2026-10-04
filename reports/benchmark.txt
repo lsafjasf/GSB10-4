@@ -1,0 +1,17 @@
+streamdecode 100 MiB benchmark
+============================================================
+streaming decode, random (incompressible) payload:
+  compressed   plaintext   time(s)   MiB/s   peak RSS (MiB, absolute)
+  ------------------------------------------------------------------
+          1 MiB         1 MiB     0.001      909             31.51
+         10 MiB        10 MiB     0.009     1075             31.51
+         50 MiB        50 MiB     0.043     1152             31.51
+        100 MiB       100 MiB     0.087     1153             31.51
+
+peak RSS stays flat while the response grows 1 -> 100 MiB: memory does not follow the body size.
+
+100 MiB compressed response (decompressed = 100 MiB):
+  streaming : 0.087 s, 1151 MiB/s, peak RSS 31.51 MiB
+  one-shot  : 0.367 s, 272 MiB/s, peak RSS 415.28 MiB
+
+100 MiB highly-compressible payload (compressed 12.8 MiB): 0.108 s, 923 MiB/s, peak RSS 31.51 MiB
