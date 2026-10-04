@@ -1,0 +1,138 @@
+{
+  "n": 1000000,
+  "seed": "0x5eed5eed5eed5eed",
+  "spread_ms": 1000,
+  "elapsed_s": 6.8907,
+  "throughput_ops": 145122.3,
+  "ns_per_op": 6890.7,
+  "clamped_count": 0,
+  "clock_skew_count": 4511,
+  "hint_ms": {
+    "min": 8,
+    "p50": 1003.0,
+    "p90": 1555.0,
+    "p99": 1860.0,
+    "p99_9": 1957.0,
+    "max": 1999,
+    "mean": 1003.36
+  },
+  "base_ms": {
+    "min": 6,
+    "p50": 503.0,
+    "p90": 901.0,
+    "p99": 991.0,
+    "p99_9": 999.0,
+    "max": 1000,
+    "mean": 503.25
+  },
+  "jitter_ms": {
+    "min": 0,
+    "p50": 501.0,
+    "p90": 901.0,
+    "p99": 991.0,
+    "p99_9": 1000.0,
+    "max": 1000,
+    "mean": 500.11
+  },
+  "body_bytes": {
+    "min": 342,
+    "p50": 350.0,
+    "p90": 351.0,
+    "p99": 351.0,
+    "p99_9": 351.0,
+    "max": 352,
+    "mean": 349.69
+  },
+  "body_bytes_histogram": [
+    {
+      "bucket": 336,
+      "count": 999276
+    },
+    {
+      "bucket": 352,
+      "count": 724
+    }
+  ],
+  "hint_ms_histogram": [
+    {
+      "bucket": 0,
+      "count": 4425
+    },
+    {
+      "bucket": 100,
+      "count": 14251
+    },
+    {
+      "bucket": 200,
+      "count": 24766
+    },
+    {
+      "bucket": 300,
+      "count": 35015
+    },
+    {
+      "bucket": 400,
+      "count": 44614
+    },
+    {
+      "bucket": 500,
+      "count": 54107
+    },
+    {
+      "bucket": 600,
+      "count": 64483
+    },
+    {
+      "bucket": 700,
+      "count": 75144
+    },
+    {
+      "bucket": 800,
+      "count": 84819
+    },
+    {
+      "bucket": 900,
+      "count": 94385
+    },
+    {
+      "bucket": 1000,
+      "count": 95433
+    },
+    {
+      "bucket": 1100,
+      "count": 85753
+    },
+    {
+      "bucket": 1200,
+      "count": 75286
+    },
+    {
+      "bucket": 1300,
+      "count": 65670
+    },
+    {
+      "bucket": 1400,
+      "count": 55365
+    },
+    {
+      "bucket": 1500,
+      "count": 45219
+    },
+    {
+      "bucket": 1600,
+      "count": 35199
+    },
+    {
+      "bucket": 1700,
+      "count": 25598
+    },
+    {
+      "bucket": 1800,
+      "count": 15250
+    },
+    {
+      "bucket": 1900,
+      "count": 5218
+    }
+  ]
+}

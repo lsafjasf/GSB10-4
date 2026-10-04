@@ -1,0 +1,179 @@
+{
+  "failed": 0,
+  "floor_rule_random_checks": 20000,
+  "golden": {
+    "raw": 3.5,
+    "seed": "0x5eed5eed5eed5eed",
+    "splitmix64_first4": [
+      18157726123883287543,
+      16369348538226379880,
+      2822214579904430031,
+      12418988111616073705
+    ],
+    "spread_ms_0": [
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500,
+      3500
+    ],
+    "spread_ms_1000_hints": [
+      4485,
+      4388,
+      3653,
+      4173,
+      4136,
+      3538,
+      4063,
+      3798,
+      4004,
+      3537,
+      4454,
+      3654
+    ]
+  },
+  "invariants": [
+    "body.used == limiter.used (internal counter)",
+    "body.remaining == limit - limiter.used == decision.remaining",
+    "body.limit == decision.limit == limiter.limit",
+    "body.window_ms == decision.remaining_ms == ceil(remaining_raw*1000)",
+    "header X-RateLimit-Remaining == decision.remaining",
+    "header X-RateLimit-Reset-Ms == body.reset_ms == ceil(window_end*1000)",
+    "denied: retry_after_ms >= ceil(remaining_raw*1000) (floor rule)",
+    "denied: retry_after_ms == base_ms + jitter_ms",
+    "Retry-After(s) == ceil(retry_after_ms/1000)"
+  ],
+  "passed": 65,
+  "randomized_consistency_checks": 12507,
+  "samples": {
+    "second": {
+      "allowed": {
+        "body": {
+          "limit": 2,
+          "remaining": 1,
+          "reset_ms": 101000,
+          "scope": "per-second",
+          "status": "allowed",
+          "used": 1,
+          "window_ms": 800
+        },
+        "headers": {
+          "X-RateLimit-Limit": "2",
+          "X-RateLimit-Remaining": "1",
+          "X-RateLimit-Reset-Ms": "101000",
+          "X-RateLimit-Window-Ms": "800"
+        },
+        "status": 200
+      },
+      "denied": {
+        "body": {
+          "base_ms": 800,
+          "clamped": false,
+          "clock_skew_count": 0,
+          "error": "rate_limited",
+          "jitter_index": 1,
+          "jitter_ms": 985,
+          "jitter_seed": 6840227782638526189,
+          "jitter_spread_ms": 1000,
+          "limit": 2,
+          "remaining": 0,
+          "reset_ms": 101000,
+          "retry_after_ms": 1785,
+          "retry_after_s": 2,
+          "scope": "per-second",
+          "status": "denied",
+          "used": 2,
+          "window_ms": 800
+        },
+        "headers": {
+          "Retry-After": "2",
+          "X-RateLimit-Jitter-Ms": "985",
+          "X-RateLimit-Limit": "2",
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset-Ms": "101000",
+          "X-RateLimit-Retry-After-Ms": "1785",
+          "X-RateLimit-Window-Ms": "800"
+        },
+        "status": 429
+      },
+      "internal": {
+        "limit": 2,
+        "remaining_ms": 800,
+        "remaining_raw": 0.7999999999999972,
+        "used": 2,
+        "window_index": 100
+      }
+    },
+    "window": {
+      "allowed": {
+        "body": {
+          "limit": 2,
+          "remaining": 1,
+          "reset_ms": 60000,
+          "scope": "per-window",
+          "status": "allowed",
+          "used": 1,
+          "window_ms": 22500
+        },
+        "headers": {
+          "X-RateLimit-Limit": "2",
+          "X-RateLimit-Remaining": "1",
+          "X-RateLimit-Reset-Ms": "60000",
+          "X-RateLimit-Window-Ms": "22500"
+        },
+        "status": 200
+      },
+      "denied": {
+        "body": {
+          "base_ms": 22500,
+          "clamped": false,
+          "clock_skew_count": 0,
+          "error": "rate_limited",
+          "jitter_index": 1,
+          "jitter_ms": 985,
+          "jitter_seed": 6840227782638526189,
+          "jitter_spread_ms": 1000,
+          "limit": 2,
+          "remaining": 0,
+          "reset_ms": 60000,
+          "retry_after_ms": 23485,
+          "retry_after_s": 24,
+          "scope": "per-window",
+          "status": "denied",
+          "used": 2,
+          "window_ms": 22500
+        },
+        "headers": {
+          "Retry-After": "24",
+          "X-RateLimit-Jitter-Ms": "985",
+          "X-RateLimit-Limit": "2",
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset-Ms": "60000",
+          "X-RateLimit-Retry-After-Ms": "23485",
+          "X-RateLimit-Window-Ms": "22500"
+        },
+        "status": 429
+      },
+      "internal": {
+        "limit": 2,
+        "remaining_ms": 22500,
+        "remaining_raw": 22.5,
+        "used": 2,
+        "window_index": 0
+      }
+    }
+  },
+  "undercut_protection_case": {
+    "actual_remaining_ms": 3000.4,
+    "buggy_truncation_ms": 3000,
+    "guard_output_ms": 3001,
+    "remaining_raw": 3.0004
+  }
+}
