@@ -1,0 +1,18 @@
+<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>ID 校验</TITLE>
+<H1>ID 校验</H1>
+
+<DL><p>
+    <DT><H3 ID="f1">目录一</H3>
+    <DL><p>
+        <DT><A ID="b1" PID="f1" HREF="https://1.example/">正常子项</A>
+        <DT><A ID="b2" PID="f999" HREF="https://2.example/">PID 指向不存在的 ID（孤立）</A>
+        <DT><A ID="b3" PID="f1" HREF="https://3.example/">正常子项二</A>
+        <DT><A ID="b3" PID="f1" HREF="https://3dup.example/">重复 ID b3</A>
+    </DL><p>
+    <DT><H3 ID="f2">目录二</H3>
+    <DL><p>
+        <DT><A ID="b4" PID="f1" HREF="https://4.example/">结构父级是 f2，却声明 PID=f1（父子不一致）</A>
+    </DL><p>
+</DL><p>

@@ -1,0 +1,41 @@
+{
+  "环境": {
+    "python": "Python 3.12.3",
+    "测量方式": "time.perf_counter 计时；tracemalloc 统计 Python 堆峰值；ru_maxrss 为进程常驻内存峰值（KiB，跨全部用例累计）"
+  },
+  "process_rss_peak_kib_before": 16364,
+  "process_rss_peak_kib_after": 520084,
+  "process_rss_peak_delta_kib": 503720,
+  "用例": [
+    {
+      "case": "balanced_100000",
+      "nodes": 100000,
+      "max_depth": 3,
+      "indent": 4,
+      "file_bytes": 12132895,
+      "write_seconds": 0.6634,
+      "write_peak_python_bytes": 77366123,
+      "parse_seconds": 4.4538,
+      "parse_peak_python_bytes": 125880500,
+      "parse_preserves_count": true,
+      "roundtrip_lossless": true,
+      "nodes_per_second_parse": 22452,
+      "nodes_per_second_write": 150732
+    },
+    {
+      "case": "chain_100000",
+      "nodes": 100000,
+      "max_depth": 100000,
+      "indent": 0,
+      "file_bytes": 5177948,
+      "write_seconds": 1.166,
+      "write_peak_python_bytes": 44378739,
+      "parse_seconds": 4.9649,
+      "parse_peak_python_bytes": 78130190,
+      "parse_preserves_count": true,
+      "roundtrip_lossless": true,
+      "nodes_per_second_parse": 20141,
+      "nodes_per_second_write": 85760
+    }
+  ]
+}

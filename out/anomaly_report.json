@@ -1,0 +1,62 @@
+{
+  "处理约定": {
+    "duplicate_id": "保留先出现者作为该 ID 的规范节点，重复节点原样保留（不删不改）",
+    "parent_mismatch": "以结构嵌套位置为准，PID 仅作参考元数据，原样保留",
+    "dangling_parent_ref": "判定为孤立节点，保持其结构位置，原样保留",
+    "stray_node": "挂到根目录末尾（按出现顺序），写回后成为合法结构",
+    "unclosed_list": "文件末尾自动闭合，写回后成为合法结构",
+    "anonymous_list": "按匿名目录处理，其内容上提一级"
+  },
+  "报告": {
+    "orphan_node": [
+      {
+        "kind": "dangling_parent_ref",
+        "message": "节点 '孤立节点' 的 PID='ghost' 指向不存在的 ID，判定为孤立节点，保持其结构位置",
+        "node_title": "孤立节点",
+        "pid": "ghost"
+      }
+    ],
+    "malformed_structure": [
+      {
+        "kind": "stray_node",
+        "message": "书签 '根 DL 之外的孤立条目' 出现在任何 <DL> 之外，已挂到根目录",
+        "node_title": "根 DL 之外的孤立条目",
+        "node_kind": "bookmark"
+      },
+      {
+        "kind": "unclosed_list",
+        "message": "目录 '未闭合目录' 的 <DL> 未闭合，已在文件末尾自动闭合",
+        "node_title": "未闭合目录",
+        "depth": 1
+      },
+      {
+        "kind": "unclosed_list",
+        "message": "目录 '正常目录' 的 <DL> 未闭合，已在文件末尾自动闭合",
+        "node_title": "正常目录",
+        "depth": 0
+      }
+    ],
+    "validate_ids": [
+      {
+        "kind": "duplicate_id",
+        "message": "ID 'b3' 重复：保留先出现的节点作为规范节点，重复节点原样保留",
+        "id": "b3",
+        "kept_title": "正常子项二",
+        "duplicate_title": "重复 ID b3"
+      },
+      {
+        "kind": "dangling_parent_ref",
+        "message": "节点 'PID 指向不存在的 ID（孤立）' 的 PID='f999' 指向不存在的 ID，判定为孤立节点，保持其结构位置",
+        "node_title": "PID 指向不存在的 ID（孤立）",
+        "pid": "f999"
+      },
+      {
+        "kind": "parent_mismatch",
+        "message": "节点 '结构父级是 f2，却声明 PID=f1（父子不一致）' 声明父级 PID='f1'，但结构父级 ID='f2'，以结构嵌套位置为准",
+        "node_title": "结构父级是 f2，却声明 PID=f1（父子不一致）",
+        "pid": "f1",
+        "structural_parent_id": "f2"
+      }
+    ]
+  }
+}

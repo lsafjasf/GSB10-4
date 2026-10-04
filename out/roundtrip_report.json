@@ -1,0 +1,85 @@
+{
+  "顺序依据": "节点按文件中的结构顺序（<DT> 条目在父 <DL> 内的出现顺序）还原，不做任何按标题的排序；canonical_nested 用例中 Zebra 排在 Apple 前即为证明。",
+  "往返判定": "structural_equal（层级+兄弟顺序+标题+属性及属性顺序+描述+文档头逐节点比对）且 byte_identical_second_pass（二次写回字节一致）；byte_identical_to_input 表示与原始输入字节一致（规范化输入可满足）。",
+  "用例": [
+    {
+      "case": "canonical_nested",
+      "nodes": 10,
+      "max_depth": 3,
+      "input_bytes": 1011,
+      "output_bytes": 1011,
+      "sha256_pass1": "b86da4d8bfb456c9fbb3e63920d1a58254c07cc27b7f02e6f3e5700d633f467f",
+      "sha256_pass2": "b86da4d8bfb456c9fbb3e63920d1a58254c07cc27b7f02e6f3e5700d633f467f",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": true,
+      "anomalies": 0
+    },
+    {
+      "case": "single_node",
+      "nodes": 1,
+      "max_depth": 1,
+      "input_bytes": 245,
+      "output_bytes": 245,
+      "sha256_pass1": "e94331121c2b4f91f5093ced26837c4c9ce6dbb048f553548c395c4bb11ff8c5",
+      "sha256_pass2": "e94331121c2b4f91f5093ced26837c4c9ce6dbb048f553548c395c4bb11ff8c5",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": true,
+      "anomalies": 0
+    },
+    {
+      "case": "deep_nesting_10000",
+      "nodes": 10001,
+      "max_depth": 10001,
+      "input_bytes": 467991,
+      "output_bytes": 467991,
+      "sha256_pass1": "7db464a06117e44ba4848e193701477f1aa4f0920ef8b10380a425b3d64e64ea",
+      "sha256_pass2": "7db464a06117e44ba4848e193701477f1aa4f0920ef8b10380a425b3d64e64ea",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": true,
+      "anomalies": 0
+    },
+    {
+      "case": "orphan_node",
+      "nodes": 3,
+      "max_depth": 2,
+      "input_bytes": 371,
+      "output_bytes": 371,
+      "sha256_pass1": "cc3f37ee459a81206fa1c1e8345a2255a0736fe8a853fc2e168d39a756d538f5",
+      "sha256_pass2": "cc3f37ee459a81206fa1c1e8345a2255a0736fe8a853fc2e168d39a756d538f5",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": true,
+      "anomalies": 1
+    },
+    {
+      "case": "malformed_repaired",
+      "nodes": 5,
+      "max_depth": 3,
+      "input_bytes": 428,
+      "output_bytes": 471,
+      "sha256_pass1": "008f522e7545c37468fdcc05bd02b35a7f873dbc9824675d114c4e12c4faf856",
+      "sha256_pass2": "008f522e7545c37468fdcc05bd02b35a7f873dbc9824675d114c4e12c4faf856",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": false,
+      "anomalies": 3,
+      "备注": "输入含结构异常，修复后写回，二次解析无异常且结构一致"
+    },
+    {
+      "case": "validate_ids",
+      "nodes": 7,
+      "max_depth": 2,
+      "input_bytes": 740,
+      "output_bytes": 740,
+      "sha256_pass1": "5b77bfe20793fb894ae0011d20158706c0e09cee81f04b7069743c34c1a59b68",
+      "sha256_pass2": "5b77bfe20793fb894ae0011d20158706c0e09cee81f04b7069743c34c1a59b68",
+      "structural_equal": true,
+      "byte_identical_second_pass": true,
+      "byte_identical_to_input": true,
+      "anomalies": 3
+    }
+  ]
+}
