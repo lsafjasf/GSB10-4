@@ -1,0 +1,22 @@
+=== 对拍数据（n=100000, seed=275）===
+批量路径   : 状态分布 {'SUCCESS': 82000, 'FAILURE_PERMANENT': 8000, 'SUCCESS_AFTER_RECONCILE': 8000, 'FAILURE_RETRY_EXHAUSTED': 2000}
+             提交调用 129000, 重试 23000, 对账 20000, 持久层核实 1000, 耗时 3.212s
+逐项路径   : 状态分布 {'SUCCESS': 82000, 'FAILURE_PERMANENT': 8000, 'SUCCESS_AFTER_RECONCILE': 8000, 'FAILURE_RETRY_EXHAUSTED': 2000}
+             提交调用 129000, 重试 23000, 对账 20000, 持久层核实 1000
+逐项状态表一致 : True  (不一致 0 条)
+副作用流水一致 : True  (A=90000 条, B=90000 条)
+副作用无重复   : A=True, B=True
+
+抽样对拍明细（item_id | 批量状态 | 逐项状态 | 提交次数 A/B）:
+  item-00000000  SUCCESS                    SUCCESS                    1/1
+  item-00000001  SUCCESS                    SUCCESS                    1/1
+  item-00000002  SUCCESS                    SUCCESS                    1/1
+  item-00000003  SUCCESS                    SUCCESS                    1/1
+  item-00000004  SUCCESS                    SUCCESS                    1/1
+  item-00000005  SUCCESS                    SUCCESS                    1/1
+  item-00000006  SUCCESS                    SUCCESS                    1/1
+  item-00000007  FAILURE_PERMANENT          FAILURE_PERMANENT          1/1
+  item-00000008  SUCCESS_AFTER_RECONCILE    SUCCESS_AFTER_RECONCILE    3/3
+  item-00000057  FAILURE_RETRY_EXHAUSTED    FAILURE_RETRY_EXHAUSTED    4/4
+
+对拍通过：批量与逐项提交结果完全一致。

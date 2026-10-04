@@ -1,0 +1,68 @@
+=== 错误分类表（分类依据 + 样例）===
+    -4 RESPONSE_LOST    AMBIGUOUS      连接在等待响应时中断：服务端可能已经提交
+    -3 READ_TIMEOUT     AMBIGUOUS      读取响应超时（ETIMEDOUT）：请求可能已到达并执行，结果未知
+    -2 CONN_RESET       RETRYABLE      连接被重置（ECONNRESET），发生在发送请求阶段，服务端未受理
+    -1 CONN_REFUSED     RETRYABLE      连接被拒绝（ECONNREFUSED），请求未发出或未被受理
+   400 BAD_REQUEST      NON_RETRYABLE  请求格式错误（Bad Request），原样重试永远失败
+   401 UNAUTHORIZED     NON_RETRYABLE  未认证（Unauthorized），凭据问题，重试结果不变
+   403 FORBIDDEN        NON_RETRYABLE  被拒绝（Forbidden），确定性的权限/校验失败
+   404 NOT_FOUND        NON_RETRYABLE  资源不存在（Not Found），确定性失败
+   422 UNPROCESSABLE    NON_RETRYABLE  语义校验失败（Unprocessable Entity），业务确定性拒绝
+   429 RATE_LIMITED     RETRYABLE      限流（Too Many Requests），服务端在受理前拒绝，无副作用
+   500 INTERNAL         AMBIGUOUS      服务端内部错误：可能在提交前，也可能在提交后，副作用未知
+   502 BAD_GATEWAY      RETRYABLE      网关错误（Bad Gateway），上游未执行，无副作用
+   503 UNAVAILABLE      RETRYABLE      服务暂时不可用（Unavailable），受理前失败，无副作用
+   504 GATEWAY_TIMEOUT  AMBIGUOUS      网关超时（Gateway Timeout）：上游可能已处理完成，只是响应丢失
+  其他未知错误码（如 999）=> AMBIGUOUS（保守处理，强制对账）
+
+=== S1 全部成功 ===  （逐项状态表，5 条）
+item_id                     kind                  status                      submits retries recon durable  errors
+success-000                 success               SUCCESS                           1       0     0       0  -
+success-001                 success               SUCCESS                           1       0     0       0  -
+success-002                 success               SUCCESS                           1       0     0       0  -
+transient_then_ok-003       transient_then_ok     SUCCESS                           2       1     0       0  503
+rate_then_ok-004            rate_then_ok          SUCCESS                           3       2     0       0  429,429
+  -> 状态分布: {'SUCCESS': 5}  提交调用 8 次, 对账 0 次, 持久层核实 0 次, 耗时 2.9 ms
+
+=== S2 全部失败 ===  （逐项状态表，4 条）
+item_id                     kind                  status                      submits retries recon durable  errors
+permanent_422-000           permanent_422         FAILURE_PERMANENT                 1       0     0       0  422
+permanent_403-001           permanent_403         FAILURE_PERMANENT                 1       0     0       0  403
+exhausted_503-002           exhausted_503         FAILURE_RETRY_EXHAUSTED           4       3     0       0  503,503,503,503
+exhausted_timeout-003       exhausted_timeout     FAILURE_RETRY_EXHAUSTED           4       0    12       4  -3,503,503,503,-3,503,503,503,-3,503,503,503,-3,503,503,503
+  -> 状态分布: {'FAILURE_PERMANENT': 2, 'FAILURE_RETRY_EXHAUSTED': 2}  提交调用 10 次, 对账 12 次, 持久层核实 4 次, 耗时 19.7 ms
+
+=== S3 部分失败 ===  （逐项状态表，8 条）
+item_id                     kind                  status                      submits retries recon durable  errors
+success-000                 success               SUCCESS                           1       0     0       0  -
+transient_then_ok-001       transient_then_ok     SUCCESS                           2       1     0       0  503
+permanent_422-002           permanent_422         FAILURE_PERMANENT                 1       0     0       0  422
+exhausted_503-003           exhausted_503         FAILURE_RETRY_EXHAUSTED           4       3     0       0  503,503,503,503
+post_504_committed-004      post_504_committed    SUCCESS_AFTER_RECONCILE           1       0     1       0  504
+success-005                 success               SUCCESS                           1       0     0       0  -
+transient_then_perm-006     transient_then_perm   FAILURE_PERMANENT                 2       1     0       0  503,422
+rate_then_ok-007            rate_then_ok          SUCCESS                           3       2     0       0  429,429
+  -> 状态分布: {'SUCCESS': 4, 'FAILURE_PERMANENT': 2, 'FAILURE_RETRY_EXHAUSTED': 1, 'SUCCESS_AFTER_RECONCILE': 1}  提交调用 15 次, 对账 1 次, 持久层核实 0 次, 耗时 5.0 ms
+
+=== S4 重试中再次失败 ===  （逐项状态表，8 条）
+item_id                     kind                  status                      submits retries recon durable  errors
+timeout_twice_ok-000        timeout_twice_ok      SUCCESS_AFTER_RECONCILE           3       0     4       0  -3,503,-3,503
+post_504_committed-001      post_504_committed    SUCCESS_AFTER_RECONCILE           1       0     1       0  504
+post_500_committed-002      post_500_committed    SUCCESS_AFTER_RECONCILE           1       0     2       0  500,503
+durable_reconciled-003      durable_reconciled    SUCCESS_AFTER_RECONCILE           1       0     3       1  504,503,503,503
+exhausted_timeout-004       exhausted_timeout     FAILURE_RETRY_EXHAUSTED           4       0    12       4  -3,503,503,503,-3,503,503,503,-3,503,503,503,-3,503,503,503
+transient_then_perm-005     transient_then_perm   FAILURE_PERMANENT                 2       1     0       0  503,422
+transient_then_ok-006       transient_then_ok     SUCCESS                           2       1     0       0  503
+success-007                 success               SUCCESS                           1       0     0       0  -
+  -> 状态分布: {'SUCCESS_AFTER_RECONCILE': 4, 'FAILURE_RETRY_EXHAUSTED': 1, 'FAILURE_PERMANENT': 1, 'SUCCESS': 2}  提交调用 15 次, 对账 22 次, 持久层核实 5 次, 耗时 20.4 ms
+
+=== 幂等性专项：超时后服务端其实已提交，重试不得重复副作用 ===
+
+=== 幂等性专项 ===  （逐项状态表，2 条）
+item_id                     kind                  status                      submits retries recon durable  errors
+only-001                    post_504_committed    SUCCESS_AFTER_RECONCILE           1       0     1       0  504
+only-002                    durable_reconciled    SUCCESS_AFTER_RECONCILE           1       0     3       1  504,503,503,503
+  -> 服务端流水: {'submit_calls': 2, 'lookup_calls': 4, 'durable_calls': 1, 'replayed': 0, 'committed': 2, 'effects': 2}
+
+=== 结论 ===
+全部断言通过：无 UNKNOWN 条目；成功项副作用恰好一次；重试只作用于失败项。
