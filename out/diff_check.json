@@ -1,0 +1,8 @@
+{
+  "case": "demo_document",
+  "library_rows": 23,
+  "manual_rows": 23,
+  "row_mismatches": [],
+  "diagnostic_mismatches": [],
+  "verdict": "IDENTICAL"
+}

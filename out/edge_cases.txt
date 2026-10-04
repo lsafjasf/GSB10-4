@@ -1,0 +1,18 @@
+PASS | 单层-仅默认值 | 6 个属性全部来自 default
+PASS | 单层-仅内联 | 仅内联层定义 bold -> inline，其余 default
+PASS | 三层冲突-内联>段落>样式>默认 | bold: inline>paragraph>style；size: paragraph>style；color: style
+PASS | 空样式 | 空样式不产生任何属性，6 个属性全部回退 default
+PASS | 空段落与空run | 空段落与空 run 不产生字符行，仅 'z' 一行
+PASS | 断链-父样式不存在 | 报告 O->Ghost 断链；自有 bold 保留，其余显式回退 default
+PASS | 段落引用缺失样式 | 段落引用缺失样式 -> 报告并按无样式处理
+PASS | 未定义属性不静默丢失 | 无任何层级提供 kern -> (null, none) 且逐段落报告，不静默丢弃
+PASS | 循环引用-自环 | 自环 A->A 被识别，环上样式名 = A
+PASS | 循环引用-二元环 | 环 X<->Y：报告环名；入口最近者胜出（X 段落 size=1，Y 段落 size=2）
+PASS | 循环引用-带环外前驱 | 带环外前驱 Root->环(A,B)：环报告含前驱，Root 覆盖环结果
+PASS | 深链10000层 | 1 万层继承链迭代解析成功，最深层 font 生效
+PASS | Unicode逐码点 | 多字节字符与 emoji 按 Unicode 码点逐字符成行（含制表符）
+PASS | 空白based_on归一化 | based_on 为空白串视为无父样式，不误报断链
+PASS | 对拍-演示文档 | 演示文档库展开与手工逐字符推算完全一致
+PASS | 对拍-100随机文档 | 100 个随机文档（含环/断链/空样式/未解析属性）逐字符对拍全一致
+
+合计: 16/16 通过

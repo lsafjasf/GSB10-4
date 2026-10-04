@@ -1,0 +1,3 @@
+[cycle] 检测到循环引用: CycA -> CycB -> CycC -> CycA
+[broken-style-ref] 样式 'Orphan' 引用了不存在的父样式 'Ghost'，缺失部分回退到显式默认值
+[missing-paragraph-style] 段落 5 引用了不存在的样式 'Missing'，按无样式处理

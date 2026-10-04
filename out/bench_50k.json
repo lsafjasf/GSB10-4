@@ -1,0 +1,34 @@
+{
+  "config": {
+    "paragraphs": 50000,
+    "runs": 100000,
+    "chars": 2000000,
+    "styles": 203,
+    "props": [
+      "font",
+      "size",
+      "bold",
+      "italic",
+      "color",
+      "underline"
+    ]
+  },
+  "build_doc_seconds": 0.0884,
+  "expand_seconds_runs": [
+    0.2376,
+    0.3262,
+    0.3161
+  ],
+  "expand_seconds_min": 0.2376,
+  "iter_rows_seconds": 2.2363,
+  "memory": {
+    "rss_at_start_bytes": 15605760,
+    "rss_after_doc_build_bytes": 57417728,
+    "rss_after_expand_bytes": 104677376,
+    "expand_rss_delta_bytes": 47259648,
+    "tracemalloc_peak_bytes": 23633934
+  },
+  "diagnostics_count": 52,
+  "checksum_crc32": "958146aa",
+  "python": "3.12.3"
+}
