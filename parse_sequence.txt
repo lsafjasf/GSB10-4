@@ -1,0 +1,12 @@
+volume layout: DATA(3B)@0 FILEMARK@27 DATA(2B)@47 VOLUMEMARK@73; image size 93
+ops: fwd fwd fwd fwd back back fwd back
+step op    position state         record
+   0 -            0 READY         -
+   1 fwd         27 READY         DATA
+   2 fwd         47 AT_FILEMARK   FILEMARK
+   3 fwd         73 READY         DATA
+   4 fwd         93 END_OF_VOLUME VOLUMEMARK
+   5 back        73 READY         VOLUMEMARK
+   6 back        47 READY         DATA
+   7 fwd         73 READY         DATA
+   8 back        47 READY         DATA
