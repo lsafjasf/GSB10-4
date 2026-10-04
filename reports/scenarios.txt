@@ -1,0 +1,53 @@
+== 场景1：后端全健康 ==
+[PASS] 粘性保持：4000 会话重复选择归属不变
+[PASS] 负载上界：每后端 <= capacity=1500  -- {'b1': 957, 'b2': 1012, 'b3': 1074, 'b4': 957}
+[PASS] 负载下限：每后端 >= 900（有界负载）  -- {'b1': 957, 'b2': 1012, 'b3': 1074, 'b4': 957}
+[PASS] 会话总数守恒  -- 4000
+[PASS] 冷启动确定性：重放同样序列，归属完全一致
+[PASS] 状态对拍（全健康）
+
+== 场景2：单后端摘除（drain, policy=migrate） ==
+摘除 b2：{'migrated': 1012, 'rejected': 0, 'failed': 0, 'lost': 0}
+[PASS] 迁移数量 = 原 b2 会话数  -- 1012 vs 1012
+[PASS] 迁移零丢失
+[PASS] 最小迁移：只有被摘除后端上的会话移动  -- moved=1012
+[PASS] 迁移目标均健康
+[PASS] 漂移后粘性：2000 会话重新选择归属不变
+[PASS] fencing：旧 epoch 写入被拒
+[PASS] 状态对拍（drain 迁移后）
+
+== 场景3：单后端摘除（crash, policy=migrate, WAL 恢复） ==
+崩溃 b3：{'migrated': 1074, 'rejected': 0, 'failed': 0, 'lost': 0}
+[PASS] 崩溃迁移数量正确
+[PASS] 崩溃迁移零丢失（WAL 恢复）
+[PASS] 状态对拍（crash 迁移后）
+
+== 场景4：单后端摘除（policy=reject） ==
+摘除 b2：{'migrated': 0, 'rejected': 958, 'failed': 0, 'lost': 0}
+[PASS] REJECT：无迁移
+[PASS] REJECT：受影响会话全部被拒
+[PASS] REJECT：选择返回 rejected
+[PASS] REJECT：其他后端会话不受影响
+[PASS] REJECT：状态完整保留在原后端 WAL
+
+== 场景5：后端全部不可用 ==
+摘除 b2（最后一个）：{'migrated': 0, 'rejected': 0, 'failed': 2000, 'lost': 0}
+[PASS] 全不可用：迁移失败计数正确
+[PASS] 全不可用：选择返回 no_backend  -- {'no_backend'}
+[PASS] 全不可用：无状态丢失
+
+== 场景6：后端恢复后的归属轨迹（不抢回） ==
+[PASS] 不抢回(migrate) sess-00004  -- 恢复b2后=b3 期望=b3
+[PASS] 不抢回(migrate) sess-00005  -- 恢复b2后=b3 期望=b3
+[PASS] 不抢回(migrate) sess-00012  -- 恢复b2后=b3 期望=b3
+[PASS] 不抢回(migrate) sess-00014  -- 恢复b2后=b1 期望=b1
+[PASS] 不抢回(migrate) sess-00015  -- 恢复b2后=b3 期望=b3
+[PASS] 不抢回(migrate) sess-00027  -- 恢复b2后=b3 期望=b3
+[PASS] 不抢回(migrate) sess-00028  -- 恢复b2后=b3 期望=b3
+[PASS] 恢复后无抢回（migrate 汇总）  -- 7 个迁出会话全部留在新后端
+[PASS] 轨迹结束：全部会话 ok_pinned
+[PASS] REJECT：恢复后会话归还原后端
+[PASS] 全摘除：全部 no_backend
+[PASS] 全摘除恢复：归属不变（不抢回）
+[PASS] 全摘除恢复：状态完整
+归属轨迹已写入 reports/ownership_trajectory.csv （90 行）
