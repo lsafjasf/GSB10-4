@@ -1,0 +1,146 @@
+[
+  {
+    "desc": "无占位符-纯文本",
+    "template": "plain text 100% no vars",
+    "variables": {"name": "X"},
+    "expected": "plain text 100% no vars"
+  },
+  {
+    "desc": "无占位符-空模板",
+    "template": "",
+    "variables": {},
+    "expected": ""
+  },
+  {
+    "desc": "无占位符-单个花括号保持字面",
+    "template": "a{b}c { } d}e{f",
+    "variables": {"b": "BBB", "f": "FFF"},
+    "expected": "a{b}c { } d}e{f"
+  },
+  {
+    "desc": "基本替换",
+    "template": "hi {{ name }}!",
+    "variables": {"name": "Alice"},
+    "expected": "hi Alice!"
+  },
+  {
+    "desc": "占位符周围空白容忍",
+    "template": "[{{x}}][{{ x }}][{{x  }}]",
+    "variables": {"x": "V"},
+    "expected": "[V][V][V]"
+  },
+  {
+    "desc": "占位符在首尾与连续出现",
+    "template": "{{a}}{{a}}-",
+    "variables": {"a": "Z"},
+    "expected": "ZZ-"
+  },
+  {
+    "desc": "两层嵌套引用",
+    "template": "结果: {{msg}}",
+    "variables": {"msg": "你好 {{who}}", "who": "世界"},
+    "expected": "结果: 你好 世界"
+  },
+  {
+    "desc": "三层嵌套引用",
+    "template": "{{a}}",
+    "variables": {"a": "{{b}}!", "b": "{{c}}?", "c": "C"},
+    "expected": "C?!"
+  },
+  {
+    "desc": "同一被依赖变量复用(菱形)",
+    "template": "{{a}}-{{b}}",
+    "variables": {"a": "{{c}}1", "b": "{{c}}2", "c": "Z"},
+    "expected": "Z1-Z2"
+  },
+  {
+    "desc": "值中的转义花括号还原为字面占位符文本",
+    "template": "{{a}}",
+    "variables": {"a": "\\{\\{notvar\\}\\}"},
+    "expected": "{{notvar}}"
+  },
+  {
+    "desc": "转义双花括号在模板中还原字面",
+    "template": "\\{\\{x\\}\\}",
+    "variables": {"x": "SHOULD_NOT_APPEAR"},
+    "expected": "{{x}}"
+  },
+  {
+    "desc": "转义反斜杠自身",
+    "template": "a\\\\b",
+    "variables": {},
+    "expected": "a\\b"
+  },
+  {
+    "desc": "其他字符前的反斜杠原样保留",
+    "template": "\\t \\n \\a",
+    "variables": {},
+    "expected": "\\t \\n \\a"
+  },
+  {
+    "desc": "尾随反斜杠原样保留",
+    "template": "x\\",
+    "variables": {},
+    "expected": "x\\"
+  },
+  {
+    "desc": "转义与真实占位符混合",
+    "template": "\\{name?} 字面 {{name}}",
+    "variables": {"name": "Bob"},
+    "expected": "{name?} 字面 Bob"
+  },
+  {
+    "desc": "用户内容中的花括号仅当不转义时也不影响普通字面文本",
+    "template": "data={ {{k}} } end",
+    "variables": {"k": "val"},
+    "expected": "data={ val } end"
+  },
+  {
+    "desc": "变量缺失-无任何变量",
+    "template": "hi {{who}}!",
+    "variables": {},
+    "error": "missing"
+  },
+  {
+    "desc": "变量缺失-列出可用变量名",
+    "template": "{{a}}",
+    "variables": {"a": "{{b}}", "c": "see-me"},
+    "error": "missing"
+  },
+  {
+    "desc": "直接自循环",
+    "template": "{{a}}",
+    "variables": {"a": "{{a}}"},
+    "error": "cycle"
+  },
+  {
+    "desc": "三节点循环",
+    "template": "{{a}}",
+    "variables": {"a": "{{b}}", "b": "{{c}}", "c": "{{a}}"},
+    "error": "cycle"
+  },
+  {
+    "desc": "分支中进入循环",
+    "template": "{{a}}",
+    "variables": {"a": "ok {{b}}", "b": "{{c}}", "c": "{{b}}"},
+    "error": "cycle"
+  },
+  {
+    "desc": "未闭合占位符",
+    "template": "head {{ name tail",
+    "variables": {"name": "X"},
+    "error": "syntax"
+  },
+  {
+    "desc": "非法变量名",
+    "template": "{{1a}}",
+    "variables": {},
+    "error": "syntax"
+  },
+  {
+    "desc": "多字节中文与占位符混排",
+    "template": "你好，{{user}}！得分={{score}}",
+    "variables": {"user": "小明", "score": 99},
+    "expected": "你好，小明！得分=99"
+  }
+]
