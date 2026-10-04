@@ -1,0 +1,10 @@
+== DelayQ benchmark, N=1,000,000 ==
+machine: Linux x86_64, python 3.12.3
+[durable insert] 20,000 schedules with fsync: 742 ops/s
+[insert x1,000,000] 17.21s total, 58,099 ops/s (17.21 us/op)
+[memory] tracemalloc peak 263.5 MiB, process RSS peak 794.7 MiB (833 B/msg RSS)
+[scan, 0 due / 1,000,000 backlog] 8.4 us
+[scan, 10,000 due / 1,000,000 backlog] 0.135s (13.55 us/delivered)
+[scan, 10,000 due / 10,000 backlog] 0.128s (12.83 us/delivered)
+[snapshot 1,000,000 pending] 15.25s, file 68.5 MiB
+[recover 1,000,000 pending] 7.49s
