@@ -1,0 +1,16 @@
+{
+  "rows": 10000000,
+  "seed": 20261005,
+  "rate": 0.01,
+  "shards": 4,
+  "global_kept": 99734,
+  "per_shard_kept": [
+    24842,
+    24935,
+    24992,
+    24965
+  ],
+  "union_of_shards_kept": 99734,
+  "union_equals_global": true,
+  "elapsed_s": 6.63
+}

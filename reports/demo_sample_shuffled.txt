@@ -1,0 +1,13 @@
+user-0022	value-0022
+user-0102	value-0102
+user-0142	value-0142
+user-0196	value-0196
+user-0362	value-0362
+user-0439	value-0439
+user-0440	value-0440
+user-0527	value-0527
+user-0604	value-0604
+user-0615	value-0615
+user-0661	value-0661
+user-0749	value-0749
+user-0767	value-0767
