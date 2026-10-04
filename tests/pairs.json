@@ -1,0 +1,284 @@
+{
+  "_about": "equivalent：同一 vary 下所有请求必须产生完全相同的 canonical/key；distinct：每对请求必须产生不同 canonical/key。值为数组表示同名重复头行。policies 为可选的自定义策略。",
+  "equivalent": [
+    {
+      "desc": "头部名大小写混用",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html"},
+        {"accept": "text/html"},
+        {"ACCEPT": "text/html"},
+        {"AcCePt": "text/html"}
+      ]
+    },
+    {
+      "desc": "值首尾 OWS（SP/HTAB 任意个数）",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html"},
+        {"Accept": "  text/html"},
+        {"Accept": "text/html  "},
+        {"Accept": "\t text/html\t"},
+        {"Accept": "  \ttext/html\t  "}
+      ]
+    },
+    {
+      "desc": "重复头行 = 逗号拼接（RFC 7230 3.2.2）",
+      "vary": ["Accept-Encoding"],
+      "requests": [
+        {"Accept-Encoding": "gzip, deflate"},
+        {"Accept-Encoding": ["gzip", "deflate"]},
+        {"Accept-Encoding": [" gzip ", "deflate"]},
+        {"accept-encoding": ["gzip,", " deflate"]}
+      ]
+    },
+    {
+      "desc": "请求中头部的出现顺序无关",
+      "vary": ["accept", "accept-encoding"],
+      "requests": [
+        {"Accept": "text/html", "Accept-Encoding": "gzip"},
+        {"Accept-Encoding": "gzip", "Accept": "text/html"},
+        [["accept-ENCODING", "gzip"], ["aCCEPT", "text/html"]]
+      ]
+    },
+    {
+      "desc": "list 元素 token 大小写不敏感",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html"},
+        {"Accept": "TEXT/HTML"},
+        {"Accept": "Text/Html"}
+      ]
+    },
+    {
+      "desc": "参数顺序无关、参数名大小写不敏感",
+      "vary": ["Content-Type"],
+      "requests": [
+        {"Content-Type": "text/html; charset=utf-8; level=1"},
+        {"Content-Type": "text/html; level=1; charset=utf-8"},
+        {"Content-Type": "TEXT/HTML; Charset=utf-8; Level=1"},
+        {"Content-Type": "text/html ;  charset=utf-8 ; level=1"}
+      ]
+    },
+    {
+      "desc": "分隔符周围 OWS 折叠，引号串外空白游程等价",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html, application/json"},
+        {"Accept": "text/html,application/json"},
+        {"Accept": "text/html ,\tapplication/json"},
+        {"Accept": "text/html  ,  application/json"}
+      ]
+    },
+    {
+      "desc": "obs-fold（折行）等价于一个 SP",
+      "vary": ["Authorization"],
+      "requests": [
+        {"Authorization": "Bearer abc"},
+        {"Authorization": "Bearer\r\n abc"},
+        {"Authorization": "Bearer\r\n\tabc"},
+        {"Authorization": "  Bearer abc  "}
+      ]
+    },
+    {
+      "desc": "exact 头部值大小写是内部字节，只去首尾空白",
+      "vary": ["Authorization"],
+      "requests": [
+        {"Authorization": "Bearer AbC"},
+        {"Authorization": "  Bearer AbC  "},
+        {"Authorization": "\tBearer AbC\t"}
+      ]
+    },
+    {
+      "desc": "声明顺序无关的自定义 list（策略指纹随键走）",
+      "vary": ["X-Flags"],
+      "policies": {"X-Flags": {"mode": "list", "sort_elements": true, "casefold_token": true}},
+      "requests": [
+        {"X-Flags": "a, b, c"},
+        {"X-Flags": "c,a,b"},
+        {"X-Flags": "C, B ,A"},
+        {"X-Flags": ["a, b", "c"]}
+      ]
+    },
+    {
+      "desc": "双方都缺失该头部 == 双方都缺失（不是与空值混淆）",
+      "vary": ["Authorization"],
+      "requests": [
+        {"Accept": "text/html"},
+        {"Accept-Encoding": "gzip"},
+        {}
+      ]
+    },
+    {
+      "desc": "超长值：首尾空白不影响哈希键",
+      "vary": ["X-Blob"],
+      "requests": [
+        {"X-Blob": "PADDING-abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789-END"},
+        {"X-Blob": "  PADDING-abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789-END  "}
+      ]
+    },
+    {
+      "desc": "未参与 vary 的头部一律忽略",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html", "X-Trace": "zzz"},
+        {"Accept": "text/html", "Cookie": "sid=abc"},
+        {"Accept": "text/html"}
+      ]
+    },
+    {
+      "desc": "空值与空值等价",
+      "vary": ["X-Note"],
+      "requests": [
+        {"X-Note": ""},
+        {"X-Note": "   "},
+        {"X-Note": ""}
+      ]
+    },
+    {
+      "desc": "vary 声明本身大小写/顺序无关",
+      "vary": null,
+      "requests": [
+        {"_vary": ["Accept", "Content-Type"], "Accept": "text/html", "Content-Type": "text/html; charset=utf-8"},
+        {"_vary": ["content-type", "ACCEPT"], "accept": "text/html", "content-type": "text/html; charset=utf-8"}
+      ]
+    },
+    {
+      "desc": "q 参数等号周围空白与参数名大小写",
+      "vary": ["Accept-Encoding"],
+      "requests": [
+        {"Accept-Encoding": "gzip;q=1, identity;q=0"},
+        {"Accept-Encoding": "gzip; Q = 1, identity;q=0"}
+      ]
+    }
+  ],
+  "distinct": [
+    {
+      "desc": "exact 值大小写不同（Authorization 大小写携带凭证语义）",
+      "vary": ["Authorization"],
+      "requests": [{"Authorization": "Bearer abc"}, {"Authorization": "bearer abc"}]
+    },
+    {
+      "desc": "exact 值内部空白不同（不折叠）",
+      "vary": ["Authorization"],
+      "requests": [{"Authorization": "Bearer abc"}, {"Authorization": "Bearer  abc"}, {"Authorization": "Bearer\tabc"}]
+    },
+    {
+      "desc": "空值 vs 缺失",
+      "vary": ["Authorization"],
+      "requests": [{"Authorization": ""}, {}]
+    },
+    {
+      "desc": "参数值大小写不同（charset 值规范上不折叠）",
+      "vary": ["Content-Type"],
+      "requests": [
+        {"Content-Type": "text/html; charset=UTF-8"},
+        {"Content-Type": "text/html; charset=utf-8"}
+      ]
+    },
+    {
+      "desc": "引号串内部空白逐字节保留",
+      "vary": ["Content-Type"],
+      "requests": [
+        {"Content-Type": "text/html; title=\"a b\""},
+        {"Content-Type": "text/html; title=\"a  b\""}
+      ]
+    },
+    {
+      "desc": "引号串内部大小写逐字节保留",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "text/html; x=\"ABC\""},
+        {"Accept": "text/html; x=\"abc\""}
+      ]
+    },
+    {
+      "desc": "引号内逗号不分隔：一个元素 vs 两个元素",
+      "vary": ["Accept"],
+      "requests": [
+        {"Accept": "\"a, b\""},
+        {"Accept": "a, b"}
+      ]
+    },
+    {
+      "desc": "顺序敏感 list：Accept-Encoding 顺序表达偏好",
+      "vary": ["Accept-Encoding"],
+      "requests": [
+        {"Accept-Encoding": "gzip, deflate"},
+        {"Accept-Encoding": "deflate, gzip"}
+      ]
+    },
+    {
+      "desc": "重复元素不去重（出现次数是信息）",
+      "vary": ["Accept-Encoding"],
+      "requests": [
+        {"Accept-Encoding": "gzip"},
+        {"Accept-Encoding": "gzip, gzip"}
+      ]
+    },
+    {
+      "desc": "vary 集合不同必须不同键（键含 vary 指纹）",
+      "vary": null,
+      "requests": [
+        {"_vary": ["Accept"], "Accept": "text/html", "Authorization": "x"},
+        {"_vary": ["Accept", "Authorization"], "Accept": "text/html", "Authorization": "x"}
+      ]
+    },
+    {
+      "desc": "朴素拼接攻击：一个头的 '1,2' 不等于两个头的 1 / 2（长度前缀阻断）",
+      "vary": ["X-A", "X-B"],
+      "requests": [
+        {"X-A": "1,2"},
+        {"X-A": "1", "X-B": "2"}
+      ]
+    },
+    {
+      "desc": "结构分隔符注入：值内冒号/换行编码后不可伪造成记录边界",
+      "vary": ["X-A", "X-B"],
+      "requests": [
+        {"X-A": "1", "X-B": "2"},
+        {"X-A": "1:1 0 3:0 1 3:2", "X-B": "x"}
+      ]
+    },
+    {
+      "desc": "q 参数字面量不同不做数值归一（01 与 1 不合并）",
+      "vary": ["Accept-Encoding"],
+      "requests": [
+        {"Accept-Encoding": "gzip;q=1"},
+        {"Accept-Encoding": "gzip;q=01"}
+      ]
+    },
+    {
+      "desc": "有参数 vs 无参数",
+      "vary": ["Content-Type"],
+      "requests": [
+        {"Content-Type": "text/html"},
+        {"Content-Type": "text/html; charset=utf-8"}
+      ]
+    },
+    {
+      "desc": "超长值尾部差异必须产生不同哈希键（不截断）",
+      "vary": ["X-Blob"],
+      "requests": [
+        {"X-Blob": "XqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqAAA"},
+        {"X-Blob": "XqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqBBB"}
+      ]
+    },
+    {
+      "desc": "同名参数重复不去重",
+      "vary": ["Content-Type"],
+      "requests": [
+        {"Content-Type": "text/html; a=1"},
+        {"Content-Type": "text/html; a=1; a=1"}
+      ]
+    },
+    {
+      "desc": "相同值但自定义策略不同（策略指纹进入键）",
+      "vary": ["X-Flags"],
+      "requests": [
+        {"_policies": {"X-Flags": {"mode": "list", "sort_elements": true}}, "X-Flags": "a, b"},
+        {"_policies": {"X-Flags": {"mode": "list", "sort_elements": false}}, "X-Flags": "a, b"}
+      ]
+    }
+  ]
+}
