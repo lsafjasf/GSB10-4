@@ -1,0 +1,113 @@
+{
+  "n_requests": 100000,
+  "environment": {
+    "python": "3.12.3",
+    "system": "Linux",
+    "release": "6.18.33.1-microsoft-standard-WSL2",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpus": 16
+  },
+  "workload": {
+    "stages": 4,
+    "weights": [
+      2,
+      2,
+      1,
+      1
+    ],
+    "max_attempts_per_config": [
+      3,
+      3,
+      8
+    ],
+    "backoff_ticks": 1,
+    "attempt_cost_uniform": [
+      3,
+      45
+    ],
+    "queue_choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      5
+    ],
+    "seed": 20261005
+  },
+  "configs": [
+    {
+      "total": 100,
+      "max_attempts": 3,
+      "wall_seconds": 1.624569547999272,
+      "us_per_request": 16.24569547999272,
+      "us_per_attempt": 3.6026210701605574,
+      "attempts_total": 450941,
+      "attempts_per_request": 4.50941,
+      "invariant_violations": 0,
+      "outcomes": {
+        "success": 41639,
+        "budget_exhausted": 13106,
+        "stage_error": 0,
+        "attempts_exhausted": 45255
+      },
+      "outcomes_pct": {
+        "success": 0.41639,
+        "budget_exhausted": 0.13106,
+        "stage_error": 0.0,
+        "attempts_exhausted": 0.45255
+      }
+    },
+    {
+      "total": 50,
+      "max_attempts": 3,
+      "wall_seconds": 1.6737078999994992,
+      "us_per_request": 16.737078999994992,
+      "us_per_attempt": 4.211889213516382,
+      "attempts_total": 397377,
+      "attempts_per_request": 3.97377,
+      "invariant_violations": 0,
+      "outcomes": {
+        "success": 2019,
+        "budget_exhausted": 6714,
+        "stage_error": 0,
+        "attempts_exhausted": 91267
+      },
+      "outcomes_pct": {
+        "success": 0.02019,
+        "budget_exhausted": 0.06714,
+        "stage_error": 0.0,
+        "attempts_exhausted": 0.91267
+      }
+    },
+    {
+      "total": 100,
+      "max_attempts": 8,
+      "wall_seconds": 2.0781082800003787,
+      "us_per_request": 20.781082800003787,
+      "us_per_attempt": 3.73832424585375,
+      "attempts_total": 555893,
+      "attempts_per_request": 5.55893,
+      "invariant_violations": 0,
+      "outcomes": {
+        "success": 41659,
+        "budget_exhausted": 49986,
+        "stage_error": 0,
+        "attempts_exhausted": 8355
+      },
+      "outcomes_pct": {
+        "success": 0.41659,
+        "budget_exhausted": 0.49986,
+        "stage_error": 0.0,
+        "attempts_exhausted": 0.08355
+      }
+    }
+  ],
+  "micro_slice_for": {
+    "iterations": 400000,
+    "seconds": 0.06169244900047488
+  }
+}
