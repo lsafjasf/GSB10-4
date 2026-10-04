@@ -1,0 +1,11 @@
+{"name": "empty", "input": [], "merge_sorted": [], "merge_pairwise": [], "match": true}
+{"name": "single_point", "input": [[5, 5]], "merge_sorted": [[5, 5]], "merge_pairwise": [[5, 5]], "match": true}
+{"name": "disjoint", "input": [[0, 10], [20, 30]], "merge_sorted": [[0, 10], [20, 30]], "merge_pairwise": [[0, 10], [20, 30]], "match": true}
+{"name": "touching", "input": [[0, 10], [10, 20]], "merge_sorted": [[0, 20]], "merge_pairwise": [[0, 20]], "match": true}
+{"name": "contained", "input": [[0, 100], [10, 50]], "merge_sorted": [[0, 100]], "merge_pairwise": [[0, 100]], "match": true}
+{"name": "partial_overlap", "input": [[0, 15], [10, 20]], "merge_sorted": [[0, 20]], "merge_pairwise": [[0, 20]], "match": true}
+{"name": "zero_length_inside", "input": [[0, 10], [5, 5]], "merge_sorted": [[0, 10]], "merge_pairwise": [[0, 10]], "match": true}
+{"name": "zero_length_touching", "input": [[0, 10], [10, 10]], "merge_sorted": [[0, 10]], "merge_pairwise": [[0, 10]], "match": true}
+{"name": "two_distinct_points", "input": [[7, 7], [9, 9]], "merge_sorted": [[7, 7], [9, 9]], "merge_pairwise": [[7, 7], [9, 9]], "match": true}
+{"name": "point_chain", "input": [[0, 0], [0, 5], [5, 5]], "merge_sorted": [[0, 5]], "merge_pairwise": [[0, 5]], "match": true}
+{"name": "unsorted_mixed", "input": [[20, 30], [0, 10], [5, 25], [40, 40], [28, 40]], "merge_sorted": [[0, 40]], "merge_pairwise": [[0, 40]], "match": true}
