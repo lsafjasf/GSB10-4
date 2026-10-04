@@ -1,0 +1,28 @@
+{
+  "size": 200000,
+  "seed": 42,
+  "real_files_on_disk": 2000,
+  "real_file_dedup": {
+    "seconds": 3.2419,
+    "unique": 2000,
+    "duplicates": 185999,
+    "errors": 12001,
+    "error_counts": {
+      "symlink_loop": 3894,
+      "permission_denied": 2004,
+      "not_found": 6103
+    },
+    "per_100k_seconds": 1.6209
+  },
+  "naive_string_dedup": {
+    "seconds": 0.0443,
+    "unique": 16482,
+    "duplicates": 183518
+  },
+  "diff_unique_count": 14482,
+  "diff_breakdown": {
+    "missed_duplicates": 8398,
+    "errors_counted_as_unique": 6084
+  },
+  "note": "diff = 朴素字符串去重多报的唯一条目数 = 漏判的重复 + 被当作唯一的错误路径"
+}
