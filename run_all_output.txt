@@ -1,0 +1,70 @@
+==== 1) 单元自测 ====
+test_acquire_timeout_no_half_grant (test_watermark_pool.BoundaryTests.test_acquire_timeout_no_half_grant) ... ok
+test_bad_watermark_args (test_watermark_pool.BoundaryTests.test_bad_watermark_args) ... ok
+test_double_release_rejected (test_watermark_pool.BoundaryTests.test_double_release_rejected) ... ok
+test_shrink_skips_busy_even_if_old (test_watermark_pool.BoundaryTests.test_shrink_skips_busy_even_if_old) ... ok
+test_cap_saturation_no_drop (test_watermark_pool.FullLoadExpandTests.test_cap_saturation_no_drop) ... ok
+test_expansion_rate_limited_and_step_bounded (test_watermark_pool.FullLoadExpandTests.test_expansion_rate_limited_and_step_bounded) ... ok
+test_idle_boundary_exact_timeout_eligible (test_watermark_pool.IdleShrinkTests.test_idle_boundary_exact_timeout_eligible) ... ok
+test_only_idle_conns_closed_and_floor_respected (test_watermark_pool.IdleShrinkTests.test_only_idle_conns_closed_and_floor_respected) ... ok
+test_drain_waits_for_in_flight_then_closes (test_watermark_pool.LongTailTests.test_drain_waits_for_in_flight_then_closes) ... ok
+test_hysteresis_and_cooldown_suppress_flapping (test_watermark_pool.OscillationTests.test_hysteresis_and_cooldown_suppress_flapping) ... ok
+test_concurrent_leases_never_overlap (test_watermark_pool.ThreadSafetyTests.test_concurrent_leases_never_overlap) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.269s
+
+OK
+
+[防抖] 无防抖规模序列: [6, 5, 7, 6, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6]
+[防抖] 受控规模序列: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5]
+[防抖] 调整事件 无防抖=60 受控=4
+==== 2) 对拍 300 随机种子 ====
+对拍 DUT(WatermarkPool) vs Oracle(无界理想池), seeds=300
+seed  n    min  max  acquired  released  expanded  shrunk  drained max_queue final  result
+0     348  4    5    348       348       7         1       8       156       4      PASS
+1     157  2    4    157       157       10        2       9       106       2      PASS
+2     158  1    1    158       158       0         0       24      125       1      PASS
+7     79   3    9    79        79        8         6       2       1         3      PASS
+42    329  1    3    329       329       20        2       18      211       1      PASS
+99    246  4    10   246       246       19        13      6       20        4      PASS
+299   354  3    9    354       354       10        6       4       23        3      PASS
+--------------------------------------------------------------------------------------------
+合计: seeds=300 acquired=67461 released=67461 expanded=4342 shrunk=2501 drained=2330
+对拍结论: 全部请求一一配对结清，dropped=0，无连接在途被关闭，规模最终回落 min。
+==== 3) 连接级状态序列 ====
+t= 0.0  conn#0  -        -> idle     in_flight:0->0  [预热 min_size=2]
+t= 0.0  conn#1  -        -> idle     in_flight:0->0  [预热 min_size=2]
+t= 0.0  conn#0  idle     -> in_use   in_flight:0->1  [acquire #0]
+t= 0.0  conn#1  idle     -> in_use   in_flight:0->1  [acquire #1]
+t= 0.0  conn#1  in_use   -> draining in_flight:1->1  [drain #1: 在途->DRAINING, 先补位 #2 再摘除]
+t= 0.0  conn#2  -        -> idle     in_flight:0->0  [drain #1: 在途->DRAINING, 先补位 #2 再摘除]
+t= 5.0  conn#1  draining -> CLOSED   in_flight:1->0  [release #1: 长尾结清, DRAINING 关闭]
+t= 5.0  conn#0  in_use   -> idle     in_flight:1->0  [release #0]
+t= 6.1  conn#0  idle     -> in_use   in_flight:0->1  [tick: util=1.0>=0.7 触发扩容 (+2)]
+t= 6.1  conn#2  idle     -> in_use   in_flight:0->1  [tick: util=1.0>=0.7 触发扩容 (+2)]
+t= 6.1  conn#3  -        -> idle     in_flight:0->0  [tick: util=1.0>=0.7 触发扩容 (+2)]
+t= 6.1  conn#4  -        -> idle     in_flight:0->0  [tick: util=1.0>=0.7 触发扩容 (+2)]
+t= 6.1  conn#0  in_use   -> idle     in_flight:1->0  [release 全部 4 条]
+t= 6.1  conn#2  in_use   -> idle     in_flight:1->0  [release 全部 4 条]
+t=12.1  conn#2  idle     -> CLOSED   in_flight:0->0  [tick: util=0<=0.3, 空闲>=5s, 缩容关闭 1 条]
+t=13.2  conn#0  idle     -> CLOSED   in_flight:0->0  [tick: 继续缩容, 回落到 min_size=2]
+不变量校验通过; stats: {'acquired': 6, 'released': 6, 'expanded': 2, 'shrunk': 2, 'drained': 1, 'scale_up_events': 1, 'scale_down_events': 2}
+==== 4) 100 万获取/释放调度压测 ====
+==============================================================================
+100 万次获取/释放调度仿真 (seed=42, 总获取=1000000, 总释放=1000000)
+------------------------------------------------------------------------------
+阶段 A 空闲低载   规模   16 -> 32    峰值   32  峰值忙   12  峰值排队      3
+阶段 B 爬坡扩容   规模   32 -> 3840  峰值 3840  峰值忙 3840  峰值排队  28037
+阶段 C 过载触顶   规模 3840 -> 4096  峰值 4096  峰值忙 4096  峰值排队 331411
+阶段 D 长尾在途   规模 4096 -> 4096  峰值 4096  峰值忙 4096  峰值排队 330829
+阶段 E 回落缩容   规模 4096 -> 16    峰值 4096  峰值忙 4096  峰值排队  69976
+------------------------------------------------------------------------------
+扩容事件=65 (共 +4080 连接)  缩容事件=132 (共 -4080 连接)  冷却抑制=379  忙连接被跳过=25171
+最终规模=16 (min=16, max=4096)  全程最大排队=331411  dropped=0
+调度耗时: 1.487 s   吞吐: 1344842 ops/s (获取+释放共 2000000 次)
+------------------------------------------------------------------------------
+规模水位曲线 (16 ~ 4096, 左=虚拟时间 0s, 右=1295s):
+▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▃▄▄▄▅▅▆▆▆▇▇██████████████████████████████████████████████▇▆▄▃▂▁
+==============================================================================
+明细曲线已写入 watermark_curve.csv
