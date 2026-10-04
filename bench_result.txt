@@ -1,0 +1,10 @@
+=== 1MB (999876 bytes) ===
+  edit wall time      : 39.2 ms (first edit; second edit is a no-op)
+  child peak RSS      : 18.2 MB (ru_maxrss, incl. interpreter)
+  python heap peak    : 4.8 MB (tracemalloc, untimed)
+
+=== 16MB (15999851 bytes) ===
+  edit wall time      : 520.2 ms (first edit; second edit is a no-op)
+  child peak RSS      : 106.7 MB (ru_maxrss, incl. interpreter)
+  python heap peak    : 78.6 MB (tracemalloc, untimed)
+

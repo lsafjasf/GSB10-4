@@ -1,0 +1,74 @@
+test_failed_rename_leaves_original_and_no_temp (__main__.TestAtomicity.test_failed_rename_leaves_original_and_no_temp) ... ok
+test_power_loss_sigkill_before_rename (__main__.TestAtomicity.test_power_loss_sigkill_before_rename) ... ok
+test_comment_only_value (__main__.TestBytePreservation.test_comment_only_value) ... ok
+test_commented_out_key_untouched (__main__.TestBytePreservation.test_commented_out_key_untouched) ... ok
+test_continuation_value_replaced (__main__.TestBytePreservation.test_continuation_value_replaced) ... ok
+test_crlf_preserved (__main__.TestBytePreservation.test_crlf_preserved) ... ok
+test_hash_inside_value_without_space_is_literal (__main__.TestBytePreservation.test_hash_inside_value_without_space_is_literal) ... ok
+test_indentation_and_separator_style_kept (__main__.TestBytePreservation.test_indentation_and_separator_style_kept) ... ok
+test_key_case_preserved_and_case_sensitive (__main__.TestBytePreservation.test_key_case_preserved_and_case_sensitive) ... ok
+test_length_change_shifts_only_tail (__main__.TestBytePreservation.test_length_change_shifts_only_tail) ... ok
+test_no_comments_basic (__main__.TestBytePreservation.test_no_comments_basic) ... ok
+test_no_trailing_newline (__main__.TestBytePreservation.test_no_trailing_newline) ... ok
+test_section_targeting (__main__.TestBytePreservation.test_section_targeting) ... ok
+test_trailing_comment_preserved (__main__.TestBytePreservation.test_trailing_comment_preserved) ... ok
+test_idempotent_after_continuation_removal (__main__.TestIdempotency.test_idempotent_after_continuation_removal) ... ok
+test_second_run_is_byte_identical_noop (__main__.TestIdempotency.test_second_run_is_byte_identical_noop) ... ok
+test_duplicate_keys_rejected_with_lines (__main__.TestRejection.test_duplicate_keys_rejected_with_lines) ... ok
+test_empty_section_name_rejected (__main__.TestRejection.test_empty_section_name_rejected) ... ok
+test_file_mode_preserved_on_write (__main__.TestRejection.test_file_mode_preserved_on_write) ... ok
+test_garbage_line_rejected (__main__.TestRejection.test_garbage_line_rejected) ... ok
+test_key_not_found (__main__.TestRejection.test_key_not_found) ... ok
+test_multiline_value_rejected (__main__.TestRejection.test_multiline_value_rejected) ... ok
+test_readonly_file_refused_and_untouched (__main__.TestRejection.test_readonly_file_refused_and_untouched) ... ok
+test_same_key_in_different_sections_is_ok (__main__.TestRejection.test_same_key_in_different_sections_is_ok) ... ok
+test_syntax_error_reports_line_and_writes_nothing (__main__.TestRejection.test_syntax_error_reports_line_and_writes_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.091s
+
+OK
+
+[atomicity] rename failure: original intact, no temp left
+
+[atomicity] SIGKILL before rename: exit=-9, original intact, 1 complete temp file(s) orphaned
+
+[byte-diff] continuation:
+bytes: 45 -> 28 (delta -17), differing offsets: 30
+  @14 old=b'pp]\npath = /one\n    /two' new=b'pp]\npath = /new\nother = '
+  @15 old=b'p]\npath = /one\n    /two\n' new=b'p]\npath = /new\nother = x'
+  @16 old=b']\npath = /one\n    /two\n\t' new=b']\npath = /new\nother = x\n'
+  @18 old=b'path = /one\n    /two\n\t/t' new=b'path = /new\nother = x\n'
+  @19 old=b'ath = /one\n    /two\n\t/th' new=b'ath = /new\nother = x\n'
+  @20 old=b'th = /one\n    /two\n\t/thr' new=b'th = /new\nother = x\n'
+  @21 old=b'h = /one\n    /two\n\t/thre' new=b'h = /new\nother = x\n'
+  @22 old=b' = /one\n    /two\n\t/three' new=b' = /new\nother = x\n'
+  @23 old=b'= /one\n    /two\n\t/three\n' new=b'= /new\nother = x\n'
+  @24 old=b' /one\n    /two\n\t/three\no' new=b' /new\nother = x\n'
+
+[byte-diff] length change:
+bytes: 18 -> 19 (delta +1), differing offsets: 8
+  @11 old=b'a = 1\nb = 2\nc = 3\n' new=b'a = 1\nb = 20\nc = 3\n'
+  @12 old=b'a = 1\nb = 2\nc = 3\n' new=b'a = 1\nb = 20\nc = 3\n'
+  @13 old=b' = 1\nb = 2\nc = 3\n' new=b' = 1\nb = 20\nc = 3\n'
+  @14 old=b'= 1\nb = 2\nc = 3\n' new=b'= 1\nb = 20\nc = 3\n'
+  @15 old=b' 1\nb = 2\nc = 3\n' new=b' 1\nb = 20\nc = 3\n'
+  @16 old=b'1\nb = 2\nc = 3\n' new=b'1\nb = 20\nc = 3\n'
+  @17 old=b'\nb = 2\nc = 3\n' new=b'\nb = 20\nc = 3\n'
+  @18 old=b'b = 2\nc = 3\n' new=b'b = 20\nc = 3\n'
+
+[byte-diff] basic replace:
+bytes: 18 -> 18 (delta +0), differing offsets: 1
+  @10 old=b'a = 1\nb = 2\nc = 3\n' new=b'a = 1\nb = 9\nc = 3\n'
+
+[byte-diff] trailing comment:
+bytes: 29 -> 29 (delta +0), differing offsets: 1
+  @10 old=b'threads = 4   # worker' new=b'threads = 8   # worker'
+
+[idempotency] 2nd run diff: 0 differing bytes, changed=False
+
+[reject] duplicate -> line 4: duplicate key b'k' in section [b's'] (first defined on line 2)
+
+[reject] read-only file refused, bytes unchanged
+
+[reject] syntax error -> line 2: unparseable line: b'= orphan value'
