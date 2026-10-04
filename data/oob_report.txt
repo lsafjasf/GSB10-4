@@ -1,0 +1,45 @@
+越界/异常索引报告
+============================================================
+
+[off_by_one] 索引 == 表长 (off-by-one)
+  用例文件: data/oob/off_by_one.xml
+  异常类型: SharedStringIndexError
+  定位信息: 表名=价格表 坐标=C7
+  错误消息: [价格表!C7] 共享字符串索引越界: index=2, 表大小=2, 合法索引区间=[0, 1]
+  结论: 已拒绝, 未返回空白单元格
+
+[far_beyond] 索引远超表长
+  用例文件: data/oob/far_beyond.xml
+  异常类型: SharedStringIndexError
+  定位信息: 表名=价格表 坐标=D8
+  错误消息: [价格表!D8] 共享字符串索引越界: index=999, 表大小=2, 合法索引区间=[0, 1]
+  结论: 已拒绝, 未返回空白单元格
+
+[negative] 负索引
+  用例文件: data/oob/negative.xml
+  异常类型: SharedStringIndexError
+  定位信息: 表名=库存表 坐标=A1
+  错误消息: [库存表!A1] 共享字符串索引越界: index=-1, 表大小=2, 合法索引区间=[0, 1]
+  结论: 已拒绝, 未返回空白单元格
+
+[non_integer] 索引不是整数
+  用例文件: data/oob/non_integer.xml
+  异常类型: MalformedCellError
+  定位信息: 表名=日志表 坐标=B2
+  错误消息: [日志表!B2] 共享字符串索引不是整数: 'abc'
+  结论: 已拒绝, 未返回空白单元格
+
+[missing_table] 缺失共享表 (sst=None)
+  用例文件: data/oob/missing_table.xml
+  异常类型: MissingSharedStringTableError
+  定位信息: 表名=订单表 坐标=E5
+  错误消息: [订单表!E5] 单元格使用共享字符串索引 (t="s"), 但未提供共享字符串表 (missing shared string table)
+  结论: 已拒绝, 未返回空白单元格
+
+[empty_table] 空共享表被引用
+  用例文件: data/oob/empty_table.xml
+  异常类型: SharedStringIndexError
+  定位信息: 表名=空表用例 坐标=C3
+  错误消息: [空表用例!C3] 共享字符串索引越界: index=0, 表大小=0, 合法索引区间=空表, 无合法索引
+  结论: 已拒绝, 未返回空白单元格
+
