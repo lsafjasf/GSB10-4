@@ -1,0 +1,24 @@
+==================================================================
+DIFF EXPERIMENT: paged scan vs one-shot snapshot (concurrent I/D)
+==================================================================
+rows at start          : 20000
+pages scanned          : 40 (page_size=500)
+scan wall time         : 1.21s
+mutations during scan  : 281 inserts, 234 deletes
+paged rows delivered   : 19999
+snapshot rows at end   : 20047
+------------------------------------------------------------------
+INVARIANTS
+  duplicate deliveries : 0  (guarantee: 0)
+  stable rows missed   : 0  (guarantee: 0)
+------------------------------------------------------------------
+DIFF vs end-of-scan snapshot (every row explained)
+  in paged, not in snapshot : 86  -> deleted after being read
+  in snapshot, not in paged : 134  -> inserted BEHIND cursor (134 confirmed by log)
+  inserted ahead & kept     : 74  -> appears in BOTH (no diff)
+  unexplained rows          : 0  (must be 0)
+  per-row evidence written : results/diff_rows.json
+------------------------------------------------------------------
+page latency ms: p50=0.76 p95=1.36 p99=1.64 max=1.54
+==================================================================
+ALL INVARIANTS HOLD: no duplicates, no missed stable rows, every diff explained.
