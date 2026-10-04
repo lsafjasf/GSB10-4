@@ -1,0 +1,46 @@
+[
+  {
+    "shards": 1,
+    "detect_duplicates": true,
+    "records": 1000000,
+    "elapsed_s": 1.601,
+    "peak_rss_mb": 122.3,
+    "hash_ok": true,
+    "gaps": 0,
+    "rollbacks": 0,
+    "dup_seqs": 0
+  },
+  {
+    "shards": 64,
+    "detect_duplicates": true,
+    "records": 1000000,
+    "elapsed_s": 1.567,
+    "peak_rss_mb": 122.2,
+    "hash_ok": true,
+    "gaps": 0,
+    "rollbacks": 0,
+    "dup_seqs": 0
+  },
+  {
+    "shards": 1024,
+    "detect_duplicates": true,
+    "records": 1000000,
+    "elapsed_s": 1.488,
+    "peak_rss_mb": 123.0,
+    "hash_ok": true,
+    "gaps": 0,
+    "rollbacks": 0,
+    "dup_seqs": 0
+  },
+  {
+    "shards": 1024,
+    "detect_duplicates": false,
+    "records": 1000000,
+    "elapsed_s": 1.341,
+    "peak_rss_mb": 20.1,
+    "hash_ok": true,
+    "gaps": 0,
+    "rollbacks": 0,
+    "dup_seqs": 0
+  }
+]
