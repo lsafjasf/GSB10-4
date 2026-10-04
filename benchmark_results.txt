@@ -1,0 +1,28 @@
+# benchmark: 1000 subscribers
+# python 3.12.3 | Linux 6.18.33.1-microsoft-standard-WSL2
+# 每个订阅者的 handler 都执行一次计数器自增(真实工作,非纯空函数)
+
+[all_unicast] 1000000 dispatches (unicast)
+  elapsed              : 0.137 s
+  actual deliveries    : 1000000
+  dispatches/sec       : 7_317_323
+  deliveries/sec       : 7_317_323
+  RSS growth, dispatch : 0 KiB
+
+[all_broadcast] 1000000 dispatches (broadcast)
+  elapsed              : 37.872 s
+  actual deliveries    : 1000000000
+  dispatches/sec       : 26_405
+  deliveries/sec       : 26_404_661
+  RSS growth, dispatch : 0 KiB
+
+[mixed_50_50] 1000000 dispatches (mixed)
+  elapsed              : 18.936 s
+  actual deliveries    : 500500000
+  dispatches/sec       : 52_810
+  deliveries/sec       : 26_431_209
+  RSS growth, dispatch : 0 KiB
+
+[tracemalloc] 100000 unicast + 1000 broadcast dispatches
+  Python heap peak     : 24752 bytes (24.2 KiB)
+  baseline: 1000 subscribers + topic 之后,RSS 增量为 0 表示百万次分发没有持续占用内存

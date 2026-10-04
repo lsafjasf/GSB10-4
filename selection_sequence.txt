@@ -1,0 +1,44 @@
+== phase 1: 空主题上发布(订阅者为空) ==
+unicast u00  -> chosen=None (subscribers=0)
+broadcast b00  -> delivered=0 receivers=[]
+== phase 2: 依次订阅 S0,S1,S2,连续 10 次单播 ==
+subscribe  token=0 name=S0
+subscribe  token=1 name=S1
+subscribe  token=2 name=S2
+unicast u01  -> chosen=S0 (subscribers=3)
+unicast u02  -> chosen=S1 (subscribers=3)
+unicast u03  -> chosen=S2 (subscribers=3)
+unicast u04  -> chosen=S0 (subscribers=3)
+unicast u05  -> chosen=S1 (subscribers=3)
+unicast u06  -> chosen=S2 (subscribers=3)
+unicast u07  -> chosen=S0 (subscribers=3)
+unicast u08  -> chosen=S1 (subscribers=3)
+unicast u09  -> chosen=S2 (subscribers=3)
+unicast u10  -> chosen=S0 (subscribers=3)
+== phase 3: 订阅边界 -- S2 退订后立刻单播 ==
+unsubscribe token=2 name=S2
+unicast u11  -> chosen=S0 (subscribers=2)
+unicast u12  -> chosen=S1 (subscribers=2)
+== phase 4: 订阅边界 -- 新订阅 S3 后立刻单播 ==
+subscribe  token=3 name=S3
+unicast u13  -> chosen=S0 (subscribers=3)
+unicast u14  -> chosen=S1 (subscribers=3)
+== phase 5: 全部退订,空主题发布,然后重新订阅 S4 ==
+unsubscribe token=0 name=S0
+unsubscribe token=1 name=S1
+unsubscribe token=3 name=S3
+unicast u15  -> chosen=None (subscribers=0)
+broadcast b01  -> delivered=0 receivers=[]
+subscribe  token=4 name=S4
+unicast u16  -> chosen=S4 (subscribers=1)
+unicast u17  -> chosen=S4 (subscribers=1)
+== phase 6: 广播到全部订阅者 ==
+subscribe  token=5 name=S5
+broadcast b02  -> delivered=2 receivers=['S4', 'S5']
+== 每个订阅者实际收到的全部消息 ==
+token=0 name=S0 messages=['u01', 'u04', 'u07', 'u10', 'u11', 'u13']
+token=1 name=S1 messages=['u02', 'u05', 'u08', 'u12', 'u14']
+token=2 name=S2 messages=['u03', 'u06', 'u09']
+token=3 name=S3 messages=[]
+token=4 name=S4 messages=['u16', 'u17', 'b02']
+token=5 name=S5 messages=['b02']
