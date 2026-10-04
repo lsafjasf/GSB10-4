@@ -1,0 +1,56 @@
+{
+  "messages": 2000,
+  "rule": "先处理后写D(fsync); 恢复从已提交base续跑",
+  "trials": [
+    {
+      "seed": 1,
+      "crash_after_offset": 32,
+      "committed_base_on_recovery": 1,
+      "processed_count_crash": 33,
+      "processed_count_final": 2032,
+      "duplicate_replays": 32,
+      "skipped": [],
+      "child_restart_output": "start=1 final_base=2000"
+    },
+    {
+      "seed": 2,
+      "crash_after_offset": 161,
+      "committed_base_on_recovery": 129,
+      "processed_count_crash": 162,
+      "processed_count_final": 2033,
+      "duplicate_replays": 33,
+      "skipped": [],
+      "child_restart_output": "start=129 final_base=2000"
+    },
+    {
+      "seed": 3,
+      "crash_after_offset": 49,
+      "committed_base_on_recovery": 1,
+      "processed_count_crash": 50,
+      "processed_count_final": 2049,
+      "duplicate_replays": 49,
+      "skipped": [],
+      "child_restart_output": "start=1 final_base=2000"
+    },
+    {
+      "seed": 4,
+      "crash_after_offset": 49,
+      "committed_base_on_recovery": 1,
+      "processed_count_crash": 50,
+      "processed_count_final": 2049,
+      "duplicate_replays": 49,
+      "skipped": [],
+      "child_restart_output": "start=1 final_base=2000"
+    },
+    {
+      "seed": 5,
+      "crash_after_offset": 105,
+      "committed_base_on_recovery": 65,
+      "processed_count_crash": 106,
+      "processed_count_final": 2041,
+      "duplicate_replays": 41,
+      "skipped": [],
+      "child_restart_output": "start=65 final_base=2000"
+    }
+  ]
+}

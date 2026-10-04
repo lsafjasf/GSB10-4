@@ -1,0 +1,64 @@
+[
+  {
+    "scenario": "strictly_increasing(mark+advance每条)",
+    "messages": 1000000,
+    "seconds": 1.4655,
+    "per_msg_us": 1.466,
+    "peak_bytes": 432,
+    "final_base": 1000000,
+    "intervals_peak": 1,
+    "intervals_end": 0
+  },
+  {
+    "scenario": "windowed_disorder(window=1024乱序)",
+    "messages": 1000000,
+    "seconds": 2.0952,
+    "per_msg_us": 2.095,
+    "peak_bytes": 90068,
+    "final_base": 1000000,
+    "window": 1024,
+    "intervals_peak": 286,
+    "intervals_end": 0
+  },
+  {
+    "scenario": "batch_mark_then_single_advance",
+    "messages": 1000000,
+    "seconds": 0.6829,
+    "per_msg_us": 0.683,
+    "peak_bytes": 488,
+    "final_base": 1000000,
+    "intervals_peak": 1,
+    "intervals_end": 0
+  },
+  {
+    "scenario": "sparse_holes_worst_memory(50%空洞,采样外推)",
+    "messages": 1000000,
+    "seconds": 0.379,
+    "per_msg_us": 0.379,
+    "peak_bytes": 11197472,
+    "sample_msgs": 200000,
+    "intervals": 99999,
+    "sample_table_bytes": 13600856,
+    "bytes_per_interval": 136.0,
+    "extrapolated_1M_table_bytes": 68004960
+  },
+  {
+    "scenario": "wal_group_commit_4096",
+    "messages": 1000000,
+    "seconds": 2.1789,
+    "per_msg_us": 2.179,
+    "peak_bytes": 281765,
+    "group": 4096,
+    "wal_bytes": 8891070
+  },
+  {
+    "scenario": "wal_fsync_each_mark(采样外推)",
+    "messages": 1000000,
+    "seconds": 2.6548,
+    "per_msg_us": 2.655,
+    "peak_bytes": 7171,
+    "sample_msgs": 2000,
+    "sample_seconds": 2.6547,
+    "extrapolated_1M_seconds": 1327.3
+  }
+]
