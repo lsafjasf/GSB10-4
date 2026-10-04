@@ -1,0 +1,165 @@
+{"event": "schedule", "id": "imm0", "at": 0, "seq": 0}
+{"event": "schedule", "id": "imm1", "at": -1, "seq": 1}
+{"event": "schedule", "id": "imm2", "at": -2, "seq": 2}
+{"event": "schedule", "id": "imm3", "at": -3, "seq": 3}
+{"event": "schedule", "id": "imm4", "at": -4, "seq": 4}
+{"event": "schedule", "id": "imm5", "at": -5, "seq": 5}
+{"event": "schedule", "id": "imm6", "at": -6, "seq": 6}
+{"event": "schedule", "id": "imm7", "at": -7, "seq": 7}
+{"event": "schedule", "id": "imm8", "at": -8, "seq": 8}
+{"event": "schedule", "id": "imm9", "at": -9, "seq": 9}
+{"event": "scan", "now": 0, "delivered": [["imm9", -9, 9], ["imm8", -8, 8], ["imm7", -7, 7], ["imm6", -6, 6], ["imm5", -5, 5], ["imm4", -4, 4], ["imm3", -3, 3], ["imm2", -2, 2], ["imm1", -1, 1], ["imm0", 0, 0]]}
+{"event": "schedule", "id": "same0", "at": 5000, "seq": 10}
+{"event": "schedule", "id": "same1", "at": 5000, "seq": 11}
+{"event": "schedule", "id": "same2", "at": 5000, "seq": 12}
+{"event": "schedule", "id": "same3", "at": 5000, "seq": 13}
+{"event": "schedule", "id": "same4", "at": 5000, "seq": 14}
+{"event": "schedule", "id": "same5", "at": 5000, "seq": 15}
+{"event": "schedule", "id": "same6", "at": 5000, "seq": 16}
+{"event": "schedule", "id": "same7", "at": 5000, "seq": 17}
+{"event": "schedule", "id": "same8", "at": 5000, "seq": 18}
+{"event": "schedule", "id": "same9", "at": 5000, "seq": 19}
+{"event": "schedule", "id": "same10", "at": 5000, "seq": 20}
+{"event": "schedule", "id": "same11", "at": 5000, "seq": 21}
+{"event": "schedule", "id": "same12", "at": 5000, "seq": 22}
+{"event": "schedule", "id": "same13", "at": 5000, "seq": 23}
+{"event": "schedule", "id": "same14", "at": 5000, "seq": 24}
+{"event": "schedule", "id": "same15", "at": 5000, "seq": 25}
+{"event": "schedule", "id": "same16", "at": 5000, "seq": 26}
+{"event": "schedule", "id": "same17", "at": 5000, "seq": 27}
+{"event": "schedule", "id": "same18", "at": 5000, "seq": 28}
+{"event": "schedule", "id": "same19", "at": 5000, "seq": 29}
+{"event": "schedule", "id": "same20", "at": 5000, "seq": 30}
+{"event": "schedule", "id": "same21", "at": 5000, "seq": 31}
+{"event": "schedule", "id": "same22", "at": 5000, "seq": 32}
+{"event": "schedule", "id": "same23", "at": 5000, "seq": 33}
+{"event": "schedule", "id": "same24", "at": 5000, "seq": 34}
+{"event": "schedule", "id": "same25", "at": 5000, "seq": 35}
+{"event": "schedule", "id": "same26", "at": 5000, "seq": 36}
+{"event": "schedule", "id": "same27", "at": 5000, "seq": 37}
+{"event": "schedule", "id": "same28", "at": 5000, "seq": 38}
+{"event": "schedule", "id": "same29", "at": 5000, "seq": 39}
+{"event": "schedule", "id": "same30", "at": 5000, "seq": 40}
+{"event": "schedule", "id": "same31", "at": 5000, "seq": 41}
+{"event": "schedule", "id": "same32", "at": 5000, "seq": 42}
+{"event": "schedule", "id": "same33", "at": 5000, "seq": 43}
+{"event": "schedule", "id": "same34", "at": 5000, "seq": 44}
+{"event": "schedule", "id": "same35", "at": 5000, "seq": 45}
+{"event": "schedule", "id": "same36", "at": 5000, "seq": 46}
+{"event": "schedule", "id": "same37", "at": 5000, "seq": 47}
+{"event": "schedule", "id": "same38", "at": 5000, "seq": 48}
+{"event": "schedule", "id": "same39", "at": 5000, "seq": 49}
+{"event": "schedule", "id": "same40", "at": 5000, "seq": 50}
+{"event": "schedule", "id": "same41", "at": 5000, "seq": 51}
+{"event": "schedule", "id": "same42", "at": 5000, "seq": 52}
+{"event": "schedule", "id": "same43", "at": 5000, "seq": 53}
+{"event": "schedule", "id": "same44", "at": 5000, "seq": 54}
+{"event": "schedule", "id": "same45", "at": 5000, "seq": 55}
+{"event": "schedule", "id": "same46", "at": 5000, "seq": 56}
+{"event": "schedule", "id": "same47", "at": 5000, "seq": 57}
+{"event": "schedule", "id": "same48", "at": 5000, "seq": 58}
+{"event": "schedule", "id": "same49", "at": 5000, "seq": 59}
+{"event": "schedule", "id": "same50", "at": 5000, "seq": 60}
+{"event": "schedule", "id": "same51", "at": 5000, "seq": 61}
+{"event": "schedule", "id": "same52", "at": 5000, "seq": 62}
+{"event": "schedule", "id": "same53", "at": 5000, "seq": 63}
+{"event": "schedule", "id": "same54", "at": 5000, "seq": 64}
+{"event": "schedule", "id": "same55", "at": 5000, "seq": 65}
+{"event": "schedule", "id": "same56", "at": 5000, "seq": 66}
+{"event": "schedule", "id": "same57", "at": 5000, "seq": 67}
+{"event": "schedule", "id": "same58", "at": 5000, "seq": 68}
+{"event": "schedule", "id": "same59", "at": 5000, "seq": 69}
+{"event": "schedule", "id": "mix0", "at": 1000, "seq": 70}
+{"event": "schedule", "id": "mix1", "at": 2000, "seq": 71}
+{"event": "schedule", "id": "mix2", "at": 3000, "seq": 72}
+{"event": "schedule", "id": "mix3", "at": 4000, "seq": 73}
+{"event": "schedule", "id": "mix4", "at": 5000, "seq": 74}
+{"event": "schedule", "id": "mix5", "at": 6000, "seq": 75}
+{"event": "schedule", "id": "mix6", "at": 7000, "seq": 76}
+{"event": "schedule", "id": "mix7", "at": 1000, "seq": 77}
+{"event": "schedule", "id": "mix8", "at": 2000, "seq": 78}
+{"event": "schedule", "id": "mix9", "at": 3000, "seq": 79}
+{"event": "schedule", "id": "mix10", "at": 4000, "seq": 80}
+{"event": "schedule", "id": "mix11", "at": 5000, "seq": 81}
+{"event": "schedule", "id": "mix12", "at": 6000, "seq": 82}
+{"event": "schedule", "id": "mix13", "at": 7000, "seq": 83}
+{"event": "schedule", "id": "mix14", "at": 1000, "seq": 84}
+{"event": "schedule", "id": "mix15", "at": 2000, "seq": 85}
+{"event": "schedule", "id": "mix16", "at": 3000, "seq": 86}
+{"event": "schedule", "id": "mix17", "at": 4000, "seq": 87}
+{"event": "schedule", "id": "mix18", "at": 5000, "seq": 88}
+{"event": "schedule", "id": "mix19", "at": 6000, "seq": 89}
+{"event": "schedule", "id": "mix20", "at": 7000, "seq": 90}
+{"event": "schedule", "id": "mix21", "at": 1000, "seq": 91}
+{"event": "schedule", "id": "mix22", "at": 2000, "seq": 92}
+{"event": "schedule", "id": "mix23", "at": 3000, "seq": 93}
+{"event": "schedule", "id": "mix24", "at": 4000, "seq": 94}
+{"event": "schedule", "id": "mix25", "at": 5000, "seq": 95}
+{"event": "schedule", "id": "mix26", "at": 6000, "seq": 96}
+{"event": "schedule", "id": "mix27", "at": 7000, "seq": 97}
+{"event": "schedule", "id": "mix28", "at": 1000, "seq": 98}
+{"event": "schedule", "id": "mix29", "at": 2000, "seq": 99}
+{"event": "schedule", "id": "mix30", "at": 3000, "seq": 100}
+{"event": "schedule", "id": "mix31", "at": 4000, "seq": 101}
+{"event": "schedule", "id": "mix32", "at": 5000, "seq": 102}
+{"event": "schedule", "id": "mix33", "at": 6000, "seq": 103}
+{"event": "schedule", "id": "mix34", "at": 7000, "seq": 104}
+{"event": "schedule", "id": "mix35", "at": 1000, "seq": 105}
+{"event": "schedule", "id": "mix36", "at": 2000, "seq": 106}
+{"event": "schedule", "id": "mix37", "at": 3000, "seq": 107}
+{"event": "schedule", "id": "mix38", "at": 4000, "seq": 108}
+{"event": "schedule", "id": "mix39", "at": 5000, "seq": 109}
+{"event": "schedule", "id": "far0", "at": 1000000000, "seq": 110}
+{"event": "schedule", "id": "far1", "at": 1000000001, "seq": 111}
+{"event": "schedule", "id": "far2", "at": 1000000002, "seq": 112}
+{"event": "schedule", "id": "far3", "at": 1000000003, "seq": 113}
+{"event": "schedule", "id": "far4", "at": 1000000004, "seq": 114}
+{"event": "schedule", "id": "far5", "at": 1000000005, "seq": 115}
+{"event": "schedule", "id": "far6", "at": 1000000006, "seq": 116}
+{"event": "schedule", "id": "far7", "at": 1000000007, "seq": 117}
+{"event": "schedule", "id": "far8", "at": 1000000008, "seq": 118}
+{"event": "restart", "recovered": {"scheduled": 119, "delivered_records": 10, "cancel_records": 0}}
+{"event": "schedule", "id": "far9", "at": 1000000009, "seq": 119}
+{"event": "schedule", "id": "far10", "at": 1000000010, "seq": 120}
+{"event": "schedule", "id": "far11", "at": 1000000011, "seq": 121}
+{"event": "schedule", "id": "far12", "at": 1000000012, "seq": 122}
+{"event": "schedule", "id": "far13", "at": 1000000013, "seq": 123}
+{"event": "schedule", "id": "far14", "at": 1000000014, "seq": 124}
+{"event": "schedule", "id": "far15", "at": 1000000015, "seq": 125}
+{"event": "schedule", "id": "far16", "at": 1000000016, "seq": 126}
+{"event": "schedule", "id": "far17", "at": 1000000017, "seq": 127}
+{"event": "schedule", "id": "far18", "at": 1000000018, "seq": 128}
+{"event": "schedule", "id": "far19", "at": 1000000019, "seq": 129}
+{"event": "cancel", "id": "imm3", "status": "delivered"}
+{"event": "cancel", "id": "imm3", "status": "delivered"}
+{"event": "cancel", "id": "same7", "status": "ok"}
+{"event": "cancel", "id": "same7", "status": "canceled"}
+{"event": "cancel", "id": "ghost", "status": "unknown"}
+{"event": "cancel", "id": "mix0", "status": "ok"}
+{"event": "cancel", "id": "far5", "status": "ok"}
+{"event": "scan", "now": 5000, "delivered": [["mix7", 1000, 77], ["mix14", 1000, 84], ["mix21", 1000, 91], ["mix28", 1000, 98], ["mix35", 1000, 105], ["mix1", 2000, 71], ["mix8", 2000, 78], ["mix15", 2000, 85], ["mix22", 2000, 92], ["mix29", 2000, 99], ["mix36", 2000, 106], ["mix2", 3000, 72], ["mix9", 3000, 79], ["mix16", 3000, 86], ["mix23", 3000, 93], ["mix30", 3000, 100], ["mix37", 3000, 107], ["mix3", 4000, 73], ["mix10", 4000, 80], ["mix17", 4000, 87], ["mix24", 4000, 94], ["mix31", 4000, 101], ["mix38", 4000, 108], ["same0", 5000, 10], ["same1", 5000, 11], ["same2", 5000, 12], ["same3", 5000, 13], ["same4", 5000, 14], ["same5", 5000, 15], ["same6", 5000, 16], ["same8", 5000, 18], ["same9", 5000, 19], ["same10", 5000, 20], ["same11", 5000, 21], ["same12", 5000, 22], ["same13", 5000, 23], ["same14", 5000, 24], ["same15", 5000, 25], ["same16", 5000, 26], ["same17", 5000, 27], ["same18", 5000, 28], ["same19", 5000, 29], ["same20", 5000, 30], ["same21", 5000, 31], ["same22", 5000, 32], ["same23", 5000, 33], ["same24", 5000, 34], ["same25", 5000, 35], ["same26", 5000, 36], ["same27", 5000, 37], ["same28", 5000, 38], ["same29", 5000, 39], ["same30", 5000, 40], ["same31", 5000, 41], ["same32", 5000, 42], ["same33", 5000, 43], ["same34", 5000, 44], ["same35", 5000, 45], ["same36", 5000, 46], ["same37", 5000, 47], ["same38", 5000, 48], ["same39", 5000, 49], ["same40", 5000, 50], ["same41", 5000, 51], ["same42", 5000, 52], ["same43", 5000, 53], ["same44", 5000, 54], ["same45", 5000, 55], ["same46", 5000, 56], ["same47", 5000, 57], ["same48", 5000, 58], ["same49", 5000, 59], ["same50", 5000, 60], ["same51", 5000, 61], ["same52", 5000, 62], ["same53", 5000, 63], ["same54", 5000, 64], ["same55", 5000, 65], ["same56", 5000, 66], ["same57", 5000, 67], ["same58", 5000, 68], ["same59", 5000, 69], ["mix4", 5000, 74], ["mix11", 5000, 81], ["mix18", 5000, 88], ["mix25", 5000, 95], ["mix32", 5000, 102], ["mix39", 5000, 109]]}
+{"event": "schedule", "id": "late1", "at": 6000, "seq": 130}
+{"event": "cancel", "id": "late1", "status": "ok"}
+{"event": "schedule", "id": "late2", "at": 6000, "seq": 131}
+{"event": "scan", "now": 6000, "delivered": [["mix5", 6000, 75], ["mix12", 6000, 82], ["mix19", 6000, 89], ["mix26", 6000, 96], ["mix33", 6000, 103], ["late2", 6000, 131]]}
+{"event": "cancel", "id": "late2", "status": "delivered"}
+{"event": "schedule", "id": "post0", "at": 5000, "seq": 132}
+{"event": "schedule", "id": "post1", "at": 5000, "seq": 133}
+{"event": "schedule", "id": "post2", "at": 5000, "seq": 134}
+{"event": "schedule", "id": "post3", "at": 5000, "seq": 135}
+{"event": "schedule", "id": "post4", "at": 5000, "seq": 136}
+{"event": "schedule", "id": "post5", "at": 5000, "seq": 137}
+{"event": "schedule", "id": "post6", "at": 5000, "seq": 138}
+{"event": "schedule", "id": "post7", "at": 5000, "seq": 139}
+{"event": "schedule", "id": "post8", "at": 5000, "seq": 140}
+{"event": "schedule", "id": "post9", "at": 5000, "seq": 141}
+{"event": "schedule", "id": "post10", "at": 5000, "seq": 142}
+{"event": "schedule", "id": "post11", "at": 5000, "seq": 143}
+{"event": "schedule", "id": "post12", "at": 5000, "seq": 144}
+{"event": "schedule", "id": "post13", "at": 5000, "seq": 145}
+{"event": "schedule", "id": "post14", "at": 5000, "seq": 146}
+{"event": "scan", "now": 7000, "delivered": [["post0", 5000, 132], ["post1", 5000, 133], ["post2", 5000, 134], ["post3", 5000, 135], ["post4", 5000, 136], ["post5", 5000, 137], ["post6", 5000, 138], ["post7", 5000, 139], ["post8", 5000, 140], ["post9", 5000, 141], ["post10", 5000, 142], ["post11", 5000, 143], ["post12", 5000, 144], ["post13", 5000, 145], ["post14", 5000, 146], ["mix6", 7000, 76], ["mix13", 7000, 83], ["mix20", 7000, 90], ["mix27", 7000, 97], ["mix34", 7000, 104]]}
+{"event": "scan", "now": 1000000100, "delivered": [["far0", 1000000000, 110], ["far1", 1000000001, 111], ["far2", 1000000002, 112], ["far3", 1000000003, 113], ["far4", 1000000004, 114], ["far6", 1000000006, 116], ["far7", 1000000007, 117], ["far8", 1000000008, 118], ["far9", 1000000009, 119], ["far10", 1000000010, 120], ["far11", 1000000011, 121], ["far12", 1000000012, 122], ["far13", 1000000013, 123], ["far14", 1000000014, 124], ["far15", 1000000015, 125], ["far16", 1000000016, 126], ["far17", 1000000017, 127], ["far18", 1000000018, 128], ["far19", 1000000019, 129]]}
+{"event": "cancel", "id": "post0", "status": "delivered"}
+{"event": "cancel", "id": "same8", "status": "delivered"}
+{"event": "cancel", "id": "same7", "status": "canceled"}
