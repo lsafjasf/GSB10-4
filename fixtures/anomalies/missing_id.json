@@ -1,0 +1,11 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "type": "url",
+      "name": "无 id 节点",
+      "url": "https://noid.example.com/"
+    }
+  ]
+}

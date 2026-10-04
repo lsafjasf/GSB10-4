@@ -1,0 +1,26 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "f1",
+      "type": "folder",
+      "name": "目录一",
+      "children": [
+        {
+          "id": "c1",
+          "type": "url",
+          "name": "子节点",
+          "url": "https://c.example.com/",
+          "parent_id": "f1"
+        }
+      ]
+    },
+    {
+      "id": "f2",
+      "type": "folder",
+      "name": "目录二",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "children_under_url": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "children_under_url": 1
+    },
+    "issues": [
+      {
+        "code": "children_under_url",
+        "action": "moved_to_root",
+        "node_id": "u1",
+        "path": "roots[0]",
+        "message": "链接节点下不允许有子节点：2 个子节点已按原顺序迁移到根列表末尾"
+      }
+    ]
+  },
+  "duplicate_id": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "duplicate_id": 1
+    },
+    "issues": [
+      {
+        "code": "duplicate_id",
+        "action": "kept",
+        "node_id": "dup-1",
+        "path": "roots[1]/children[0]",
+        "message": "重复的 id 'dup-1'：两处节点均保留，索引以首次出现为准"
+      }
+    ]
+  },
+  "invalid_children": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "invalid_children": 1
+    },
+    "issues": [
+      {
+        "code": "invalid_children",
+        "action": "cleared",
+        "node_id": "f1",
+        "path": "roots[0]",
+        "message": "children 不是数组（原值类型 str），已按空目录处理"
+      }
+    ]
+  },
+  "missing_id": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "id_missing": 1
+    },
+    "issues": [
+      {
+        "code": "id_missing",
+        "action": "assigned",
+        "node_id": "auto-1",
+        "path": "roots[0]",
+        "message": "节点缺少 id，已自动分配 'auto-1'"
+      }
+    ]
+  },
+  "orphan_reference": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "orphan_reference": 1
+    },
+    "issues": [
+      {
+        "code": "orphan_reference",
+        "action": "corrected",
+        "node_id": "c1",
+        "path": "roots[0]/children[0]",
+        "message": "孤立节点：parent_id 指向不存在的节点 'ghost-999'，已按结构嵌套修正为 'f1'"
+      }
+    ]
+  },
+  "parent_mismatch": {
+    "ok": false,
+    "issue_count": 1,
+    "counts": {
+      "parent_mismatch": 1
+    },
+    "issues": [
+      {
+        "code": "parent_mismatch",
+        "action": "corrected",
+        "node_id": "c1",
+        "path": "roots[0]/children[0]",
+        "message": "父子关系不一致：parent_id 指向 'f2'，但结构父节点是 'f1'，已按结构嵌套修正为 'f1'"
+      }
+    ]
+  }
+}

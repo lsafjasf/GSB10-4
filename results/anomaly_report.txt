@@ -1,0 +1,26 @@
+书签异常报告（由 tests/selftest.py 汇总 fixtures/anomalies 生成）
+============================================================
+
+### children_under_url.json：1 处异常
+  [children_under_url] 处理=moved_to_root 位置=roots[0] 节点=u1
+    链接节点下不允许有子节点：2 个子节点已按原顺序迁移到根列表末尾
+
+### duplicate_id.json：1 处异常
+  [duplicate_id] 处理=kept 位置=roots[1]/children[0] 节点=dup-1
+    重复的 id 'dup-1'：两处节点均保留，索引以首次出现为准
+
+### invalid_children.json：1 处异常
+  [invalid_children] 处理=cleared 位置=roots[0] 节点=f1
+    children 不是数组（原值类型 str），已按空目录处理
+
+### missing_id.json：1 处异常
+  [id_missing] 处理=assigned 位置=roots[0] 节点=auto-1
+    节点缺少 id，已自动分配 'auto-1'
+
+### orphan_reference.json：1 处异常
+  [orphan_reference] 处理=corrected 位置=roots[0]/children[0] 节点=c1
+    孤立节点：parent_id 指向不存在的节点 'ghost-999'，已按结构嵌套修正为 'f1'
+
+### parent_mismatch.json：1 处异常
+  [parent_mismatch] 处理=corrected 位置=roots[0]/children[0] 节点=c1
+    父子关系不一致：parent_id 指向 'f2'，但结构父节点是 'f1'，已按结构嵌套修正为 'f1'

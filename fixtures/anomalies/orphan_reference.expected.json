@@ -1,0 +1,20 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "f1",
+      "type": "folder",
+      "name": "目录",
+      "children": [
+        {
+          "id": "c1",
+          "type": "url",
+          "name": "孤儿",
+          "url": "https://orphan.example.com/",
+          "parent_id": "f1"
+        }
+      ]
+    }
+  ]
+}

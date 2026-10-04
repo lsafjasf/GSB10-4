@@ -1,0 +1,49 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "o1",
+      "type": "url",
+      "name": "zebra",
+      "url": "https://z.example.com/"
+    },
+    {
+      "id": "o2",
+      "type": "url",
+      "name": "apple",
+      "url": "https://a.example.com/"
+    },
+    {
+      "id": "o3",
+      "type": "url",
+      "name": "mango",
+      "url": "https://m.example.com/"
+    },
+    {
+      "id": "of",
+      "type": "folder",
+      "name": "目录",
+      "children": [
+        {
+          "id": "o4",
+          "type": "url",
+          "name": "delta",
+          "url": "https://d.example.com/"
+        },
+        {
+          "id": "o5",
+          "type": "url",
+          "name": "beta",
+          "url": "https://b.example.com/"
+        },
+        {
+          "id": "o6",
+          "type": "url",
+          "name": "alpha",
+          "url": "https://al.example.com/"
+        }
+      ]
+    }
+  ]
+}

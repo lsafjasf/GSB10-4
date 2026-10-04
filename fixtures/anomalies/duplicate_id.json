@@ -1,0 +1,32 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "fa",
+      "type": "folder",
+      "name": "目录A",
+      "children": [
+        {
+          "id": "dup-1",
+          "type": "url",
+          "name": "第一个",
+          "url": "https://a.example.com/"
+        }
+      ]
+    },
+    {
+      "id": "fb",
+      "type": "folder",
+      "name": "目录B",
+      "children": [
+        {
+          "id": "dup-1",
+          "type": "url",
+          "name": "第二个",
+          "url": "https://b.example.com/"
+        }
+      ]
+    }
+  ]
+}

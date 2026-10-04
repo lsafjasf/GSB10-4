@@ -1,0 +1,81 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "f1",
+      "type": "folder",
+      "name": "工作",
+      "children": [
+        {
+          "id": "n1",
+          "type": "url",
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "add_date": "1759600001",
+          "icon": null,
+          "visit_count": 0,
+          "starred": true
+        },
+        {
+          "id": "f2",
+          "type": "folder",
+          "name": "文档",
+          "children": [
+            {
+              "id": "n2",
+              "type": "url",
+              "name": "API 参考",
+              "url": "https://docs.example.com/api",
+              "parent_id": "f2",
+              "x_meta": {
+                "权重": 3,
+                "标签": [
+                  "a",
+                  "b"
+                ]
+              }
+            },
+            {
+              "id": "n3",
+              "type": "url",
+              "name": "转义字符 \"引号\" \\反斜杠\\ 换行\n制表\t",
+              "url": "https://example.com/escape"
+            }
+          ]
+        },
+        {
+          "id": "f3",
+          "type": "folder",
+          "name": "空子目录",
+          "children": []
+        }
+      ],
+      "add_date": "1759600002"
+    },
+    {
+      "id": "f4",
+      "type": "folder",
+      "name": "个人 🚀 中文目录",
+      "children": [
+        {
+          "id": "n4",
+          "type": "url",
+          "name": " emoji 书签 😀",
+          "url": "https://emoji.example.com/"
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "type": "url",
+      "name": "根级链接",
+      "url": "https://root.example.com/",
+      "parent_id": ""
+    }
+  ],
+  "meta": {
+    "导出工具": "bookmarks-cli",
+    "导出时间": "2026-10-04T00:00:00+08:00"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "u1",
+      "type": "url",
+      "name": "错误地带了孩子",
+      "url": "https://u1.example.com/",
+      "children": [
+        {
+          "id": "k1",
+          "type": "url",
+          "name": "孩子一",
+          "url": "https://k1.example.com/"
+        },
+        {
+          "id": "k2",
+          "type": "folder",
+          "name": "孩子二",
+          "children": [
+            {
+              "id": "k3",
+              "type": "url",
+              "name": "孙子",
+              "url": "https://k3.example.com/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

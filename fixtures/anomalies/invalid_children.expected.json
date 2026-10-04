@@ -1,0 +1,12 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "f1",
+      "type": "folder",
+      "name": "坏目录",
+      "children": []
+    }
+  ]
+}

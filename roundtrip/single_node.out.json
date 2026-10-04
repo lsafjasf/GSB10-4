@@ -1,0 +1,17 @@
+{
+  "format": "gsb-bookmarks",
+  "version": 1,
+  "roots": [
+    {
+      "id": "n1",
+      "type": "url",
+      "name": "单个书签",
+      "url": "https://example.com/",
+      "add_date": "1759600000",
+      "tags": [
+        "单节点",
+        "测试"
+      ]
+    }
+  ]
+}

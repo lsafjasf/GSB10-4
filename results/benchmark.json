@@ -1,0 +1,49 @@
+{
+  "python": "3.12.3",
+  "platform": "linux",
+  "cases": {
+    "nodes_100k": {
+      "input_bytes": 35729873,
+      "parse_seconds": 7.759,
+      "parse_peak_mb": 108.4,
+      "issues": 0,
+      "stats": {
+        "nodes": 100100,
+        "folders": 10100,
+        "urls": 90000,
+        "other_types": 0,
+        "max_depth": 4,
+        "roots": 100
+      },
+      "serialize_seconds": 3.506,
+      "serialize_peak_mb": 229.9,
+      "output_bytes": 35729873,
+      "roundtrip_lossless": true,
+      "sha256_in": "328ac357750f3e12732cf83bbe71e77d5f01605bb2718b469cdc3dc6234e3c52",
+      "sha256_out": "328ac357750f3e12732cf83bbe71e77d5f01605bb2718b469cdc3dc6234e3c52",
+      "process_peak_rss_mb": 736.8,
+      "generate_seconds": 0.854
+    },
+    "depth_100k": {
+      "input_bytes": 6077901,
+      "parse_seconds": 5.524,
+      "parse_peak_mb": 85.2,
+      "issues": 0,
+      "stats": {
+        "nodes": 100001,
+        "folders": 100000,
+        "urls": 1,
+        "other_types": 0,
+        "max_depth": 100001,
+        "roots": 1
+      },
+      "serialize_seconds": 1.694,
+      "serialize_peak_mb": 86.1,
+      "output_bytes": 6077901,
+      "roundtrip_lossless": true,
+      "sha256_in": "1f066fb4db33993ba696cf49f4c316d5b999143222b7253e2b840e635be6fa88",
+      "sha256_out": "1f066fb4db33993ba696cf49f4c316d5b999143222b7253e2b840e635be6fa88",
+      "process_peak_rss_mb": 736.8
+    }
+  }
+}
