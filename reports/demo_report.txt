@@ -1,0 +1,54 @@
+
+========================================================================
+SCENARIO 1 - all healthy: initial deterministic placement
+========================================================================
+session      owner  revision     checksum(sha256)  data
+s-alpha      b1            0     db62868a7d3651e0  {"cart": ["item-a"], "hits": 7}
+s-bravo      b0            0     04487b0d08276bd4  {"cart": ["item-o"], "hits": 7}
+s-charlie    b2            0     92b039da26277912  {"cart": ["item-e"], "hits": 9}
+s-delta      b3            0     f95f53529042895b  {"cart": ["item-a"], "hits": 7}
+s-echo       b0            0     d00138777256f455  {"cart": ["item-o"], "hits": 6}
+
+========================================================================
+SCENARIO 2 - backend b1 removed: migrate policy vs reject policy
+========================================================================
+pinned-to-b1 sessions: ['s-alpha']
+
+[migrate policy]
+  s-alpha: b1 -> b2   checksum db62868a7d36 == db62868a7d36
+[reject policy]
+  s-alpha: REJECTED (session 's-alpha' pinned to dead backend 'b1')
+  pins after reject attempt: {s: rr.pins[s] for s in orphaned} = {'s-alpha': 'b1'}
+
+========================================================================
+SCENARIO 3 - state before/after diff (migrate policy)
+========================================================================
+session      before owner after owner rev checksum equal  data equal
+s-alpha      b1           b2            0           True  True
+s-bravo      b0           b0            0           True  True
+s-charlie    b2           b2            0           True  True
+s-delta      b3           b3            0           True  True
+s-echo       b0           b0            0           True  True
+
+RESULT: zero state loss across all 5 sessions: True
+post-migration write on s-alpha: owner=b2 revision=1 chained_from=db62868a7d36
+
+========================================================================
+SCENARIO 4 - recovery sequence: ownership trail
+========================================================================
+  initial          -> owner b1
+  remove b1        -> owner b2
+  recover b1       -> owner b2
+  remove b2        -> owner b1
+  recover b2       -> owner b1
+final state on b1: {"phase": "after-first-drift"} revision=1
+recovered backends never steal a migrated pin (recovery only flips health).
+note: 'remove b2 -> b1' is a *migration* (owner died), not a steal-back;
+      a recovered backend may host sessions only via new placement/migration.
+
+========================================================================
+SCENARIO 5 - all backends unavailable
+========================================================================
+[migrate] NoHealthyBackend: cannot migrate session 's-alpha': all backends are down
+[reject]  SessionRejected: session 's-alpha' pinned to dead backend 'b1'
+after b0 recovery, unpinned new session -> b0

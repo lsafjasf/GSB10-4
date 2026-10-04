@@ -1,0 +1,10 @@
+python 3.12.3  backends=8  sessions=100,000  selects=1,000,000
+ring build (8 backends x 160 vnodes): 0.002 s
+placement phase: 100,000 new sessions in 0.729 s (137,108 selects/s)
+state writes: 100,000 in 3.947 s
+steady-state phase: 1,000,000 selects in 2.094 s (477,541 selects/s, 2.09 us/select)
+tracemalloc current=56.9 MiB peak=56.9 MiB
+process max RSS=155.7 MiB
+per-session router overhead ~= 597 B (pins + loads + per-session state snapshot)
+drift: b0 down -> migrated 12,500 sessions in 0.733 s, state_lost=0
+final loads: {'b0': 0, 'b1': 13853, 'b2': 14480, 'b3': 14567, 'b4': 14285, 'b5': 13682, 'b6': 14496, 'b7': 14637}
