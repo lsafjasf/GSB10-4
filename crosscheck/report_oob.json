@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "start_before_zero",
+    "cue": {
+      "start": 1000,
+      "end": 3000,
+      "text": "A1",
+      "tag": "out_merged.srt"
+    },
+    "detail": "offset=-1500ms 使 start=1000 -> -500"
+  }
+]

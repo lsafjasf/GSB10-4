@@ -1,0 +1,53 @@
+{
+  "_comment": "手工推算结果（毫秒，半开区间 [start, end)）。推导过程见 RULES.md 第 5 节。",
+  "merge": {
+    "cues": [
+      {"start": 1000, "end": 3000, "text": "A1"},
+      {"start": 3000, "end": 4000, "text": "B1"},
+      {"start": 4500, "end": 5500, "text": "B2"},
+      {"start": 6000, "end": 7000, "text": "A2"},
+      {"start": 7000, "end": 8000, "text": "B3"},
+      {"start": 9000, "end": 10000, "text": "A3"},
+      {"start": 10000, "end": 11000, "text": "B4"}
+    ],
+    "reports": []
+  },
+  "shift_global_plus500": {
+    "cues": [
+      {"start": 1500, "end": 3500, "text": "A1"},
+      {"start": 3500, "end": 4500, "text": "B1"},
+      {"start": 5000, "end": 6000, "text": "B2"},
+      {"start": 6500, "end": 7500, "text": "A2"},
+      {"start": 7500, "end": 8500, "text": "B3"},
+      {"start": 9500, "end": 10500, "text": "A3"},
+      {"start": 10500, "end": 11500, "text": "B4"}
+    ],
+    "reports": []
+  },
+  "shift_global_minus1500_nostrict": {
+    "cues": [
+      {"start": 1000, "end": 3000, "text": "A1"},
+      {"start": 1500, "end": 2500, "text": "B1"},
+      {"start": 3000, "end": 4000, "text": "B2"},
+      {"start": 4500, "end": 5500, "text": "A2"},
+      {"start": 5500, "end": 6500, "text": "B3"},
+      {"start": 7500, "end": 8500, "text": "A3"},
+      {"start": 8500, "end": 9500, "text": "B4"}
+    ],
+    "reports": [
+      {"kind": "start_before_zero", "text": "A1"}
+    ]
+  },
+  "shift_segmented": {
+    "cues": [
+      {"start": 1000, "end": 3000, "text": "A1"},
+      {"start": 3000, "end": 4000, "text": "B1"},
+      {"start": 4000, "end": 5000, "text": "B2"},
+      {"start": 5500, "end": 6500, "text": "A2"},
+      {"start": 6500, "end": 7500, "text": "B3"},
+      {"start": 10500, "end": 11500, "text": "A3"},
+      {"start": 11500, "end": 12500, "text": "B4"}
+    ],
+    "reports": []
+  }
+}
