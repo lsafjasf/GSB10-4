@@ -1,0 +1,8 @@
+round	path	attempts	offset	digest@offset	|state|
+1	full	1	0	0000000000000000	0
+2	resume	7	40	0823b49288296aed	22
+3	resume	1	80	14b6b42dc83260f9	36
+4	resume	4	120	c58c7f62ba7c6eb8	42
+5	resume	1	160	f9cfc62eeabaedc8	36
+6	resume	10	200	fa9708a800fdc7ca	42
+7	resume	1	240	0d1387268b1b0eec	43
