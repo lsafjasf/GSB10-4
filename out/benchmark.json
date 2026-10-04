@@ -1,0 +1,13 @@
+{
+  "chains": 10000,
+  "total_seconds": 3.375,
+  "avg_ms_per_chain": 0.3375,
+  "chains_per_second": 2963,
+  "total_hops": 265000,
+  "max_depth": 50,
+  "min_depth": 1,
+  "avg_depth": 25.5,
+  "reasons": {
+    "OK": 10000
+  }
+}

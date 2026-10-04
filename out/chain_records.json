@@ -1,0 +1,525 @@
+{
+  "direct_same_origin": {
+    "start_url": "http://example.com/a",
+    "reason": "OK",
+    "depth": 1,
+    "error": null,
+    "hops": [
+      {
+        "index": 0,
+        "url": "http://example.com/a",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/b",
+        "resolved_next": "http://example.com/b",
+        "note": null
+      },
+      {
+        "index": 1,
+        "url": "http://example.com/b",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 200,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": null,
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  },
+  "cross_protocol_downgrade": {
+    "start_url": "https://example.com/a",
+    "reason": "OK",
+    "depth": 1,
+    "error": null,
+    "hops": [
+      {
+        "index": 0,
+        "url": "https://example.com/a",
+        "scheme": "https",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [
+          "Authorization",
+          "Cookie"
+        ],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/b",
+        "resolved_next": "http://example.com/b",
+        "note": "cross-origin: 剥离 Authorization, Cookie（https://example.com/a -> http://example.com/b）"
+      },
+      {
+        "index": 1,
+        "url": "http://example.com/b",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 200,
+        "request_headers": {
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": false,
+        "url_has_userinfo": false,
+        "location_raw": null,
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  },
+  "cross_host": {
+    "start_url": "https://a.example.com/x",
+    "reason": "OK",
+    "depth": 1,
+    "error": null,
+    "hops": [
+      {
+        "index": 0,
+        "url": "https://a.example.com/x",
+        "scheme": "https",
+        "host": "a.example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [
+          "Authorization",
+          "Cookie"
+        ],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "https://b.example.com/y",
+        "resolved_next": "https://b.example.com/y",
+        "note": "cross-origin: 剥离 Authorization, Cookie（https://a.example.com/x -> https://b.example.com/y）"
+      },
+      {
+        "index": 1,
+        "url": "https://b.example.com/y",
+        "scheme": "https",
+        "host": "b.example.com",
+        "port": null,
+        "status": 200,
+        "request_headers": {
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": false,
+        "url_has_userinfo": false,
+        "location_raw": null,
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  },
+  "loop": {
+    "start_url": "http://example.com/a",
+    "reason": "LOOP",
+    "depth": 1,
+    "error": "重定向成环: http://example.com/a",
+    "hops": [
+      {
+        "index": 0,
+        "url": "http://example.com/a",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/b",
+        "resolved_next": "http://example.com/b",
+        "note": null
+      },
+      {
+        "index": 1,
+        "url": "http://example.com/b",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/a",
+        "resolved_next": "http://example.com/a",
+        "note": "目标 http://example.com/a 已在链中出现"
+      }
+    ]
+  },
+  "chain_too_long": {
+    "start_url": "http://example.com/0",
+    "reason": "CHAIN_TOO_LONG",
+    "depth": 10,
+    "error": "超过最大重定向数 10",
+    "hops": [
+      {
+        "index": 0,
+        "url": "http://example.com/0",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/1",
+        "resolved_next": "http://example.com/1",
+        "note": null
+      },
+      {
+        "index": 1,
+        "url": "http://example.com/1",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/2",
+        "resolved_next": "http://example.com/2",
+        "note": null
+      },
+      {
+        "index": 2,
+        "url": "http://example.com/2",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/3",
+        "resolved_next": "http://example.com/3",
+        "note": null
+      },
+      {
+        "index": 3,
+        "url": "http://example.com/3",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/4",
+        "resolved_next": "http://example.com/4",
+        "note": null
+      },
+      {
+        "index": 4,
+        "url": "http://example.com/4",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/5",
+        "resolved_next": "http://example.com/5",
+        "note": null
+      },
+      {
+        "index": 5,
+        "url": "http://example.com/5",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/6",
+        "resolved_next": "http://example.com/6",
+        "note": null
+      },
+      {
+        "index": 6,
+        "url": "http://example.com/6",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/7",
+        "resolved_next": "http://example.com/7",
+        "note": null
+      },
+      {
+        "index": 7,
+        "url": "http://example.com/7",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/8",
+        "resolved_next": "http://example.com/8",
+        "note": null
+      },
+      {
+        "index": 8,
+        "url": "http://example.com/8",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/9",
+        "resolved_next": "http://example.com/9",
+        "note": null
+      },
+      {
+        "index": 9,
+        "url": "http://example.com/9",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/10",
+        "resolved_next": "http://example.com/10",
+        "note": null
+      },
+      {
+        "index": 10,
+        "url": "http://example.com/10",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "http://example.com/11",
+        "resolved_next": "http://example.com/11",
+        "note": null
+      }
+    ]
+  },
+  "invalid_target_scheme": {
+    "start_url": "http://example.com/a",
+    "reason": "INVALID_TARGET",
+    "depth": 0,
+    "error": "非法重定向目标: 不支持的协议: 'javascript'",
+    "hops": [
+      {
+        "index": 0,
+        "url": "http://example.com/a",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "javascript:alert(1)",
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  },
+  "relative_and_escaped": {
+    "start_url": "http://example.com/dir/page",
+    "reason": "OK",
+    "depth": 1,
+    "error": null,
+    "hops": [
+      {
+        "index": 0,
+        "url": "http://example.com/dir/page",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "../%7Euser/%2f?q=1",
+        "resolved_next": "http://example.com/~user/%2F?q=1",
+        "note": null
+      },
+      {
+        "index": 1,
+        "url": "http://example.com/~user/%2F?q=1",
+        "scheme": "http",
+        "host": "example.com",
+        "port": null,
+        "status": 200,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": null,
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  },
+  "userinfo_in_target": {
+    "start_url": "https://example.com/a",
+    "reason": "OK",
+    "depth": 1,
+    "error": null,
+    "hops": [
+      {
+        "index": 0,
+        "url": "https://example.com/a",
+        "scheme": "https",
+        "host": "example.com",
+        "port": null,
+        "status": 302,
+        "request_headers": {
+          "Authorization": "<redacted>",
+          "Cookie": "<redacted>",
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [
+          "Authorization",
+          "Cookie"
+        ],
+        "credentials_carried": true,
+        "url_has_userinfo": false,
+        "location_raw": "https://user:pass@evil.example.com/",
+        "resolved_next": "https://user:pass@evil.example.com/",
+        "note": "cross-origin: 剥离 Authorization, Cookie（https://example.com/a -> https://user:pass@evil.example.com/）"
+      },
+      {
+        "index": 1,
+        "url": "https://user:pass@evil.example.com/",
+        "scheme": "https",
+        "host": "evil.example.com",
+        "port": null,
+        "status": 200,
+        "request_headers": {
+          "X-Request-Id": "r-1"
+        },
+        "stripped_headers": [],
+        "credentials_carried": true,
+        "url_has_userinfo": true,
+        "location_raw": null,
+        "resolved_next": null,
+        "note": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "case": "同源同路径跳转",
+    "from": "http://example.com/a",
+    "to": "http://example.com/b",
+    "stripped_headers": [],
+    "authorization_sent_on_next": true,
+    "cookie_sent_on_next": true,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": true,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "同源显式默认端口",
+    "from": "http://example.com/a",
+    "to": "http://example.com:80/b",
+    "stripped_headers": [],
+    "authorization_sent_on_next": true,
+    "cookie_sent_on_next": true,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": true,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "跨协议降级 https->http",
+    "from": "https://example.com/a",
+    "to": "http://example.com/b",
+    "stripped_headers": [
+      "Authorization",
+      "Cookie"
+    ],
+    "authorization_sent_on_next": false,
+    "cookie_sent_on_next": false,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": false,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "跨协议升级 http->https",
+    "from": "http://example.com/a",
+    "to": "https://example.com/b",
+    "stripped_headers": [
+      "Authorization",
+      "Cookie"
+    ],
+    "authorization_sent_on_next": false,
+    "cookie_sent_on_next": false,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": false,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "跨主机同协议",
+    "from": "https://a.example.com/x",
+    "to": "https://b.example.com/y",
+    "stripped_headers": [
+      "Authorization",
+      "Cookie"
+    ],
+    "authorization_sent_on_next": false,
+    "cookie_sent_on_next": false,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": false,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "跨端口",
+    "from": "http://example.com:8080/a",
+    "to": "http://example.com:9090/b",
+    "stripped_headers": [
+      "Authorization",
+      "Cookie"
+    ],
+    "authorization_sent_on_next": false,
+    "cookie_sent_on_next": false,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": false,
+    "url_has_userinfo_next": false
+  },
+  {
+    "case": "目标 URL 内嵌 userinfo",
+    "from": "https://example.com/a",
+    "to": "https://user:pass@evil.example.com/",
+    "stripped_headers": [
+      "Authorization",
+      "Cookie"
+    ],
+    "authorization_sent_on_next": false,
+    "cookie_sent_on_next": false,
+    "custom_header_sent_on_next": true,
+    "credentials_carried_next": true,
+    "url_has_userinfo_next": true
+  }
+]
