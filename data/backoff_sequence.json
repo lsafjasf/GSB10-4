@@ -1,0 +1,163 @@
+{
+  "seed": 20261005,
+  "policy": {
+    "request_timeout": 30.0,
+    "base_delay": 1.0,
+    "factor": 2.0,
+    "max_delay": 60.0,
+    "max_attempts": 12
+  },
+  "formula": {
+    "raw": "base_delay * factor ** (n - 1)",
+    "capped": "min(raw, max_delay)",
+    "equal_jitter": "capped/2 + u*capped/2,  u = Random(seed).random()",
+    "server_hint": "min(hint, max_delay)，优先于本地退避"
+  },
+  "schedule": [
+    {
+      "failure": 1,
+      "failure_at": 30.0,
+      "raw_delay": 1.0,
+      "capped_delay": 1.0,
+      "u": 0.2768271010047326,
+      "delay_low": 0.5,
+      "delay_high": 1.0,
+      "applied_delay": 0.6384135505023663,
+      "reconnect_at": 30.638413550502367,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 2,
+      "failure_at": 60.638413550502364,
+      "raw_delay": 2.0,
+      "capped_delay": 2.0,
+      "u": 0.29632958322643,
+      "delay_low": 1.0,
+      "delay_high": 2.0,
+      "applied_delay": 1.2963295832264299,
+      "reconnect_at": 61.934743133728794,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 3,
+      "failure_at": 91.9347431337288,
+      "raw_delay": 4.0,
+      "capped_delay": 4.0,
+      "u": 0.15449398081647991,
+      "delay_low": 2.0,
+      "delay_high": 4.0,
+      "applied_delay": 2.30898796163296,
+      "reconnect_at": 94.24373109536177,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 4,
+      "failure_at": 124.24373109536177,
+      "raw_delay": 8.0,
+      "capped_delay": 8.0,
+      "u": 0.5534013176105713,
+      "delay_low": 4.0,
+      "delay_high": 8.0,
+      "applied_delay": 6.213605270442285,
+      "reconnect_at": 130.45733636580405,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 5,
+      "failure_at": 160.45733636580405,
+      "raw_delay": 16.0,
+      "capped_delay": 16.0,
+      "u": 0.021929920401406844,
+      "delay_low": 8.0,
+      "delay_high": 16.0,
+      "applied_delay": 8.175439363211254,
+      "reconnect_at": 168.6327757290153,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 6,
+      "failure_at": 198.6327757290153,
+      "raw_delay": 32.0,
+      "capped_delay": 32.0,
+      "u": 0.1117443570255302,
+      "delay_low": 16.0,
+      "delay_high": 32.0,
+      "applied_delay": 17.787909712408485,
+      "reconnect_at": 216.42068544142379,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 7,
+      "failure_at": 246.42068544142379,
+      "raw_delay": 64.0,
+      "capped_delay": 60.0,
+      "u": 0.2871892715678781,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": 38.61567814703634,
+      "reconnect_at": 285.0363635884601,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 8,
+      "failure_at": 315.0363635884601,
+      "raw_delay": 128.0,
+      "capped_delay": 60.0,
+      "u": 0.2844437341182724,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": 38.53331202354817,
+      "reconnect_at": 353.56967561200827,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 9,
+      "failure_at": 383.56967561200827,
+      "raw_delay": 256.0,
+      "capped_delay": 60.0,
+      "u": 0.8836087095895984,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": 56.50826128768795,
+      "reconnect_at": 440.0779368996962,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 10,
+      "failure_at": 470.0779368996962,
+      "raw_delay": 512.0,
+      "capped_delay": 60.0,
+      "u": 0.640805888274815,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": 49.22417664824445,
+      "reconnect_at": 519.3021135479407,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 11,
+      "failure_at": 549.3021135479407,
+      "raw_delay": 1024.0,
+      "capped_delay": 60.0,
+      "u": 0.5866771169470939,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": 47.60031350841282,
+      "reconnect_at": 596.9024270563535,
+      "state": "WAITING -> 到期 CONNECTING"
+    },
+    {
+      "failure": 12,
+      "failure_at": 626.9024270563535,
+      "raw_delay": 2048.0,
+      "capped_delay": 60.0,
+      "u": 0.856304350344132,
+      "delay_low": 30.0,
+      "delay_high": 60.0,
+      "applied_delay": null,
+      "reconnect_at": null,
+      "state": "GIVEN_UP",
+      "note": "达到连续失败上界，停止调度，仅 reset() 可恢复"
+    }
+  ]
+}
