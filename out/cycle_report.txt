@@ -1,0 +1,9 @@
+== 断裂 / 循环引用诊断（快速实现） ==
+[循环] 样式循环引用: LoopA -> LoopB -> LoopC -> LoopA；环上样式: LoopA, LoopB, LoopC。在环处断链，环内未设置的属性回退默认值。
+[断裂] 样式 'GhostUser' 引用的样式 'Missing' 不存在；该分支回退到默认值，未显式设置的属性不会丢失。
+[断裂] 段落 引用的样式 'NoSuchStyle' 不存在；该分支回退到默认值，未显式设置的属性不会丢失。
+
+== 手工实现诊断 ==
+[循环] 样式循环引用: LoopA -> LoopB -> LoopC -> LoopA；环上样式: LoopA, LoopB, LoopC
+[断裂] 样式 'GhostUser' 引用的样式 'Missing' 不存在；回退默认值
+[断裂] 段落引用的样式 'NoSuchStyle' 不存在；回退默认值
