@@ -1,0 +1,37 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "rules": {
+    "total": 50000,
+    "literal": 40000,
+    "glob": 8000,
+    "escaped_literal": 2000
+  },
+  "build": {
+    "seconds": 2.5385,
+    "tracemalloc_peak_bytes": 71004546
+  },
+  "index_memory": {
+    "bytes": 46657467,
+    "per_rule_bytes": 933.1
+  },
+  "queries": {
+    "total": 100000,
+    "matched": 80085,
+    "conflict": 0,
+    "no_match": 19915,
+    "total_seconds": 0.3194,
+    "per_query_us": 3.194,
+    "p50_us": 3.17,
+    "p95_us": 4.35,
+    "p99_us": 6.27,
+    "max_us": 98.691
+  },
+  "order_invariance": {
+    "shuffled_reload_queries_compared": 3000,
+    "identical": true
+  }
+}

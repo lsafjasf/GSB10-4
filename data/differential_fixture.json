@@ -1,0 +1,201 @@
+{
+  "description": "路由优先级对拍夹具：trie Router 在全部规则排列下结果必须与此一致",
+  "matching_semantics": {
+    "match_type": "prefix",
+    "star_glob": "段内任意字符（含空），不跨 '/'；不存在跨段通配，'*' 单独成段即匹配任意一个非空段",
+    "escapes": "\\* 与 \\\\ 是字面量；其余转义与结尾孤立反斜杠为加载期错误",
+    "decision": "显式 priority 大者胜（整数，默认 0）；同优先级多命中=冲突；最长前缀不参与裁决",
+    "order_independence": "规则按规范化 (pattern, priority) 排序后建索引"
+  },
+  "rules": [
+    {
+      "id": "api",
+      "pattern": "/api",
+      "priority": 1
+    },
+    {
+      "id": "deep",
+      "pattern": "/api/users/u1",
+      "priority": 1
+    },
+    {
+      "id": "apiwild",
+      "pattern": "/api/v*",
+      "priority": 3
+    },
+    {
+      "id": "admin",
+      "pattern": "/admin",
+      "priority": 5
+    },
+    {
+      "id": "root",
+      "pattern": "/",
+      "priority": 0
+    },
+    {
+      "id": "escstar",
+      "pattern": "/files/a\\*b",
+      "priority": 2
+    },
+    {
+      "id": "filesglob",
+      "pattern": "/files/*",
+      "priority": 2
+    }
+  ],
+  "rule_count": 7,
+  "permutations_tested": 5040,
+  "queries": [
+    {
+      "path": "/",
+      "status": "match",
+      "winner": "root",
+      "top_priority": 0,
+      "hits_ordered": [
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/other",
+      "status": "match",
+      "winner": "root",
+      "top_priority": 0,
+      "hits_ordered": [
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/admin",
+      "status": "match",
+      "winner": "admin",
+      "top_priority": 5,
+      "hits_ordered": [
+        "admin",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/api",
+      "status": "match",
+      "winner": "api",
+      "top_priority": 1,
+      "hits_ordered": [
+        "api",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/api/users/u1",
+      "status": "conflict",
+      "winner": null,
+      "top_priority": 1,
+      "hits_ordered": [
+        "deep",
+        "api",
+        "root"
+      ],
+      "conflicting": [
+        "api",
+        "deep"
+      ]
+    },
+    {
+      "path": "/api/v2",
+      "status": "match",
+      "winner": "apiwild",
+      "top_priority": 3,
+      "hits_ordered": [
+        "apiwild",
+        "api",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/api/v10/status",
+      "status": "match",
+      "winner": "apiwild",
+      "top_priority": 3,
+      "hits_ordered": [
+        "apiwild",
+        "api",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/files/a*b",
+      "status": "conflict",
+      "winner": null,
+      "top_priority": 2,
+      "hits_ordered": [
+        "escstar",
+        "filesglob",
+        "root"
+      ],
+      "conflicting": [
+        "escstar",
+        "filesglob"
+      ]
+    },
+    {
+      "path": "/files/cd",
+      "status": "match",
+      "winner": "filesglob",
+      "top_priority": 2,
+      "hits_ordered": [
+        "filesglob",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/files/",
+      "status": "match",
+      "winner": "root",
+      "top_priority": 0,
+      "hits_ordered": [
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/admin/users",
+      "status": "match",
+      "winner": "admin",
+      "top_priority": 5,
+      "hits_ordered": [
+        "admin",
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/adminx",
+      "status": "match",
+      "winner": "root",
+      "top_priority": 0,
+      "hits_ordered": [
+        "root"
+      ],
+      "conflicting": []
+    },
+    {
+      "path": "/api/v",
+      "status": "match",
+      "winner": "apiwild",
+      "top_priority": 3,
+      "hits_ordered": [
+        "apiwild",
+        "api",
+        "root"
+      ],
+      "conflicting": []
+    }
+  ]
+}

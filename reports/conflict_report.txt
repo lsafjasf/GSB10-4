@@ -1,0 +1,58 @@
+路由冲突报告（由 tests/make_conflict_report.py 生成，内容确定性）
+
+============================================================
+场景 A：同优先级两条命中（/api 与 /api/users/u1 同为 priority=1）
+------------------------------------------------------------
+path: /api/users/u1
+status: conflict
+top_priority: 1
+conflict_count: 2
+conflicting_rules (全部最高优先级命中项, specificity 仅诊断):
+  - id=deep pattern='/api/users/u1' priority=1 specificity=(segments=3, literal_segments=3, literal_chars=10)
+  - id=api pattern='/api' priority=1 specificity=(segments=1, literal_segments=1, literal_chars=3)
+all_matches:
+  - id=deep pattern='/api/users/u1' priority=1 specificity=(segments=3, literal_segments=3, literal_chars=10)
+  - id=api pattern='/api' priority=1 specificity=(segments=1, literal_segments=1, literal_chars=3)
+  - id=root pattern='/' priority=0 specificity=(segments=0, literal_segments=0, literal_chars=0)
+
+============================================================
+场景 B：转义字面星号 /files/a\*b 与 glob /files/* 同优先级命中 /files/a*b
+------------------------------------------------------------
+path: /files/a*b
+status: conflict
+top_priority: 2
+conflict_count: 2
+conflicting_rules (全部最高优先级命中项, specificity 仅诊断):
+  - id=escstar pattern='/files/a\\*b' priority=2 specificity=(segments=2, literal_segments=2, literal_chars=8)
+  - id=filesglob pattern='/files/*' priority=2 specificity=(segments=2, literal_segments=1, literal_chars=5)
+all_matches:
+  - id=escstar pattern='/files/a\\*b' priority=2 specificity=(segments=2, literal_segments=2, literal_chars=8)
+  - id=filesglob pattern='/files/*' priority=2 specificity=(segments=2, literal_segments=1, literal_chars=5)
+  - id=root pattern='/' priority=0 specificity=(segments=0, literal_segments=0, literal_chars=0)
+
+============================================================
+场景 C：同优先级三条命中（/a、/a/b、/a/b/c 同为 priority=2）
+------------------------------------------------------------
+path: /a/b/c
+status: conflict
+top_priority: 2
+conflict_count: 3
+conflicting_rules (全部最高优先级命中项, specificity 仅诊断):
+  - id=abc pattern='/a/b/c' priority=2 specificity=(segments=3, literal_segments=3, literal_chars=3)
+  - id=ab pattern='/a/b' priority=2 specificity=(segments=2, literal_segments=2, literal_chars=2)
+  - id=a pattern='/a' priority=2 specificity=(segments=1, literal_segments=1, literal_chars=1)
+all_matches:
+  - id=abc pattern='/a/b/c' priority=2 specificity=(segments=3, literal_segments=3, literal_chars=3)
+  - id=ab pattern='/a/b' priority=2 specificity=(segments=2, literal_segments=2, literal_chars=2)
+  - id=a pattern='/a' priority=2 specificity=(segments=1, literal_segments=1, literal_chars=1)
+
+============================================================
+场景 D（对照）：显式优先级压过最长前缀，无冲突
+------------------------------------------------------------
+path: /a/b/c
+status: match
+top_priority: 10
+winner: short-but-high
+all_matches:
+  - id=short-but-high pattern='/a' priority=10 specificity=(segments=1, literal_segments=1, literal_chars=1)
+  - id=long-but-low pattern='/a/b/c' priority=0 specificity=(segments=3, literal_segments=3, literal_chars=3)
