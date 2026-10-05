@@ -1,0 +1,65 @@
+规模: 1,000,000 行 x 1,000 列 = 1,000,000,000 个单元格
+蓄水池: 每列 512 条样本 (推断 80% / 留出 20%)
+耗时: 生成+解析基线 30.18s | 含推断 59.03s | 推断开销 28.85s (28.9 ns/单元格)
+内存峰值(ru_maxrss): 56.3 MiB (启动时 14.6 MiB)
+状态分布: {'inferred': 950, 'empty': 50}
+类型分布: {'int': 400, 'float': 200, 'text': 250, 'bool': 100}
+
+--- 示例: col_0 ---
+{
+  "column": "col_0",
+  "status": "inferred",
+  "type": "int",
+  "decision": null,
+  "rows_seen": 1000000,
+  "sample_size": 410,
+  "null_rate": 0.0,
+  "distribution": {
+    "int": 410
+  },
+  "confidence": 0.9907,
+  "holdout_size": 102,
+  "holdout_pass_rate": 1.0,
+  "cost": null,
+  "message": "推断为 int：非空样本 410 条，分布 {'int': 410}，置信度(Wilson 下界) 0.991，留出验证 102/102 通过。"
+}
+推断为 int：非空样本 410 条，分布 {'int': 410}，置信度(Wilson 下界) 0.991，留出验证 102/102 通过。
+
+--- 示例: col_18 ---
+{
+  "column": "col_18",
+  "status": "inferred",
+  "type": "text",
+  "decision": "promote_to_text",
+  "rows_seen": 1000000,
+  "sample_size": 410,
+  "null_rate": 0.0,
+  "distribution": {
+    "int": 403,
+    "text": 7
+  },
+  "confidence": 0.9907,
+  "holdout_size": 102,
+  "holdout_pass_rate": 1.0,
+  "cost": "全列提升为文本：解析无损（任何值都是合法字符串），代价是失去数值/布尔运算与排序语义（变为字典序），存储约为数值列 3-5 倍；若有损可接受，备选方案是把占比 1.7% 的文本值置空（丢失这部分数据）。",
+  "message": "推断为 text：非空样本 410 条，分布 {'int': 403, 'text': 7}，置信度(Wilson 下界) 0.991，留出验证 102/102 通过。 混合处理：promote_to_text。"
+}
+推断为 text：非空样本 410 条，分布 {'int': 403, 'text': 7}，置信度(Wilson 下界) 0.991，留出验证 102/102 通过。 混合处理：promote_to_text。
+
+--- 示例: col_19 ---
+{
+  "column": "col_19",
+  "status": "empty",
+  "type": null,
+  "decision": null,
+  "rows_seen": 1000000,
+  "sample_size": 0,
+  "null_rate": 1.0,
+  "distribution": {},
+  "confidence": null,
+  "holdout_size": 0,
+  "holdout_pass_rate": null,
+  "cost": null,
+  "message": "整列为空：共 1000000 行，抽样 512 条全部为空值，无法推断类型；建议人工指定类型或等出现数据后再推断。"
+}
+整列为空：共 1000000 行，抽样 512 条全部为空值，无法推断类型；建议人工指定类型或等出现数据后再推断。
