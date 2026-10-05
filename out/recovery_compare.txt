@@ -1,0 +1,23 @@
+crash-recovery A/B comparison
+========================================
+water_level:
+  A (pre-crash)     : 0.0
+  B (post-recovery) : 0.0
+  -> MATCH
+active_txn_ids:
+  A (pre-crash)     : [1]
+  B (post-recovery) : [1]
+  -> MATCH
+visible_at_water_level:
+  A (pre-crash)     : {'alpha': None, 'beta': None}
+  B (post-recovery) : {'alpha': None, 'beta': None}
+  -> MATCH
+visible_at_now:
+  A (pre-crash)     : {'alpha': 'a5', 'beta': 'b4'}
+  B (post-recovery) : {'alpha': 'a5', 'beta': 'b4'}
+  -> MATCH
+version_count:
+  A (pre-crash)     : 11
+  B (post-recovery) : 11
+  -> MATCH
+overall: MATCH
