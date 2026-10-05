@@ -1,0 +1,294 @@
+{
+  "definition": "MUS = a constraint set S where S itself is unsatisfiable, but S\\{c} is satisfiable for every c in S (inclusion-minimal).",
+  "cases": [
+    {
+      "case": "no_conflict",
+      "constraint_count": 3,
+      "variable_count": 4,
+      "status": "no_conflict",
+      "truncated": false,
+      "witness": {
+        "y": 0,
+        "x": 0,
+        "z": -2,
+        "w": 0
+      },
+      "witness_satisfies_every_constraint": true
+    },
+    {
+      "case": "single_minimal_conflict",
+      "constraint_count": 3,
+      "variable_count": 3,
+      "status": "unsatisfiable",
+      "truncated": false,
+      "conflicts": [
+        {
+          "constraint_ids": [
+            "b",
+            "a",
+            "c"
+          ],
+          "size": 3,
+          "total_bound": -1,
+          "kind": "cycle",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "b",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0,
+                "z": -3
+              }
+            },
+            {
+              "removed_constraint": "a",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": -2,
+                "x": 0,
+                "z": -3
+              }
+            },
+            {
+              "removed_constraint": "c",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0,
+                "z": 0
+              }
+            }
+          ]
+        }
+      ],
+      "brute_force_reference_mus": [
+        [
+          "a",
+          "b",
+          "c"
+        ]
+      ],
+      "matches_brute_force_reference": true,
+      "cardinality_minimal_size": 3
+    },
+    {
+      "case": "multiple_disjoint_conflicts",
+      "constraint_count": 5,
+      "variable_count": 4,
+      "status": "unsatisfiable",
+      "truncated": false,
+      "conflicts": [
+        {
+          "constraint_ids": [
+            "c1",
+            "c2"
+          ],
+          "size": 2,
+          "total_bound": -1,
+          "kind": "cycle",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "c1",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": -2,
+                "x": 0
+              }
+            },
+            {
+              "removed_constraint": "c2",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0
+              }
+            }
+          ]
+        },
+        {
+          "constraint_ids": [
+            "c3",
+            "c4"
+          ],
+          "size": 2,
+          "total_bound": -1,
+          "kind": "cycle",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "c3",
+              "remaining_satisfiable": true,
+              "witness": {
+                "q": -2,
+                "p": 0
+              }
+            },
+            {
+              "removed_constraint": "c4",
+              "remaining_satisfiable": true,
+              "witness": {
+                "q": 0,
+                "p": 0
+              }
+            }
+          ]
+        }
+      ],
+      "brute_force_reference_mus": [
+        [
+          "c1",
+          "c2"
+        ],
+        [
+          "c3",
+          "c4"
+        ]
+      ],
+      "matches_brute_force_reference": true,
+      "cardinality_minimal_size": 2
+    },
+    {
+      "case": "multiple_overlapping_conflicts",
+      "constraint_count": 4,
+      "variable_count": 3,
+      "status": "unsatisfiable",
+      "truncated": false,
+      "conflicts": [
+        {
+          "constraint_ids": [
+            "e2",
+            "e1"
+          ],
+          "size": 2,
+          "total_bound": -1,
+          "kind": "cycle",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "e2",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0
+              }
+            },
+            {
+              "removed_constraint": "e1",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": -2,
+                "x": 0
+              }
+            }
+          ]
+        },
+        {
+          "constraint_ids": [
+            "e1",
+            "e3",
+            "e4"
+          ],
+          "size": 3,
+          "total_bound": -1,
+          "kind": "cycle",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "e1",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": -2,
+                "x": 0,
+                "z": -3
+              }
+            },
+            {
+              "removed_constraint": "e3",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0,
+                "z": 0
+              }
+            },
+            {
+              "removed_constraint": "e4",
+              "remaining_satisfiable": true,
+              "witness": {
+                "y": 0,
+                "x": 0,
+                "z": -3
+              }
+            }
+          ]
+        }
+      ],
+      "brute_force_reference_mus": [
+        [
+          "e1",
+          "e2"
+        ],
+        [
+          "e1",
+          "e3",
+          "e4"
+        ]
+      ],
+      "matches_brute_force_reference": true,
+      "cardinality_minimal_size": 2
+    },
+    {
+      "case": "self_contradictory_constraint",
+      "constraint_count": 2,
+      "variable_count": 2,
+      "status": "unsatisfiable",
+      "truncated": false,
+      "conflicts": [
+        {
+          "constraint_ids": [
+            "bad"
+          ],
+          "size": 1,
+          "total_bound": -1,
+          "kind": "self_contradiction",
+          "is_negative_cycle": true,
+          "is_simple_directed_cycle": true,
+          "every_single_removal_satisfiable": true,
+          "is_minimal": true,
+          "removal_checks": [
+            {
+              "removed_constraint": "bad",
+              "remaining_satisfiable": true,
+              "witness": {}
+            }
+          ]
+        }
+      ],
+      "brute_force_reference_mus": [
+        [
+          "bad"
+        ]
+      ],
+      "matches_brute_force_reference": true,
+      "cardinality_minimal_size": 1
+    }
+  ]
+}

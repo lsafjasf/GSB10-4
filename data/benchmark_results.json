@@ -1,0 +1,562 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count": 16,
+    "timestamp_utc": "2026-10-05T01:35:14Z"
+  },
+  "parameters": {
+    "variables": 1000,
+    "constraints": 10000,
+    "seed": 20261005,
+    "planted_cycle_length": 100,
+    "max_conflicts": 1
+  },
+  "scenarios": [
+    {
+      "scenario": "satisfiable",
+      "variables": 1000,
+      "constraints": 10000,
+      "status": "no_conflict",
+      "oracle_calls": 1,
+      "truncated": false,
+      "generation_s": 0.124907,
+      "solve_s": 0.262313,
+      "generation_tracemalloc_peak_mib": 3.968,
+      "solve_tracemalloc_peak_mib": 2.618,
+      "process_peak_rss_mib": 29.895,
+      "verification": {
+        "witness_checked_constraints": 10000
+      },
+      "verification_s": 0.002153,
+      "verification_tracemalloc_peak_mib": 0.0
+    },
+    {
+      "scenario": "unsatisfiable",
+      "variables": 1000,
+      "constraints": 10000,
+      "status": "unsatisfiable",
+      "oracle_calls": 1,
+      "truncated": true,
+      "generation_s": 0.125553,
+      "solve_s": 4.098244,
+      "generation_tracemalloc_peak_mib": 3.961,
+      "solve_tracemalloc_peak_mib": 2.636,
+      "process_peak_rss_mib": 29.941,
+      "unique_negative_cycle_proven": true,
+      "conflict": {
+        "size": 100,
+        "total_bound": -1,
+        "constraint_ids": [
+          "planted-21",
+          "planted-22",
+          "planted-23",
+          "planted-24",
+          "planted-25",
+          "planted-26",
+          "planted-27",
+          "planted-28",
+          "planted-29",
+          "planted-30",
+          "planted-31",
+          "planted-32",
+          "planted-33",
+          "planted-34",
+          "planted-35",
+          "planted-36",
+          "planted-37",
+          "planted-38",
+          "planted-39",
+          "planted-40",
+          "planted-41",
+          "planted-42",
+          "planted-43",
+          "planted-44",
+          "planted-45",
+          "planted-46",
+          "planted-47",
+          "planted-48",
+          "planted-49",
+          "planted-50",
+          "planted-51",
+          "planted-52",
+          "planted-53",
+          "planted-54",
+          "planted-55",
+          "planted-56",
+          "planted-57",
+          "planted-58",
+          "planted-59",
+          "planted-60",
+          "planted-61",
+          "planted-62",
+          "planted-63",
+          "planted-64",
+          "planted-65",
+          "planted-66",
+          "planted-67",
+          "planted-68",
+          "planted-69",
+          "planted-70",
+          "planted-71",
+          "planted-72",
+          "planted-73",
+          "planted-74",
+          "planted-75",
+          "planted-76",
+          "planted-77",
+          "planted-78",
+          "planted-79",
+          "planted-80",
+          "planted-81",
+          "planted-82",
+          "planted-83",
+          "planted-84",
+          "planted-85",
+          "planted-86",
+          "planted-87",
+          "planted-88",
+          "planted-89",
+          "planted-90",
+          "planted-91",
+          "planted-92",
+          "planted-93",
+          "planted-94",
+          "planted-95",
+          "planted-96",
+          "planted-97",
+          "planted-98",
+          "planted-99",
+          "planted-0",
+          "planted-1",
+          "planted-2",
+          "planted-3",
+          "planted-4",
+          "planted-5",
+          "planted-6",
+          "planted-7",
+          "planted-8",
+          "planted-9",
+          "planted-10",
+          "planted-11",
+          "planted-12",
+          "planted-13",
+          "planted-14",
+          "planted-15",
+          "planted-16",
+          "planted-17",
+          "planted-18",
+          "planted-19",
+          "planted-20"
+        ],
+        "matches_planted_cycle": true,
+        "removal_checks": [
+          {
+            "removed": "planted-21",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-22",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-23",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-24",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-25",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-26",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-27",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-28",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-29",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-30",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-31",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-32",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-33",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-34",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-35",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-36",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-37",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-38",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-39",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-40",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-41",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-42",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-43",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-44",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-45",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-46",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-47",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-48",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-49",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-50",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-51",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-52",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-53",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-54",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-55",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-56",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-57",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-58",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-59",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-60",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-61",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-62",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-63",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-64",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-65",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-66",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-67",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-68",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-69",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-70",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-71",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-72",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-73",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-74",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-75",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-76",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-77",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-78",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-79",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-80",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-81",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-82",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-83",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-84",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-85",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-86",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-87",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-88",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-89",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-90",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-91",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-92",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-93",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-94",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-95",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-96",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-97",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-98",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-99",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-0",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-1",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-2",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-3",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-4",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-5",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-6",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-7",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-8",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-9",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-10",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-11",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-12",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-13",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-14",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-15",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-16",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-17",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-18",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-19",
+            "remaining_satisfiable": true
+          },
+          {
+            "removed": "planted-20",
+            "remaining_satisfiable": true
+          }
+        ]
+      },
+      "verification_s": 0.283064,
+      "verification_tracemalloc_peak_mib": 0.537
+    }
+  ]
+}
