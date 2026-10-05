@@ -1,0 +1,44 @@
+回退结果（确定性回退的实际输出）
+============================================================
+
+数据集 partial_missing（前 12 条排序结果，含桶标注）
+排序键: [('a', False, 'last'), ('b', False, 'last')]
+  id=   7 a=0          bucket=present(可比值)
+  id=  87 a=0          bucket=present(可比值)
+  id=  88 a=0          bucket=present(可比值)
+  id=  99 a=0          bucket=present(可比值)
+  id= 119 a=0          bucket=present(可比值)
+  id= 186 a=0          bucket=present(可比值)
+  id= 135 a=0          bucket=present(可比值)
+  id= 169 a=0          bucket=present(可比值)
+  id= 194 a=0          bucket=present(可比值)
+  id=  90 a=0          bucket=present(可比值)
+  id=  98 a=0          bucket=present(可比值)
+  id= 148 a=0          bucket=present(可比值)
+规则：present < missing < incomparable（nulls='last'）；
+missing 桶内一律相等 -> 由下一级键、最终由原始下标裁决；
+incomparable 桶内按 (模块名, 类型名, repr) 全序键排序。
+
+数据集 incomparable（前 12 条排序结果，含桶标注）
+排序键: [('a', False, 'last'), ('id', False, 'last')]
+  id=  80 a=0          bucket=present(可比值)
+  id=  97 a=0          bucket=present(可比值)
+  id= 110 a=0          bucket=present(可比值)
+  id= 169 a=0          bucket=present(可比值)
+  id= 184 a=0          bucket=present(可比值)
+  id=  17 a=1          bucket=present(可比值)
+  id=  85 a=1          bucket=present(可比值)
+  id= 118 a=1          bucket=present(可比值)
+  id=  30 a=2          bucket=present(可比值)
+  id=  40 a=2          bucket=present(可比值)
+  id=  74 a=2          bucket=present(可比值)
+  id=  90 a=2          bucket=present(可比值)
+规则：present < missing < incomparable（nulls='last'）；
+missing 桶内一律相等 -> 由下一级键、最终由原始下标裁决；
+incomparable 桶内按 (模块名, 类型名, repr) 全序键排序。
+
+跨类型回退演示（int 与 str 混排）
+  升序: [(2, 2), (0, 10), (3, 'a'), (1, 'b')]
+  降序: [(1, 'b'), (3, 'a'), (0, 10), (2, 2)]
+  说明：同类型按自然序，跨类型按 (builtins, int|str, repr)，
+  降序反转该级完整全序（含回退序）。
