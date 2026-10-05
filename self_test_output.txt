@@ -1,0 +1,33 @@
+test_all_positive (__main__.TestBasicCases.test_all_positive) ... ok
+test_disconnected_source (__main__.TestBasicCases.test_disconnected_source) ... ok
+test_negative_edges_no_cycle (__main__.TestBasicCases.test_negative_edges_no_cycle) ... ok
+test_negative_self_loop_is_negative_cycle (__main__.TestBasicCases.test_negative_self_loop_is_negative_cycle) ... ok
+test_nonnegative_self_loop_not_misjudged (__main__.TestBasicCases.test_nonnegative_self_loop_not_misjudged) ... ok
+test_reachable_negative_cycle (__main__.TestBasicCases.test_reachable_negative_cycle) ... ok
+test_unreachable_negative_cycle (__main__.TestBasicCases.test_unreachable_negative_cycle) ... ok
+test_zero_weight_cycle_not_misjudged (__main__.TestBasicCases.test_zero_weight_cycle_not_misjudged) ... ok
+test_random_cross_check (__main__.TestCrossCheck.test_random_cross_check) ... ok
+test_early_check_does_not_misjudge_zero_cycle (__main__.TestEarlyCycleDetection.test_early_check_does_not_misjudge_zero_cycle) ... ok
+test_large_graph_early_exit (__main__.TestEarlyCycleDetection.test_large_graph_early_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.055s
+
+OK
+
+[可达负环] 环节点: [1, 2, 3], 环权: -3
+
+[不可达负环] 环节点: [3, 4], 环权: -3, 源点出发 dist=[0, 2, 5, inf, inf]
+
+[对拍] 200 个随机图（含负权边、无负环），逐点比较 6192 个距离值，不一致 0 处
+  图0: n=19 m=140 src=11
+    bellman_ford 前8点: [35, 27, 52, 59, 3, 6, 73, 61]
+    spfa_reference 前8点: [35, 27, 52, 59, 3, 6, 73, 61]
+  图1: n=57 m=162 src=5
+    bellman_ford 前8点: [58, 38, -8, 27, 24, 0, -27, inf]
+    spfa_reference 前8点: [58, 38, -8, 27, 24, 0, -27, inf]
+  图2: n=36 m=97 src=32
+    bellman_ford 前8点: [33, -25, -10, 18, 23, 27, -34, -43]
+    spfa_reference 前8点: [33, -25, -10, 18, 23, 27, -34, -43]
+
+[提前检测] n=3000 第 8 轮检出, 环 [1, 637, 2337, 1150, 1244, 588, 1971, 2204, 2, 0], 环权 -27
