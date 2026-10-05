@@ -1,0 +1,2 @@
+size= 1048465 bytes | change:  126.94 ms | python peak:   10.86 MB | process maxRSS + 18.21 MB | idempotent re-run:  15.20 ms (no write)
+size=16777131 bytes | change: 2414.62 ms | python peak:  172.70 MB | process maxRSS +277.94 MB | idempotent re-run: 358.17 ms (no write)

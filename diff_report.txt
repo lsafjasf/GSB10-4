@@ -1,0 +1,32 @@
+### pass 1: change host, workers, paths
+
+== pass 1 (three keys changed) ==
+  bytes: 261 -> 231 | equal bytes: 214 | changed regions: 5
+  [insert] old[70:70] b''
+       new[70:75] b'examp'
+  [insert] old[71:71] b''
+       new[76:79] b'e.c'
+  [replace] old[72:79] b'calhost'
+       new[80:81] b'm'
+  [replace] old[192:193] b'8'
+       new[194:196] b'16'
+  [replace] old[203:242] b'var/a \\\n        /var/b \\\n        /var/c'
+       new[206:212] b'single'
+
+### pass 2: identical operations again (idempotency check)
+
+  set_value() returned: [False, False, False] (False = file not even rewritten)
+== pass 2 (must be zero differences) ==
+  bytes: 231 -> 231 | equal bytes: 231 | changed regions: 0
+  files are byte-identical
+
+### resulting file
+
+  # demo config -- comments, blanks and indentation must survive
+  host = example.com   # primary host
+  port = 8080
+  
+  [server]
+  # workers = 4        <- commented-out key, must NOT be touched
+  workers = 16
+  paths = /single     # search path

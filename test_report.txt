@@ -1,0 +1,40 @@
+test_failure_before_replace_leaves_original (test_cfgrewrite.AtomicityTests.test_failure_before_replace_leaves_original) ... ok
+test_readonly_directory_fails_cleanly (test_cfgrewrite.AtomicityTests.test_readonly_directory_fails_cleanly) ... ok
+test_readonly_file_still_rewritten_mode_kept (test_cfgrewrite.AtomicityTests.test_readonly_file_still_rewritten_mode_kept) ... ok
+test_sigkill_mid_write_never_truncates (test_cfgrewrite.AtomicityTests.test_sigkill_mid_write_never_truncates)
+Simulate a power cut: SIGKILL the writer between temp-write and rename. ... ok
+test_second_run_byte_identical (test_cfgrewrite.IdempotencyTests.test_second_run_byte_identical) ... ok
+test_read_commented_key_ignored (test_cfgrewrite.ReadTests.test_read_commented_key_ignored) ... ok
+test_read_continuation (test_cfgrewrite.ReadTests.test_read_continuation) ... ok
+test_read_duplicate_last_wins (test_cfgrewrite.ReadTests.test_read_duplicate_last_wins) ... ok
+test_read_missing (test_cfgrewrite.ReadTests.test_read_missing) ... ok
+test_read_section (test_cfgrewrite.ReadTests.test_read_section) ... ok
+test_read_simple (test_cfgrewrite.ReadTests.test_read_simple) ... ok
+test_read_strips_inline_comment (test_cfgrewrite.ReadTests.test_read_strips_inline_comment) ... ok
+test_empty_key (test_cfgrewrite.SyntaxErrorTests.test_empty_key) ... ok
+test_empty_section_name (test_cfgrewrite.SyntaxErrorTests.test_empty_section_name) ... ok
+test_error_reports_reason (test_cfgrewrite.SyntaxErrorTests.test_error_reports_reason) ... ok
+test_junk_after_section (test_cfgrewrite.SyntaxErrorTests.test_junk_after_section) ... ok
+test_line_without_equals (test_cfgrewrite.SyntaxErrorTests.test_line_without_equals) ... ok
+test_unterminated_section (test_cfgrewrite.SyntaxErrorTests.test_unterminated_section) ... ok
+test_bad_duplicate_policy (test_cfgrewrite.ValueConstraintTests.test_bad_duplicate_policy) ... ok
+test_bad_keys (test_cfgrewrite.ValueConstraintTests.test_bad_keys) ... ok
+test_commented_out_keys_untouched (test_cfgrewrite.WriteTests.test_commented_out_keys_untouched) ... ok
+test_continuation_value_collapsed_comment_kept (test_cfgrewrite.WriteTests.test_continuation_value_collapsed_comment_kept) ... ok
+test_crlf_preserved (test_cfgrewrite.WriteTests.test_crlf_preserved) ... ok
+test_duplicate_all_first_last_error (test_cfgrewrite.WriteTests.test_duplicate_all_first_last_error) ... ok
+test_invalid_value_rejected_before_write (test_cfgrewrite.WriteTests.test_invalid_value_rejected_before_write) ... ok
+test_key_case_preserved_and_case_sensitive (test_cfgrewrite.WriteTests.test_key_case_preserved_and_case_sensitive) ... ok
+test_key_not_found_no_write (test_cfgrewrite.WriteTests.test_key_not_found_no_write) ... ok
+test_no_comments_only_value_bytes_change (test_cfgrewrite.WriteTests.test_no_comments_only_value_bytes_change) ... ok
+test_no_trailing_newline (test_cfgrewrite.WriteTests.test_no_trailing_newline) ... ok
+test_section_targeting (test_cfgrewrite.WriteTests.test_section_targeting) ... ok
+test_syntax_error_no_partial_write (test_cfgrewrite.WriteTests.test_syntax_error_no_partial_write) ... ok
+test_trailing_comment_and_spacing_preserved (test_cfgrewrite.WriteTests.test_trailing_comment_and_spacing_preserved) ... ok
+test_trailing_whitespace_after_value_preserved (test_cfgrewrite.WriteTests.test_trailing_whitespace_after_value_preserved) ... ok
+test_value_with_hash_no_space_ok (test_cfgrewrite.WriteTests.test_value_with_hash_no_space_ok) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.575s
+
+OK
