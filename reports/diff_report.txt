@@ -1,0 +1,32 @@
+null_join vs sqlite3 逐行对拍报告
+对拍总例数: 30
+both_all_null  anti  行数 库=   20 参考=   20 sha256=一致
+both_all_null  full  行数 库=   40 参考=   40 sha256=一致
+both_all_null  inner 行数 库=    0 参考=    0 sha256=一致
+both_all_null  left  行数 库=   20 参考=   20 sha256=一致
+both_all_null  right 行数 库=   20 参考=   20 sha256=一致
+both_all_null  semi  行数 库=    0 参考=    0 sha256=一致
+left_all_null  anti  行数 库=   40 参考=   40 sha256=一致
+left_all_null  full  行数 库=  100 参考=  100 sha256=一致
+left_all_null  inner 行数 库=    0 参考=    0 sha256=一致
+left_all_null  left  行数 库=   40 参考=   40 sha256=一致
+left_all_null  right 行数 库=   60 参考=   60 sha256=一致
+left_all_null  semi  行数 库=    0 参考=    0 sha256=一致
+mixed          anti  行数 库=  107 参考=  107 sha256=一致
+mixed          full  行数 库= 3607 参考= 3607 sha256=一致
+mixed          inner 行数 库= 3415 参考= 3415 sha256=一致
+mixed          left  行数 库= 3522 参考= 3522 sha256=一致
+mixed          right 行数 库= 3500 参考= 3500 sha256=一致
+mixed          semi  行数 库=  193 参考=  193 sha256=一致
+no_null        anti  行数 库=   16 参考=   16 sha256=一致
+no_null        full  行数 库=  456 参考=  456 sha256=一致
+no_null        inner 行数 库=  440 参考=  440 sha256=一致
+no_null        left  行数 库=  456 参考=  456 sha256=一致
+no_null        right 行数 库=  440 参考=  440 sha256=一致
+no_null        semi  行数 库=   44 参考=   44 sha256=一致
+partial_null   anti  行数 库=   32 参考=   32 sha256=一致
+partial_null   full  行数 库=  773 参考=  773 sha256=一致
+partial_null   inner 行数 库=  705 参考=  705 sha256=一致
+partial_null   left  行数 库=  737 参考=  737 sha256=一致
+partial_null   right 行数 库=  741 参考=  741 sha256=一致
+partial_null   semi  行数 库=   88 参考=   88 sha256=一致
