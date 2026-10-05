@@ -1,0 +1,16 @@
+生产/消费并发压测结果
+============================================================
+校验方式: 消费者对每个字节按全局偏移核对 f(i)=(i*2654435761+7)&0xFF;
+          任何覆盖未读数据/错位/丢失都会触发 AssertionError。
+
+round1: total=8.0MiB cap=4096 write<= 700B read<= 500B -> PASS (1.486s, 5.4 MiB/s)
+round2: total=8.0MiB cap=1024 write<= 4096B read<= 333B -> PASS (2.253s, 3.6 MiB/s)
+round3: total=4.0MiB cap=17 write<= 50B read<= 13B -> PASS (29.323s, 0.1 MiB/s)
+
+multi-pair: 4 个独立 RingBuffer x (生产者+消费者), 每对 2 MiB
+    pair0: PASS (3.471s)
+    pair1: PASS (3.471s)
+    pair2: PASS (3.472s)
+    pair3: PASS (3.470s)
+
+OVERALL: PASS - 未读数据从未被覆盖，字节流零错位零丢失
