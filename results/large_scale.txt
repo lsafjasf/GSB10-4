@@ -1,0 +1,13 @@
+variables: 10000
+edges(pairwise): 100000
+factors: 110000 (10000 一元 + 100000 成对)
+build_time_sec: 0.350
+inference_time_sec: 45.236
+sec_per_iteration: 1.190
+total_time_sec: 45.586
+iterations: 38
+status: converged
+final_residual: 8.644420e-10
+rss_after_build_mb: 88.1
+peak_rss_mb: 268.6
+all_beliefs_valid: True
