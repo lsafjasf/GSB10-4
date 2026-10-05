@@ -1,0 +1,7 @@
+{
+  "readers": 8,
+  "switches": 100,
+  "total_reads": 24731076,
+  "mixed_version_reads": 0,
+  "final_version": 100
+}

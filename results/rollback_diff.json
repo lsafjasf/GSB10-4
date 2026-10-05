@@ -1,0 +1,58 @@
+{
+  "before_rollback": {
+    "version": 5,
+    "data": {
+      "k00": "v000001",
+      "shared": "v000005",
+      "k01": "v000002",
+      "k02": "v000003",
+      "k03": "v000004",
+      "k04": "v000005"
+    }
+  },
+  "expected_target_v2": {
+    "version": 2,
+    "data": {
+      "k00": "v000001",
+      "shared": "v000002",
+      "k01": "v000002"
+    }
+  },
+  "after_rollback": {
+    "version": 2,
+    "data": {
+      "k00": "v000001",
+      "k01": "v000002",
+      "shared": "v000002"
+    }
+  },
+  "changed_keys_v5_to_v2": {
+    "k02": {
+      "v5_value": "v000003",
+      "v2_value": null
+    },
+    "k03": {
+      "v5_value": "v000004",
+      "v2_value": null
+    },
+    "k04": {
+      "v5_value": "v000005",
+      "v2_value": null
+    },
+    "shared": {
+      "v5_value": "v000005",
+      "v2_value": "v000002"
+    }
+  },
+  "rollback_matches_expected": true,
+  "history_versions_preserved": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "roll_forward_to_v4_matches": true,
+  "durable_after_reopen_matches": true,
+  "next_new_version_after_rollback": 6
+}

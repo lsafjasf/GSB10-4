@@ -1,0 +1,12 @@
+{
+  "before_pointer": {
+    "recovered_version": 0,
+    "state": "old(v0)",
+    "recovered_reads_consistent": true
+  },
+  "after_pointer_rename": {
+    "recovered_version": 1,
+    "state": "new(v1)",
+    "recovered_reads_consistent": true
+  }
+}

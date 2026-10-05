@@ -1,0 +1,30 @@
+{
+  "config": {
+    "reads": 1000000,
+    "switches": 1000,
+    "keys_per_version": 100,
+    "python": "3.12.3"
+  },
+  "A_pure_reads_1M": {
+    "reads": 1000000,
+    "seconds": 1.456,
+    "reads_per_sec": 686579,
+    "python_alloc_peak_mb": 0.0,
+    "process_peak_rss_mb": 33.5
+  },
+  "B_pure_switches_1000": {
+    "switches": 1000,
+    "seconds": 6.318,
+    "switches_per_sec": 158.3,
+    "python_alloc_peak_mb": 0.14,
+    "process_peak_rss_mb": 33.5
+  },
+  "C_interleaved_1M_reads_1000_switches": {
+    "reads": 1000000,
+    "switches": 1000,
+    "seconds": 8.581,
+    "python_alloc_peak_mb": 0.22,
+    "process_peak_rss_mb": 33.5
+  },
+  "final_version": 2001
+}

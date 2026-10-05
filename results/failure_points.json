@@ -1,0 +1,17 @@
+{
+  "before_version_file": {
+    "memory_version": 2,
+    "disk_version": 2,
+    "state": "old(v2)"
+  },
+  "after_version_file": {
+    "memory_version": 2,
+    "disk_version": 2,
+    "state": "old(v2)"
+  },
+  "after_pointer": {
+    "memory_version": 3,
+    "disk_version": 3,
+    "state": "new(v3)"
+  }
+}
