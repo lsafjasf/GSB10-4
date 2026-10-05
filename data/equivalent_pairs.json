@@ -1,0 +1,67 @@
+{
+  "description": "Pairs of requests that are semantically equivalent and MUST produce identical cache keys.",
+  "pairs": [
+    {
+      "id": "EQ-01-name-case-and-order",
+      "why": "Header names are case-insensitive; field order on the wire is irrelevant.",
+      "a": [["Accept", "application/json"], ["Accept-Encoding", "gzip"]],
+      "b": [["accept-encoding", "gzip"], ["ACCEPT", "application/json"]]
+    },
+    {
+      "id": "EQ-02-repeated-field-vs-csv",
+      "why": "RFC 7230 3.2.2: repeated field lines are equivalent to a comma-joined value (token_list).",
+      "a": [["Accept", "text/html"], ["Accept", "application/json"]],
+      "b": [["Accept", "text/html, application/json"]]
+    },
+    {
+      "id": "EQ-03-element-ows-around-commas",
+      "why": "Optional whitespace around list commas is insignificant.",
+      "a": [["Accept", "text/html,application/json"]],
+      "b": [["Accept", "  text/html ,  application/json  "]]
+    },
+    {
+      "id": "EQ-04-token-case-insensitive-codings",
+      "why": "Accept-Encoding codings are RFC tokens and case-insensitive; token_set ignores order.",
+      "a": [["Accept-Encoding", "gzip, deflate, br"]],
+      "b": [["Accept-Encoding", "GZIP,  BR , Deflate"]]
+    },
+    {
+      "id": "EQ-05-content-type-media-type-case",
+      "why": "The media TYPE is case-insensitive; no parameters are present here.",
+      "a": [["Content-Type", "application/json"]],
+      "b": [["Content-Type", "Application/JSON"]]
+    },
+    {
+      "id": "EQ-06-raw-policy-trims-only-surrounding-ows",
+      "why": "raw policy strips leading/trailing OWS but preserves inner content, so both sides are identical after trim.",
+      "a": [["Cookie", "sid=abc; theme=dark"]],
+      "b": [["Cookie", "   sid=abc; theme=dark  "]]
+    },
+    {
+      "id": "EQ-07-tab-and-space-ows-equivalent",
+      "why": "SP and HTAB are both OWS and are both stripped at element boundaries.",
+      "a": [["Accept-Language", "en-US, zh-CN"]],
+      "b": [["Accept-Language", "\ten-US\t,\tzh-CN\t"]]
+    },
+    {
+      "id": "EQ-08-trailing-comma-and-empty-elements",
+      "why": "Empty list elements are not values; trailing/stray commas carry no semantics.",
+      "a": [["Accept", "text/html, application/json"]],
+      "b": [["Accept", "text/html, , application/json,"]]
+    },
+    {
+      "id": "EQ-09-unlisted-headers-ignored",
+      "why": "Headers outside the allow-list (X-Trace-Id, User-Agent) do not participate.",
+      "a": [["Accept", "application/json"], ["X-Trace-Id", "111"]],
+      "b": [["Accept", "application/json"], ["User-Agent", "curl/8"]]
+    },
+    {
+      "id": "EQ-10-quoted-string-comma-is-not-a-separator",
+      "why": "Commas inside quoted-strings are data; both requests contain the same single quoted element plus token c.",
+      "participating": ["x-custom-list"],
+      "policies": {"x-custom-list": "token_list"},
+      "a": [["X-Custom-List", "\"a,b\", c"]],
+      "b": [["X-Custom-List", "\"a,b\",c"]]
+    }
+  ]
+}

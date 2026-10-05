@@ -1,0 +1,71 @@
+{
+  "description": "Pairs of requests that are semantically DIFFERENT and MUST produce distinct cache keys. Every one of these would be wrongly merged by a naive normalizer.",
+  "pairs": [
+    {
+      "id": "NE-01-raw-value-case-is-significant",
+      "why": "Credentials are case-sensitive. A raw policy must never lowercase values; 'Bearer ABC' != 'Bearer abc'.",
+      "a": [["Authorization", "Bearer ABC"]],
+      "b": [["Authorization", "Bearer abc"]]
+    },
+    {
+      "id": "NE-02-list-order-is-significant-with-token_list",
+      "why": "Accept uses order as preference. token_list preserves order; only true sets (Accept-Encoding) use token_set.",
+      "a": [["Accept", "text/html, application/json"]],
+      "b": [["Accept", "application/json, text/html"]]
+    },
+    {
+      "id": "NE-03-content-type-parameter-value",
+      "why": "Only the media type is case-folded; parameter bytes are preserved, so utf-8 != utf-16.",
+      "a": [["Content-Type", "text/plain; charset=utf-8"]],
+      "b": [["Content-Type", "text/plain; charset=utf-16"]]
+    },
+    {
+      "id": "NE-04-quoted-string-case-preserved",
+      "why": "Case-folding applies to bare RFC tokens only. Text inside quoted-strings is opaque: \"Hello\" != \"hello\".",
+      "participating": ["x-thing"],
+      "policies": {"x-thing": "token_list"},
+      "a": [["X-Thing", "\"Hello\""]],
+      "b": [["X-Thing", "\"hello\""]]
+    },
+    {
+      "id": "NE-05-present-vs-absent",
+      "why": "A request sending Accept-Encoding: gzip differs from one sending no Accept-Encoding at all.",
+      "a": [["Accept-Encoding", "gzip"]],
+      "b": []
+    },
+    {
+      "id": "NE-06-present-empty-vs-absent",
+      "why": "An empty field line is still a field (0 elements vs absent); the length-framed encoding keeps them apart.",
+      "a": [["Cookie", ""]],
+      "b": []
+    },
+    {
+      "id": "NE-07-set-membership",
+      "why": "token_set ignores order/duplicates but never membership: one coding vs two codings stay distinct.",
+      "a": [["Accept-Encoding", "gzip"]],
+      "b": [["Accept-Encoding", "gzip, identity"]]
+    },
+    {
+      "id": "NE-08-repeated-fields-vs-one-quoted-value",
+      "why": "Two raw field lines 'a' then 'b' merge to a,b and must never collide with one line whose value is the literal \"a,b\".",
+      "participating": ["x-raw"],
+      "policies": {"x-raw": "raw"},
+      "a": [["X-Raw", "a"], ["X-Raw", "b"]],
+      "b": [["X-Raw", "\"a,b\""]]
+    },
+    {
+      "id": "NE-09-comma-inside-quotes-is-not-a-delimiter",
+      "why": "One quoted element \"gzip, deflate\" is a different request from two elements gzip / deflate. Naive comma-splitting merges them.",
+      "participating": ["x-codings"],
+      "policies": {"x-codings": "token_list"},
+      "a": [["X-Codings", "\"gzip, deflate\""]],
+      "b": [["X-Codings", "gzip, deflate"]]
+    },
+    {
+      "id": "NE-10-different-media-types",
+      "why": "application/json and application/xml are different representations.",
+      "a": [["Content-Type", "application/json"]],
+      "b": [["Content-Type", "application/xml"]]
+    }
+  ]
+}
