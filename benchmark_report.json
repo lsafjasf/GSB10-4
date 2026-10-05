@@ -1,0 +1,28 @@
+{
+  "build_seconds": 0.3701432919988292,
+  "exact_rules": 45000,
+  "expected_result_mismatches_first_load": 0,
+  "index_bytes": 61708227,
+  "index_mib": 58.8495512008667,
+  "matching_seconds": 1.0474733490009385,
+  "memory_walk_seconds": 0.5760740030018496,
+  "order_invariance_mismatches": 0,
+  "order_invariance_queries": 100000,
+  "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "priorities": 20,
+  "python": "3.12.3",
+  "queries": 100000,
+  "result_counts": {
+    "conflicts": 0,
+    "matched": 94929,
+    "no_match": 5071
+  },
+  "rules": 50000,
+  "shuffled_load_seeds": [
+    12345,
+    67890
+  ],
+  "throughput_queries_per_second": 95467.8227330349,
+  "trie_nodes": 110640,
+  "wildcard_rules": 5000
+}
