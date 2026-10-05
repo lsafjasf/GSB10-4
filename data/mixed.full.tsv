@@ -1,0 +1,12 @@
+# c0	c1	c2	c3
+k1	10	k1	X
+k1	10	k1	Z
+\N	20	\N	\N
+k2	30	\N	\N
+k1	40	k1	X
+k1	40	k1	Z
+\N	50	\N	\N
+k3	60	\N	\N
+\N	\N	\N	Y
+\N	\N	k9	W
+\N	\N	\N	V
