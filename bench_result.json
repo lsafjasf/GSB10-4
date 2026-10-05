@@ -1,0 +1,48 @@
+{
+  "graph": {
+    "edges_after_dedup": 1000867,
+    "duplicates_skipped": 10247,
+    "nodes": 10005,
+    "chain_depth": 10000
+  },
+  "recursive_query": {
+    "max_depth": 10000,
+    "shape": "cycle+depth_limit",
+    "emitted_nodes": 10001,
+    "cycles": [
+      [
+        2
+      ]
+    ],
+    "truncated": [
+      {
+        "node": 10004,
+        "depth": 10001
+      }
+    ]
+  },
+  "find_all_cycles": {
+    "cycles": [
+      [
+        2
+      ],
+      [
+        10001,
+        10002,
+        10003
+      ]
+    ],
+    "seconds": 0.221
+  },
+  "timing_seconds": {
+    "build_graph": 1.271,
+    "recursive_query": 0.995,
+    "total_query_only": 2.287
+  },
+  "memory_mb": {
+    "peak_rss_after_build": 113.1,
+    "peak_rss_total": 113.1,
+    "python_alloc_peak_during_query": 1.9
+  },
+  "python": "3.12.3"
+}

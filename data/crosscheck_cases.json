@@ -1,0 +1,81 @@
+{
+  "comment": "手工构造图（8 字形双环相交 + 自环 + 重复边 + 不可达环）。expected 为手工推导结果，测试断言库输出与其逐字节一致。行内标记：CYCLE[...]=环元素，TRUNC(n,d)=深度裁剪元素。",
+  "graph": {
+    "edges": [
+      [0, 1], [1, 2], [2, 3], [3, 0],
+      [2, 4], [4, 5], [5, 2],
+      [5, 5],
+      [1, 2],
+      [6, 7], [7, 6]
+    ],
+    "note": "环A=0-1-2-3-0，环B=2-4-5-2，自环=5-5，重复边=1->2 出现两次，6<->7 从根 0 不可达"
+  },
+  "cases": [
+    {
+      "name": "full_query_from_0",
+      "roots": [0],
+      "max_depth": null,
+      "expected": {
+        "shape": "cycle",
+        "rows": [0, 1, 2, 3, "CYCLE[0,1,2,3]", 4, 5, "CYCLE[2,4,5]", "CYCLE[5]"],
+        "cycles": [[0, 1, 2, 3], [2, 4, 5], [5]],
+        "truncated": [],
+        "duplicates_skipped": 1,
+        "unreachable": false
+      }
+    },
+    {
+      "name": "depth_limit_only",
+      "roots": [0],
+      "max_depth": 2,
+      "expected": {
+        "shape": "depth_limit",
+        "rows": [0, 1, 2, "TRUNC(3,3)", "TRUNC(4,3)"],
+        "cycles": [],
+        "truncated": [{"node": 3, "depth": 3}, {"node": 4, "depth": 3}],
+        "duplicates_skipped": 1,
+        "unreachable": false
+      }
+    },
+    {
+      "name": "cycle_and_depth_limit",
+      "roots": [0],
+      "max_depth": 3,
+      "expected": {
+        "shape": "cycle+depth_limit",
+        "rows": [0, 1, 2, 3, "CYCLE[0,1,2,3]", 4, "TRUNC(5,4)"],
+        "cycles": [[0, 1, 2, 3]],
+        "truncated": [{"node": 5, "depth": 4}],
+        "duplicates_skipped": 1,
+        "unreachable": false
+      }
+    },
+    {
+      "name": "no_reachable_path",
+      "roots": [9],
+      "max_depth": null,
+      "expected": {
+        "shape": "ok",
+        "rows": [9],
+        "cycles": [],
+        "truncated": [],
+        "duplicates_skipped": 1,
+        "unreachable": true
+      }
+    },
+    {
+      "name": "self_loop_root_zero_depth",
+      "roots": [5],
+      "max_depth": 0,
+      "expected": {
+        "shape": "cycle+depth_limit",
+        "rows": [5, "TRUNC(2,1)", "CYCLE[5]"],
+        "cycles": [[5]],
+        "truncated": [{"node": 2, "depth": 1}],
+        "duplicates_skipped": 1,
+        "unreachable": false
+      }
+    }
+  ],
+  "all_cycles_expected": [[0, 1, 2, 3], [2, 4, 5], [5], [6, 7]]
+}
