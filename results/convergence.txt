@@ -1,0 +1,7 @@
+order,sha1_of_snapshot,identical_to_inorder
+in-order,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True
+shuffle-0,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True
+shuffle-1,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True
+shuffle-2,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True
+shuffle-3,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True
+shuffle-4,a98fe77f5ea8c4fb49538c41eeb6099c3c91b60a,True

@@ -1,0 +1,7 @@
+python=3.12.3
+nodes=1000 updates=1000000
+elapsed_sec=5.151
+updates_per_sec=194131
+tracemalloc_peak_mib=1.10
+process_maxrss_mib=21.35
+verdicts={'NEW': 950146, 'DUPLICATE': 40011, 'STALE_MERGED': 1796, 'EXPIRED': 8047}
