@@ -1,0 +1,87 @@
+======================================================================
+1) FULL JITTER DISTRIBUTION
+   formula: delay = rand() * min(cap, base * 2**attempt)
+   base=0.1s, cap=5.0s, rand~U[0,1), samples=100000, seed=42
+
+attempt=0: limit=min(5.0, 0.1) = 0.1s   bounds=[0, 0.1)   E[delay]=0.05s   observed mean=0.050014s
+               range (s) |   count | bar
+  [   0.0000,    0.0100) |   10049 | #####
+  [   0.0100,    0.0200) |   10107 | #####
+  [   0.0200,    0.0300) |    9826 | #####
+  [   0.0300,    0.0400) |    9981 | #####
+  [   0.0400,    0.0500) |    9971 | #####
+  [   0.0500,    0.0600) |    9936 | #####
+  [   0.0600,    0.0700) |   10142 | #####
+  [   0.0700,    0.0800) |    9985 | #####
+  [   0.0800,    0.0900) |    9927 | #####
+  [   0.0900,    0.1000) |   10076 | #####
+
+attempt=1: limit=min(5.0, 0.2) = 0.2s   bounds=[0, 0.2)   E[delay]=0.1s   observed mean=0.100029s
+               range (s) |   count | bar
+  [   0.0000,    0.0200) |   10049 | #####
+  [   0.0200,    0.0400) |   10107 | #####
+  [   0.0400,    0.0600) |    9826 | #####
+  [   0.0600,    0.0800) |    9981 | #####
+  [   0.0800,    0.1000) |    9971 | #####
+  [   0.1000,    0.1200) |    9936 | #####
+  [   0.1200,    0.1400) |   10142 | #####
+  [   0.1400,    0.1600) |    9985 | #####
+  [   0.1600,    0.1800) |    9927 | #####
+  [   0.1800,    0.2000) |   10076 | #####
+
+attempt=2: limit=min(5.0, 0.4) = 0.4s   bounds=[0, 0.4)   E[delay]=0.2s   observed mean=0.200058s
+               range (s) |   count | bar
+  [   0.0000,    0.0400) |   10049 | #####
+  [   0.0400,    0.0800) |   10107 | #####
+  [   0.0800,    0.1200) |    9826 | #####
+  [   0.1200,    0.1600) |    9981 | #####
+  [   0.1600,    0.2000) |    9971 | #####
+  [   0.2000,    0.2400) |    9936 | #####
+  [   0.2400,    0.2800) |   10142 | #####
+  [   0.2800,    0.3200) |    9985 | #####
+  [   0.3200,    0.3600) |    9927 | #####
+  [   0.3600,    0.4000) |   10076 | #####
+
+attempt=6: limit=min(5.0, 6.4) = 5s   bounds=[0, 5)   E[delay]=2.5s   observed mean=2.500721s
+               range (s) |   count | bar
+  [   0.0000,    0.5000) |   10049 | #####
+  [   0.5000,    1.0000) |   10107 | #####
+  [   1.0000,    1.5000) |    9826 | #####
+  [   1.5000,    2.0000) |    9981 | #####
+  [   2.0000,    2.5000) |    9971 | #####
+  [   2.5000,    3.0000) |    9936 | #####
+  [   3.0000,    3.5000) |   10142 | #####
+  [   3.5000,    4.0000) |    9985 | #####
+  [   4.0000,    4.5000) |    9927 | #####
+  [   4.5000,    5.0000) |   10076 | #####
+
+======================================================================
+2) REPRODUCIBLE JITTER SEQUENCE (seed=42, first 10 retries)
+  retry  0 (limit  0.1s): 0.06394267984578837  run2=0.06394267984578837  identical=True
+  retry  1 (limit  0.2s): 0.00500215104453339  run2=0.00500215104453339  identical=True
+  retry  2 (limit  0.4s): 0.11001172734764771  run2=0.11001172734764771  identical=True
+  retry  3 (limit  0.8s): 0.17856859051905821  run2=0.17856859051905821  identical=True
+  retry  4 (limit  1.6s): 1.17835394266241988  run2=1.17835394266241988  identical=True
+  retry  5 (limit  3.2s): 2.16543835975331644  run2=2.16543835975331644  identical=True
+  retry  6 (limit  5.0s): 4.46089783852422705  run2=4.46089783852422705  identical=True
+  retry  7 (limit  5.0s): 0.43469416314708076  run2=0.43469416314708076  identical=True
+  retry  8 (limit  5.0s): 2.10960909842635225  run2=2.10960909842635225  identical=True
+  retry  9 (limit  5.0s): 0.14898609719035172  run2=0.14898609719035172  identical=True
+
+======================================================================
+3) BENCHMARK: 1,000,000 retries (time injected, zero wall waiting)
+  retry sleeps (jitter computed+awaited): 1,000,000
+  execute() calls: 1,000,000  fn invocations: 2,000,000
+  wall time: 22.894 s (43,679 retries/s)
+  Python object peak (tracemalloc): 0.28 MiB
+  process RSS peak (ru_maxrss): 28.5 MiB (before run 28.5 MiB)
+  simulated jitter time that real wall would have spent: 50,001.5 s
+
+======================================================================
+4) DEDUP STATISTICS (1000 concurrent callers, 1 key)
+  submitted: 1000
+  fn actually executed: 1
+  executed outcomes: 1
+  merged (duplicate requests folded): 999  == stats.merged=999
+  saved fn executions: 999 / 1000 (100% of traffic)
+
