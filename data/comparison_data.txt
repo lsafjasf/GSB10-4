@@ -1,0 +1,19 @@
+空值比较：本库 vs 参考实现 SQLite（逐例对照）
+
+表达式           本库        SQLite    一致
+------------------------------------------
+NULL = NULL   U         U         OK
+NULL <> NULL  U         U         OK
+NULL = 1      U         U         OK
+1 = NULL      U         U         OK
+NULL < 1      U         U         OK
+NULL <> 'x'   U         U         OK
+1 = 1         T         T         OK
+1 = 2         F         F         OK
+1 < 2         T         T         OK
+
+结论：全部一致
+
+补充：IS NULL / IS NOT NULL 永不返回 UNKNOWN
+NULL IS NULL  
+  本库=T  SQLite=T

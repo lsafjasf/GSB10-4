@@ -1,0 +1,44 @@
+三值逻辑真值表（T=TRUE, F=FALSE, U=UNKNOWN）
+
+NOT:
+
+  a | NOT a
+  ---+------
+  T | F
+  F | T
+  U | U
+
+AND（FALSE 主导）:
+
+  a b | a AND b
+  ----+--------
+  T T | T
+  T F | F
+  T U | U
+  F T | F
+  F F | F
+  F U | F
+  U T | U
+  U F | F
+  U U | U
+
+OR（TRUE 主导）:
+
+  a b | a OR b
+  ----+-------
+  T T | T
+  T F | T
+  T U | T
+  F T | T
+  F F | F
+  F U | U
+  U T | T
+  U F | U
+  U U | U
+
+关键性质：
+  NOT U = U      （UNKNOWN 不是 FALSE，双重否定不会凭空变真）
+  U AND F = F    （FALSE 决定）
+  U OR  T = T    （TRUE 决定）
+  U AND U = U    （依然未知）
+  U OR  F = U

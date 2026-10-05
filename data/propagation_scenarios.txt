@@ -1,0 +1,14 @@
+UNKNOWN 在过滤 / 连接 / 聚合中的传递（逐一验证）
+
+WHERE a > 15:
+  id=1 -> FALSE 丢弃；id=2 -> UNKNOWN 丢弃；id=3 -> TRUE 保留
+  本库保留: [3]
+WHERE NOT (a > 15):
+  id=1 -> TRUE 保留；id=2 -> NOT UNKNOWN = UNKNOWN 丢弃；id=3 -> FALSE 丢弃
+  本库保留: [1]
+
+JOIN ON l.k = r.k（两表 k 各为 1, NULL）
+  配对数: 1（NULL=NULL 为 UNKNOWN，不配对；只保留 1=1）
+
+聚合：COUNT(*) 不看 NULL；COUNT(a)/SUM/AVG/MIN/MAX 跳过 NULL；
+      全 NULL 列时 SUM/AVG/MIN/MAX = NULL，COUNT = 0

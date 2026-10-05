@@ -1,0 +1,17 @@
+空值在分组 / 去重 / 排序中的位置（可复算）
+
+1) GROUP BY g（输入 5 行，g 取值 1, NULL, NULL, 1, NULL）
+   结果：3 个 NULL 键落入同一组
+   g       count(*)  sum(v)
+   1       2         50
+   NULL    3         100
+
+2) DISTINCT x（输入序列：NULL, NULL, 1, 1, NULL, 2）
+   结果（3 行）: NULL, 1, 2   <- 所有 NULL 合并为一个
+
+3) ORDER BY x（输入：3, NULL, 1, NULL, 2，NULL 以两个独立行出现）
+   ASC  NULLS LAST   : 1, 2, 3, NULL, NULL
+   ASC  NULLS FIRST  : NULL, NULL, 1, 2, 3
+   DESC NULLS LAST   : 3, 2, 1, NULL, NULL
+   DESC NULLS FIRST  : NULL, NULL, 3, 2, 1
+   （组内稳定：同值按输入 id 先后，两个 NULL 的相对顺序保持 2 在 4 前）
