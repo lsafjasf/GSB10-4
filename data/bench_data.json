@@ -1,0 +1,88 @@
+{
+ "spec": {
+  "states": 10000,
+  "transitions": 50000,
+  "inputs": 8
+ },
+ "runs": [
+  {
+   "seed": 1,
+   "states": 10000,
+   "transitions": 50000,
+   "reachable": 9916,
+   "unreachable": 84,
+   "missing_transitions": 30000,
+   "equivalence_classes": 9912,
+   "multi_state_classes": 1,
+   "certificate_valid": true,
+   "times_sec": {
+    "build_random_machine": 0.506,
+    "reachability": 0.023,
+    "unreachable": 0.023,
+    "missing_scan": 0.027,
+    "partition_refinement": 0.218,
+    "certificate_verify": 0.016,
+    "total": 0.817
+   },
+   "peak_memory": {
+    "tracemalloc_bytes": 18670501,
+    "tracemalloc_mib": 17.81,
+    "maxrss_kib": 56328,
+    "maxrss_mib": 55.0
+   }
+  },
+  {
+   "seed": 2,
+   "states": 10000,
+   "transitions": 50000,
+   "reachable": 9913,
+   "unreachable": 87,
+   "missing_transitions": 30000,
+   "equivalence_classes": 9912,
+   "multi_state_classes": 1,
+   "certificate_valid": true,
+   "times_sec": {
+    "build_random_machine": 0.477,
+    "reachability": 0.024,
+    "unreachable": 0.024,
+    "missing_scan": 0.024,
+    "partition_refinement": 0.22,
+    "certificate_verify": 0.018,
+    "total": 0.792
+   },
+   "peak_memory": {
+    "tracemalloc_bytes": 18580347,
+    "tracemalloc_mib": 17.72,
+    "maxrss_kib": 56328,
+    "maxrss_mib": 55.0
+   }
+  },
+  {
+   "seed": 3,
+   "states": 10000,
+   "transitions": 50000,
+   "reachable": 9913,
+   "unreachable": 87,
+   "missing_transitions": 30000,
+   "equivalence_classes": 9909,
+   "multi_state_classes": 1,
+   "certificate_valid": true,
+   "times_sec": {
+    "build_random_machine": 0.489,
+    "reachability": 0.024,
+    "unreachable": 0.025,
+    "missing_scan": 0.023,
+    "partition_refinement": 0.204,
+    "certificate_verify": 0.016,
+    "total": 0.785
+   },
+   "peak_memory": {
+    "tracemalloc_bytes": 18578451,
+    "tracemalloc_mib": 17.72,
+    "maxrss_kib": 56328,
+    "maxrss_mib": 55.0
+   }
+  }
+ ],
+ "best_run_seed": 3
+}

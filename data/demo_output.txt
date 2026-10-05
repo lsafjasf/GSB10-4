@@ -1,0 +1,66 @@
+========================================================================
+CASE 1: all states distinguishable
+========================================================================
+initial state        : A
+states / transitions : 3 / 6
+unreachable states   : (none)
+missing transitions  : 0 (none)
+equivalence classes  :
+  C0 = ['A']
+  C1 = ['B']
+  C2 = ['C']
+certificate valid    : True
+  distinguishing_sequence(A, B) = ['x']
+
+========================================================================
+CASE 2: equivalence classes exist
+========================================================================
+initial state        : A
+states / transitions : 5 / 10
+unreachable states   : (none)
+missing transitions  : 0 (none)
+equivalence classes  :
+  C0 = ['A']
+  C1 = ['B']
+  C2 = ['C']
+  C3 = ['D', 'E']  <- equivalent
+certificate valid    : True
+  evidence pair D ~ E (all 2 input symbols agree):
+    input=x: outputs '1'/'1', successors E(C3)/D(C3)
+    input=y: outputs '0'/'0', successors C(C2)/C(C2)
+    exhaustive search: 62 input sequences tried up to length 5, counterexample=None
+    product-automaton distinguishing_sequence = None
+  distinguishing_sequence(A, B) = ['x']
+
+========================================================================
+CASE 3: unreachable states present
+========================================================================
+initial state        : A
+states / transitions : 4 / 8
+unreachable states   : ['G', 'H']
+missing transitions  : 0 (none)
+equivalence classes  :
+  C0 = ['A']
+  C1 = ['B']
+certificate valid    : True
+  distinguishing_sequence(A, B) = ['x']
+
+========================================================================
+CASE 4: missing transitions (partial machine)
+========================================================================
+initial state        : A
+states / transitions : 4 / 6
+unreachable states   : (none)
+missing transitions  : 2 [('C', 'y'), ('D', 'y')]
+equivalence classes  :
+  C0 = ['A']
+  C1 = ['B']
+  C2 = ['C', 'D']  <- equivalent
+certificate valid    : True
+  evidence pair C ~ D (all 2 input symbols agree):
+    input=x: outputs '0'/'0', successors A(C0)/A(C0)
+    input=y: outputs None/None, successors None(CNone)/None(CNone)
+    exhaustive search: 14 input sequences tried up to length 4, counterexample=None
+    product-automaton distinguishing_sequence = None
+  distinguishing_sequence(A, B) = ['x']
+
