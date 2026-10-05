@@ -1,0 +1,67 @@
+================================================================================================
+CASE TABLE: fill-in per ordering (nnz before vs after factorization)
+================================================================================================
+case                   ordering     nnz(A)     nnz(L)    fill-in   fill x    est.flops  fact.[s]   residual refine it
+---------------------------------------------------------------------------------------------------------------------
+diagonal   n=5000      natural        5000       5000          0     1.00        15000     0.008   2.22e-16         0
+diagonal   n=5000      rcm            5000       5000          0     1.00        15000     0.012   2.22e-16         0
+diagonal   n=5000      mindeg         5000       5000          0     1.00        15000     0.007   2.22e-16         0
+---------------------------------------------------------------------------------------------------------------------
+banded bw=7 n=5000     natural       74944      39972          0     1.00       224804     0.035   6.87e-16         0
+banded bw=7 n=5000     rcm           74944      39972          0     1.00       224804     0.036   5.73e-16         0
+banded bw=7 n=5000     mindeg        74944      39972          0     1.00       224804     0.033   6.87e-16         0
+---------------------------------------------------------------------------------------------------------------------
+random deg=8 n=1500    natural       13464     655778     648296    87.65    229046465      (skip)     (skip)    (skip)
+random deg=8 n=1500    rcm           13464     579530     572048    77.46    166404122      (skip)     (skip)    (skip)
+random deg=8 n=1500    mindeg        13464     268416     260934    35.87     59689957     7.086   2.72e-15         0
+---------------------------------------------------------------------------------------------------------------------
+near-dense 50% n=250   natural       31654      31110      15158     1.95      2611710     0.133   2.14e-15         0
+near-dense 50% n=250   rcm           31654      30830      14878     1.93      2556190     0.145   1.89e-15         0
+near-dense 50% n=250   mindeg        31654      30081      14129     1.89      2424498     0.132   2.26e-15         0
+---------------------------------------------------------------------------------------------------------------------
+grid9 40x40 n=1600     natural       13924      65560      57798     8.45      1463699     0.081   1.52e-15         0
+grid9 40x40 n=1600     rcm           13924      83097      75335    10.71      2565072     0.129   1.69e-15         0
+grid9 40x40 n=1600     mindeg        13924      37991      30229     4.89       785091     0.049   1.86e-15         0
+---------------------------------------------------------------------------------------------------------------------
+================================================================================================
+MEMORY-LIMIT POLICY: controlled refusal, watchdog, and spill-to-disk
+================================================================================================
+1) pre-flight refusal (budget 1 MB, no spill):
+   MemoryBudgetExceeded: refusing to factorize: estimated factor storage 4,158,560 bytes (nnz(L) = 29,985) exceeds memory budget 1,000,000 bytes. Enable spilling (spill_path=...), reorder, or raise the budget.
+2) RSS watchdog (rss_cap=1 byte):
+   MemoryBudgetExceeded: RSS watchdog: process high-water mark 85,491,712 bytes exceeded rss_cap 1 bytes at column 0; aborting cleanly instead of being OOM-killed.
+3) spill-to-disk (budget 1 MB + spill file): SUCCEEDED
+   panels of 256 columns, spill file 0.5 MiB, factor+solve 0.02 s, residual 5.88e-16
+   -> the process never gets OOM-killed: it either refuses with
+      MemoryBudgetExceeded or completes via blocked spilling.
+================================================================================================
+RESIDUAL vs ITERATION (iterative refinement)
+residual = ||b-Ax||_inf/||b||_inf,  fwd.err = ||x-x_true||_inf/||x_true||_inf
+================================================================================================
+banded bw=5 n=2000
+    it0: residual=4.68e-16  fwd.err=8.88e-16
+    it1: residual=3.12e-16  fwd.err=4.44e-16
+    it2: residual=1.56e-16  fwd.err=4.44e-16
+    it3: residual=1.56e-16  fwd.err=4.44e-16
+random deg=6 n=800 (ill-cond, margin=1e-6)
+    it0: residual=2.88e-15  fwd.err=7.22e-11
+    it1: residual=2.22e-16  fwd.err=3.40e-12
+    it2: residual=2.22e-16  fwd.err=2.31e-12
+    it3: residual=2.22e-16  fwd.err=1.13e-11
+near-dense 60% n=300 (ill-cond, margin=1e-6)
+    it0: residual=2.43e-15  fwd.err=3.03e-09
+    it1: residual=3.75e-16  fwd.err=7.56e-13
+    it2: residual=1.87e-16  fwd.err=2.38e-10
+    it3: residual=1.87e-16  fwd.err=5.76e-10
+================================================================================================
+BIG BENCHMARK: n = 100,000, banded bw=5 -> nnz(A) ~ 1.1M, matrix
+stored in a *random* order (as badly-numbered input arrives)
+================================================================================================
+built matrix: n=100000 nnz(A)=1099970  (0.6 s, RSS 261 MiB)
+one triangle of A: 599985 nonzeros; fill x is nnz(L)/that
+ordering       nnz(L)    fill-in   fill x  ord.[s]   fact.[s]   solve[s]   peak MiB     residual
+----------------------------------------------------------------------------------------------
+natural    REFUSED after 1.1 s: symbolic factorization aborted at column 72037: fill-in exceeded the cap (5,000,491 > 5,000,000 nonzeros in L). Reorder the matrix (rcm/mindeg) or raise fill_cap.
+rcm            599985          0     1.00      0.2        1.6        0.1        342     4.47e-16
+mindeg         599985          0     1.00      1.6        1.6        0.1        392     4.47e-16
+RSS baseline after matrix build: 392 MiB (high-water mark, cumulative)
