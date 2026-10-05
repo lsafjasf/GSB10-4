@@ -1,0 +1,5 @@
+case=single_edge n=2 edges=1 seed=42
+communities=1 modularity=0.000000 levels=2 passes=2,1
+cid    size   internal_w   selfloop_w   boundary_w   degree_tot modularity_c  conductance    density
+0         2          1.0          0.0          0.0          2.0     0.000000     0.000000     1.0000
+ALL       2          1.0          0.0          0.0          2.0     0.000000

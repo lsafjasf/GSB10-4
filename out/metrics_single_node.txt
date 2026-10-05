@@ -1,0 +1,5 @@
+case=single_node n=1 edges=0 seed=42
+communities=1 modularity=0.000000 levels=1 passes=1
+cid    size   internal_w   selfloop_w   boundary_w   degree_tot modularity_c  conductance    density
+0         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+ALL       1          0.0          0.0          0.0          0.0     0.000000

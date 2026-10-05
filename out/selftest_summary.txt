@@ -1,0 +1,28 @@
+# selftest 汇总  seed=42
+
+[PASS] empty                        reproducible_same_seed           run1 sha=e3b0c44298fc1c14 run2 sha=e3b0c44298fc1c14
+[PASS] single_node                  reproducible_same_seed           run1 sha=0a5a2432405b31b9 run2 sha=0a5a2432405b31b9
+[PASS] single_edge                  reproducible_same_seed           run1 sha=5394ea49f68d6a0b run2 sha=5394ea49f68d6a0b
+[PASS] chain30                      reproducible_same_seed           run1 sha=bfa198836e3066cd run2 sha=bfa198836e3066cd
+[PASS] two_cliques                  reproducible_same_seed           run1 sha=fb93a9c231fd99da run2 sha=fb93a9c231fd99da
+[PASS] dense_random                 reproducible_same_seed           run1 sha=379327743d5500e3 run2 sha=379327743d5500e3
+[PASS] isolated_mix                 reproducible_same_seed           run1 sha=1a03834b8c55c243 run2 sha=1a03834b8c55c243
+[PASS] selfloop_only                reproducible_same_seed           run1 sha=5c413d388a3165b3 run2 sha=5c413d388a3165b3
+[PASS] weighted_parallel            reproducible_same_seed           run1 sha=ef7b0cfaf71bf833 run2 sha=ef7b0cfaf71bf833
+[PASS] empty                        no_communities                   
+[PASS] single_node                  singleton                        
+[PASS] single_edge                  together                         
+[PASS] chain30                      community_count_in_[2,15]        k=6
+[PASS] chain30                      contiguous_segments              
+[PASS] two_cliques                  exactly_2_communities            
+[PASS] two_cliques                  matches_ground_truth             
+[PASS] dense_random                 low_modularity(<0.15)            Q=0.0375
+[PASS] dense_random                 few_communities(<n/10)           k=5
+[PASS] isolated_mix                 clique_together                  
+[PASS] isolated_mix                 isolated_nodes_are_singletons    labels[8:]=[1, 2, 3, 4, 5]
+[PASS] selfloop_only                selfloop_node_is_singleton       
+[PASS] selfloop_only                triangle_together                
+[PASS] selfloop_only                edge_pair_together               
+[PASS] weighted_parallel            respects_weights                 labels=[0, 0, 1, 1, 1]
+
+total=24 failed=0

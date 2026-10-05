@@ -1,0 +1,9 @@
+case=selfloop_only n=8 edges=6 seed=42
+communities=5 modularity=0.540000 levels=2 passes=2,1
+cid    size   internal_w   selfloop_w   boundary_w   degree_tot modularity_c  conductance    density
+0         3          3.0          0.0          0.0          6.0     0.240000     0.000000     1.0000
+1         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+2         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+3         1          0.0          1.0          0.0          1.0     0.090000     0.000000     0.0000
+4         2          1.0          1.0          0.0          3.0     0.210000     0.000000     1.0000
+ALL       8          4.0          2.0          0.0         10.0     0.540000

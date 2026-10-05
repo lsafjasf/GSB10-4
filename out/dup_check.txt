@@ -1,0 +1,11 @@
+# 对拍：同一种子 (seed=42) 两次运行的划分逐位比较
+case               result   sha256_run1        sha256_run2        note
+empty              OK       e3b0c44298fc1c14   e3b0c44298fc1c14   identical
+single_node        OK       0a5a2432405b31b9   0a5a2432405b31b9   identical
+single_edge        OK       5394ea49f68d6a0b   5394ea49f68d6a0b   identical
+chain30            OK       bfa198836e3066cd   bfa198836e3066cd   identical
+two_cliques        OK       fb93a9c231fd99da   fb93a9c231fd99da   identical
+dense_random       OK       379327743d5500e3   379327743d5500e3   identical
+isolated_mix       OK       1a03834b8c55c243   1a03834b8c55c243   identical
+selfloop_only      OK       5c413d388a3165b3   5c413d388a3165b3   identical
+weighted_parallel  OK       ef7b0cfaf71bf833   ef7b0cfaf71bf833   identical

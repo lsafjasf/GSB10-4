@@ -1,0 +1,6 @@
+case=two_cliques n=80 edges=1561 seed=42
+communities=2 modularity=0.499359 levels=2 passes=2,1
+cid    size   internal_w   selfloop_w   boundary_w   degree_tot modularity_c  conductance    density
+0        40        780.0          0.0          1.0       1561.0     0.249680     0.000641     1.0000
+1        40        780.0          0.0          1.0       1561.0     0.249680     0.000641     1.0000
+ALL      80       1560.0          0.0          2.0       3122.0     0.499359

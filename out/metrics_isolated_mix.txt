@@ -1,0 +1,10 @@
+case=isolated_mix n=13 edges=28 seed=42
+communities=6 modularity=0.000000 levels=2 passes=2,1
+cid    size   internal_w   selfloop_w   boundary_w   degree_tot modularity_c  conductance    density
+0         8         28.0          0.0          0.0         56.0     0.000000     0.000000     1.0000
+1         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+2         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+3         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+4         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+5         1          0.0          0.0          0.0          0.0     0.000000     0.000000     0.0000
+ALL      13         28.0          0.0          0.0         56.0     0.000000

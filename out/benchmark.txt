@@ -1,0 +1,13 @@
+# benchmark: n=100000, m=500000 (planted: 199 comms x 500 + 500 isolated)
+# seed=42  python=3.12.3
+gen_edges:            0.24 s  (500000 edges)
+build_csr:            0.22 s
+detect run1:         16.60 s  (levels=4, passes=[44, 13, 3, 1])
+detect run2:         15.89 s
+dup check:        IDENTICAL  (sha run1=3ba288dd670e7029 run2=3ba288dd670e7029)
+communities:      678 (planted 199 + 500 isolated)
+modularity:       0.712339
+ARI vs planted:   0.7308
+isolated nodes as singletons: 500 / 500
+peak RSS:            131.2 MB (ru_maxrss)
+total wall:          32.94 s

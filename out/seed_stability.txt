@@ -1,0 +1,18 @@
+# 不同种子下划分的稳定性（ARI = 调整兰德指数, agree = 节点对一致比例）
+case             seed_a   seed_b      ARI   agree
+chain30              42        1   0.5177   0.8782
+chain30              42        7   0.5177   0.8782
+chain30              42      123   0.6021   0.8989
+chain30              42     2024   0.6087   0.9011
+two_cliques          42        1   1.0000   1.0000
+two_cliques          42        7   1.0000   1.0000
+two_cliques          42      123   1.0000   1.0000
+two_cliques          42     2024   1.0000   1.0000
+dense_random         42        1   0.0373   0.6931
+dense_random         42        7   0.0467   0.6922
+dense_random         42      123   0.0395   0.6928
+dense_random         42     2024   0.0356   0.6943
+isolated_mix         42        1   1.0000   1.0000
+isolated_mix         42        7   1.0000   1.0000
+isolated_mix         42      123   1.0000   1.0000
+isolated_mix         42     2024   1.0000   1.0000
