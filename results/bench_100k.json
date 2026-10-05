@@ -1,0 +1,1196 @@
+{
+  "n_tasks": 100000,
+  "workers": 64,
+  "cleanup_workers": 64,
+  "warmup_s": 0.002,
+  "variants": {
+    "A-comfortable": {
+      "summary": {
+        "variant": "A-comfortable",
+        "trials": 20,
+        "inflight_mean": 99999.95,
+        "duration_p50": 0.9386280648992695,
+        "duration_p95": 0.9392467751224436,
+        "duration_max": 0.9397030139286765,
+        "duration_min": 0.9368138316208229,
+        "wall_ms_p50": 528.1383494984766,
+        "wall_ms_max": 1051.6130209980474,
+        "abandoned_min": 0,
+        "abandoned_max": 0,
+        "punctual_all": true,
+        "mem_peak_mb_max": 90.86393,
+        "phase_mean": {
+          "stop-accepting": 0.0,
+          "drain-inflight": 0.1,
+          "cleanup": 0.8383251581910944,
+          "force-exit": 0.0
+        },
+        "counts_mean": {
+          "finished": 0.05,
+          "checkpointed": 59983.2,
+          "rolled_back": 30016.25,
+          "failed": 10000.5,
+          "abandoned": 0
+        }
+      },
+      "trials": [
+        {
+          "seed": 1000,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9387931192886487,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8387931192886487,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60011,
+            "rolled_back": 29921,
+            "failed": 10068
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 1030.3170680017502,
+          "events": 100142,
+          "mem_peak_bytes": 90863930
+        },
+        {
+          "seed": 1001,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9379596031305584,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8379596031305584,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 59977,
+            "rolled_back": 30151,
+            "failed": 9872
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 917.6458869987982,
+          "events": 100141,
+          "mem_peak_bytes": 90783182
+        },
+        {
+          "seed": 1002,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9386962768235572,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8386962768235572,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 29923,
+            "checkpointed": 59965,
+            "failed": 10112
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 1051.6130209980474,
+          "events": 100142,
+          "mem_peak_bytes": 90828405
+        },
+        {
+          "seed": 1003,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9389658647814201,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8389658647814201,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60047,
+            "rolled_back": 30010,
+            "failed": 9943
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 401.78172000014456,
+          "events": 100142,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1004,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9386944679071556,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8386944679071556,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 30220,
+            "failed": 10059,
+            "checkpointed": 59721
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 444.7873120006989,
+          "events": 100145,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1005,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9386864168850829,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8386864168850829,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 30110,
+            "checkpointed": 59925,
+            "failed": 9965
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 238.3847560013237,
+          "events": 100139,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1006,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9368138316208229,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8368138316208229,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60261,
+            "rolled_back": 29756,
+            "failed": 9983
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 530.7991759982542,
+          "events": 100146,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1007,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9372729744777409,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.837272974477741,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 30034,
+            "checkpointed": 59902,
+            "failed": 10064
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 448.14119200236746,
+          "events": 100140,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1008,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9386162381241296,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8386162381241297,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 59919,
+            "rolled_back": 30256,
+            "failed": 9825
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 421.58302800089587,
+          "events": 100144,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1009,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9385107391783448,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8385107391783448,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60208,
+            "failed": 9945,
+            "rolled_back": 29847
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 588.3448179993138,
+          "events": 100136,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1010,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9383798744398621,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8383798744398622,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "failed": 9951,
+            "checkpointed": 60177,
+            "rolled_back": 29872
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 708.8036429995554,
+          "events": 100136,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1011,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9391152389040482,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8391152389040483,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 29940,
+            "failed": 9988,
+            "checkpointed": 60072
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 579.9726429977454,
+          "events": 100146,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1012,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9397030139286765,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8397030139286765,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "failed": 10047,
+            "rolled_back": 30019,
+            "checkpointed": 59934
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 691.7251449995092,
+          "events": 100143,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1013,
+          "inflight_at_shutdown": 99999,
+          "duration": 0.9375320978550973,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8375320978550973,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "finished": 1,
+            "rolled_back": 30170,
+            "failed": 9958,
+            "checkpointed": 59871
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 221.71184599937988,
+          "events": 100147,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1014,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.937342137077507,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.837342137077507,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "failed": 10045,
+            "checkpointed": 59826,
+            "rolled_back": 30129
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 464.7650730003079,
+          "events": 100143,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1015,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9392227625536945,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8392227625536945,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 30014,
+            "checkpointed": 60020,
+            "failed": 9966
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 645.5751169996802,
+          "events": 100141,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1016,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9387977007125773,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8387977007125773,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 30206,
+            "checkpointed": 59784,
+            "failed": 10010
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 463.8094589972752,
+          "events": 100144,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1017,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9386398916744093,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8386398916744093,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60056,
+            "failed": 9965,
+            "rolled_back": 29979
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 549.9274499998137,
+          "events": 100145,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1018,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.937285424413121,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.837285424413121,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "checkpointed": 60087,
+            "rolled_back": 29833,
+            "failed": 10080
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 436.637281000003,
+          "events": 100142,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1019,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.9374754900454336,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.1,
+            "cleanup": 0.8374754900454336,
+            "force-exit": 0.0
+          },
+          "counts": {
+            "rolled_back": 29935,
+            "checkpointed": 59901,
+            "failed": 10164
+          },
+          "abandoned": 0,
+          "punctual": true,
+          "wall_ms": 525.477522998699,
+          "events": 100143,
+          "mem_peak_bytes": 0
+        }
+      ]
+    },
+    "B-tight": {
+      "summary": {
+        "variant": "B-tight",
+        "trials": 20,
+        "inflight_mean": 99999.95,
+        "duration_p50": 0.44999999999999996,
+        "duration_p95": 0.44999999999999996,
+        "duration_max": 0.44999999999999996,
+        "duration_min": 0.44999999999999996,
+        "wall_ms_p50": 258.4787215000688,
+        "wall_ms_max": 1024.4454010025947,
+        "abandoned_min": 51952,
+        "abandoned_max": 52214,
+        "punctual_all": true,
+        "mem_peak_mb_max": 87.587107,
+        "phase_mean": {
+          "stop-accepting": 0.0,
+          "drain-inflight": 0.05,
+          "cleanup": 0.3,
+          "force-exit": 0.09999999999999998
+        },
+        "counts_mean": {
+          "finished": 0.05,
+          "checkpointed": 28754.75,
+          "rolled_back": 14400.6,
+          "failed": 4786.75,
+          "abandoned": 52057.85
+        }
+      },
+      "trials": [
+        {
+          "seed": 1000,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28786,
+            "rolled_back": 14259,
+            "failed": 4857,
+            "abandoned": 52098
+          },
+          "abandoned": 52098,
+          "punctual": true,
+          "wall_ms": 982.8398739991826,
+          "events": 48044,
+          "mem_peak_bytes": 87587107
+        },
+        {
+          "seed": 1001,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28705,
+            "rolled_back": 14515,
+            "failed": 4717,
+            "abandoned": 52063
+          },
+          "abandoned": 52063,
+          "punctual": true,
+          "wall_ms": 802.1867779971217,
+          "events": 48078,
+          "mem_peak_bytes": 87506246
+        },
+        {
+          "seed": 1002,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14409,
+            "checkpointed": 28576,
+            "failed": 4960,
+            "abandoned": 52055
+          },
+          "abandoned": 52055,
+          "punctual": true,
+          "wall_ms": 1024.4454010025947,
+          "events": 48087,
+          "mem_peak_bytes": 87539727
+        },
+        {
+          "seed": 1003,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28746,
+            "rolled_back": 14471,
+            "failed": 4718,
+            "abandoned": 52065
+          },
+          "abandoned": 52065,
+          "punctual": true,
+          "wall_ms": 222.29581999999937,
+          "events": 48077,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1004,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14572,
+            "failed": 4818,
+            "checkpointed": 28590,
+            "abandoned": 52020
+          },
+          "abandoned": 52020,
+          "punctual": true,
+          "wall_ms": 247.86135199974524,
+          "events": 48125,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1005,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14471,
+            "checkpointed": 28702,
+            "failed": 4771,
+            "abandoned": 52056
+          },
+          "abandoned": 52056,
+          "punctual": true,
+          "wall_ms": 548.9982459985185,
+          "events": 48083,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1006,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 29106,
+            "rolled_back": 14192,
+            "failed": 4728,
+            "abandoned": 51974
+          },
+          "abandoned": 51974,
+          "punctual": true,
+          "wall_ms": 868.5282210026344,
+          "events": 48172,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1007,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14494,
+            "checkpointed": 28625,
+            "failed": 4786,
+            "abandoned": 52095
+          },
+          "abandoned": 52095,
+          "punctual": true,
+          "wall_ms": 278.43213899905095,
+          "events": 48045,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1008,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28663,
+            "rolled_back": 14427,
+            "failed": 4696,
+            "abandoned": 52214
+          },
+          "abandoned": 52214,
+          "punctual": true,
+          "wall_ms": 191.15254999996978,
+          "events": 47930,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1009,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28842,
+            "failed": 4793,
+            "rolled_back": 14401,
+            "abandoned": 51964
+          },
+          "abandoned": 51964,
+          "punctual": true,
+          "wall_ms": 182.91279699769802,
+          "events": 48172,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1010,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "failed": 4835,
+            "checkpointed": 28886,
+            "rolled_back": 14218,
+            "abandoned": 52061
+          },
+          "abandoned": 52061,
+          "punctual": true,
+          "wall_ms": 202.78587599750608,
+          "events": 48075,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1011,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14309,
+            "failed": 4688,
+            "checkpointed": 28856,
+            "abandoned": 52147
+          },
+          "abandoned": 52147,
+          "punctual": true,
+          "wall_ms": 519.8343960000784,
+          "events": 47999,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1012,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "failed": 4787,
+            "rolled_back": 14520,
+            "checkpointed": 28585,
+            "abandoned": 52108
+          },
+          "abandoned": 52108,
+          "punctual": true,
+          "wall_ms": 184.38795499969274,
+          "events": 48035,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1013,
+          "inflight_at_shutdown": 99999,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "finished": 1,
+            "rolled_back": 14509,
+            "failed": 4731,
+            "checkpointed": 28807,
+            "abandoned": 51952
+          },
+          "abandoned": 51952,
+          "punctual": true,
+          "wall_ms": 269.09609100039233,
+          "events": 48195,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1014,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "failed": 4773,
+            "checkpointed": 28670,
+            "rolled_back": 14500,
+            "abandoned": 52057
+          },
+          "abandoned": 52057,
+          "punctual": true,
+          "wall_ms": 221.38483899834682,
+          "events": 48086,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1015,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14438,
+            "checkpointed": 28693,
+            "failed": 4806,
+            "abandoned": 52063
+          },
+          "abandoned": 52063,
+          "punctual": true,
+          "wall_ms": 193.61746100184973,
+          "events": 48078,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1016,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14370,
+            "checkpointed": 28785,
+            "failed": 4775,
+            "abandoned": 52070
+          },
+          "abandoned": 52070,
+          "punctual": true,
+          "wall_ms": 595.4120980022708,
+          "events": 48074,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1017,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28926,
+            "failed": 4773,
+            "rolled_back": 14314,
+            "abandoned": 51987
+          },
+          "abandoned": 51987,
+          "punctual": true,
+          "wall_ms": 617.3193659997196,
+          "events": 48158,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1018,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28827,
+            "rolled_back": 14260,
+            "failed": 4849,
+            "abandoned": 52064
+          },
+          "abandoned": 52064,
+          "punctual": true,
+          "wall_ms": 223.41949499968905,
+          "events": 48078,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1019,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14363,
+            "checkpointed": 28719,
+            "failed": 4874,
+            "abandoned": 52044
+          },
+          "abandoned": 52044,
+          "punctual": true,
+          "wall_ms": 186.5658450005867,
+          "events": 48099,
+          "mem_peak_bytes": 0
+        }
+      ]
+    },
+    "C-tight+stuck": {
+      "summary": {
+        "variant": "C-tight+stuck",
+        "trials": 10,
+        "inflight_mean": 100000,
+        "duration_p50": 0.44999999999999996,
+        "duration_p95": 0.44999999999999996,
+        "duration_max": 0.44999999999999996,
+        "duration_min": 0.44999999999999996,
+        "wall_ms_p50": 534.4631399984792,
+        "wall_ms_max": 919.6956970008614,
+        "abandoned_min": 51964,
+        "abandoned_max": 52214,
+        "punctual_all": true,
+        "mem_peak_mb_max": 87.561743,
+        "phase_mean": {
+          "stop-accepting": 0.0,
+          "drain-inflight": 0.05,
+          "cleanup": 0.3,
+          "force-exit": 0.09999999999999998
+        },
+        "counts_mean": {
+          "finished": 0,
+          "checkpointed": 28734.1,
+          "rolled_back": 14421.1,
+          "failed": 4784.4,
+          "abandoned": 52060.4
+        }
+      },
+      "trials": [
+        {
+          "seed": 1000,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28786,
+            "rolled_back": 14259,
+            "failed": 4857,
+            "abandoned": 52098
+          },
+          "abandoned": 52098,
+          "punctual": true,
+          "wall_ms": 857.7101379996748,
+          "events": 47934,
+          "mem_peak_bytes": 87561743
+        },
+        {
+          "seed": 1001,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28705,
+            "rolled_back": 14515,
+            "failed": 4717,
+            "abandoned": 52063
+          },
+          "abandoned": 52063,
+          "punctual": true,
+          "wall_ms": 792.4186769996595,
+          "events": 47968,
+          "mem_peak_bytes": 87488106
+        },
+        {
+          "seed": 1002,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14409,
+            "checkpointed": 28576,
+            "failed": 4960,
+            "abandoned": 52055
+          },
+          "abandoned": 52055,
+          "punctual": true,
+          "wall_ms": 919.6956970008614,
+          "events": 47976,
+          "mem_peak_bytes": 87521397
+        },
+        {
+          "seed": 1003,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28746,
+            "rolled_back": 14471,
+            "failed": 4718,
+            "abandoned": 52065
+          },
+          "abandoned": 52065,
+          "punctual": true,
+          "wall_ms": 535.8447709986649,
+          "events": 47965,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1004,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14572,
+            "failed": 4818,
+            "checkpointed": 28590,
+            "abandoned": 52020
+          },
+          "abandoned": 52020,
+          "punctual": true,
+          "wall_ms": 179.64101300094626,
+          "events": 48011,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1005,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14471,
+            "checkpointed": 28702,
+            "failed": 4771,
+            "abandoned": 52056
+          },
+          "abandoned": 52056,
+          "punctual": true,
+          "wall_ms": 222.21716800049762,
+          "events": 47976,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1006,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 29106,
+            "rolled_back": 14192,
+            "failed": 4728,
+            "abandoned": 51974
+          },
+          "abandoned": 51974,
+          "punctual": true,
+          "wall_ms": 533.0815089982934,
+          "events": 48056,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1007,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "rolled_back": 14494,
+            "checkpointed": 28625,
+            "failed": 4786,
+            "abandoned": 52095
+          },
+          "abandoned": 52095,
+          "punctual": true,
+          "wall_ms": 595.790413000941,
+          "events": 47937,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1008,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28663,
+            "rolled_back": 14427,
+            "failed": 4696,
+            "abandoned": 52214
+          },
+          "abandoned": 52214,
+          "punctual": true,
+          "wall_ms": 169.7188489997643,
+          "events": 47814,
+          "mem_peak_bytes": 0
+        },
+        {
+          "seed": 1009,
+          "inflight_at_shutdown": 100000,
+          "duration": 0.44999999999999996,
+          "phases": {
+            "stop-accepting": 0.0,
+            "drain-inflight": 0.05,
+            "cleanup": 0.3,
+            "force-exit": 0.09999999999999998
+          },
+          "counts": {
+            "checkpointed": 28842,
+            "failed": 4793,
+            "rolled_back": 14401,
+            "abandoned": 51964
+          },
+          "abandoned": 51964,
+          "punctual": true,
+          "wall_ms": 167.63670400177944,
+          "events": 48065,
+          "mem_peak_bytes": 0
+        }
+      ]
+    }
+  },
+  "reconcile_A_trial0": {
+    "ok": true,
+    "categories": {
+      "rolled-back": 29921,
+      "failed": 10068,
+      "checkpointed": 60011
+    },
+    "violations": []
+  },
+  "rss_peak_mb": 665.88671875
+}
