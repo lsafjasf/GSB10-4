@@ -1,0 +1,407 @@
+{
+  "all_same_key": {
+    "diff_equal": true,
+    "hot_keys": {
+      "ONLY": 1000
+    },
+    "num_splits": {
+      "ONLY": 8
+    },
+    "partition_loads_redistributed": [
+      125,
+      125,
+      125,
+      125,
+      125,
+      125,
+      125,
+      125
+    ],
+    "partition_loads_unsplit": [
+      0,
+      1000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 1000,
+        "key": "ONLY",
+        "merged_count": 1000
+      },
+      {
+        "baseline_count": 1000,
+        "key": "ONLY",
+        "merged_count": 1000
+      }
+    ],
+    "shard_size_distribution": {
+      "ONLY": [
+        125,
+        125,
+        125,
+        125,
+        125,
+        125,
+        125,
+        125
+      ]
+    },
+    "threshold": 100,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 1000,
+    "worst_load_redistributed": 125,
+    "worst_load_unsplit": 1000
+  },
+  "boundary_10pct_cold": {
+    "diff_equal": true,
+    "hot_keys": {},
+    "num_splits": {},
+    "partition_loads_redistributed": [
+      212,
+      111,
+      104,
+      128,
+      104,
+      104,
+      111,
+      126
+    ],
+    "partition_loads_unsplit": [
+      212,
+      111,
+      104,
+      128,
+      104,
+      104,
+      111,
+      126
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 100,
+        "key": "a",
+        "merged_count": 100
+      },
+      {
+        "baseline_count": 1,
+        "key": "c0",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c1",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c10",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c100",
+        "merged_count": 1
+      }
+    ],
+    "shard_size_distribution": {},
+    "threshold": 100,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 1000,
+    "worst_load_redistributed": 212,
+    "worst_load_unsplit": 212
+  },
+  "boundary_10pct_hot": {
+    "diff_equal": true,
+    "hot_keys": {
+      "a": 101
+    },
+    "num_splits": {
+      "a": 2
+    },
+    "partition_loads_redistributed": [
+      112,
+      111,
+      155,
+      128,
+      154,
+      104,
+      111,
+      125
+    ],
+    "partition_loads_unsplit": [
+      213,
+      111,
+      104,
+      128,
+      104,
+      104,
+      111,
+      125
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 101,
+        "key": "a",
+        "merged_count": 101
+      },
+      {
+        "baseline_count": 1,
+        "key": "c0",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c1",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c10",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 1,
+        "key": "c100",
+        "merged_count": 1
+      },
+      {
+        "baseline_count": 101,
+        "key": "a",
+        "merged_count": 101
+      }
+    ],
+    "shard_size_distribution": {
+      "a": [
+        51,
+        50
+      ]
+    },
+    "threshold": 100,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 1000,
+    "worst_load_redistributed": 155,
+    "worst_load_unsplit": 213
+  },
+  "multi_hot": {
+    "diff_equal": true,
+    "hot_keys": {
+      "H1": 3000,
+      "H2": 2000,
+      "H3": 1500
+    },
+    "num_splits": {
+      "H1": 3,
+      "H2": 2,
+      "H3": 2
+    },
+    "partition_loads_redistributed": [
+      1434,
+      1434,
+      1406,
+      560,
+      1184,
+      1392,
+      1399,
+      1191
+    ],
+    "partition_loads_unsplit": [
+      3934,
+      434,
+      406,
+      560,
+      3434,
+      392,
+      399,
+      441
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 3000,
+        "key": "H1",
+        "merged_count": 3000
+      },
+      {
+        "baseline_count": 2000,
+        "key": "H2",
+        "merged_count": 2000
+      },
+      {
+        "baseline_count": 1500,
+        "key": "H3",
+        "merged_count": 1500
+      },
+      {
+        "baseline_count": 7,
+        "key": "c000",
+        "merged_count": 7
+      },
+      {
+        "baseline_count": 7,
+        "key": "c001",
+        "merged_count": 7
+      },
+      {
+        "baseline_count": 3000,
+        "key": "H1",
+        "merged_count": 3000
+      }
+    ],
+    "shard_size_distribution": {
+      "H1": [
+        1000,
+        1000,
+        1000
+      ],
+      "H2": [
+        1000,
+        1000
+      ],
+      "H3": [
+        750,
+        750
+      ]
+    },
+    "threshold": 1000,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 10000,
+    "worst_load_redistributed": 1434,
+    "worst_load_unsplit": 3934
+  },
+  "single_hot": {
+    "diff_equal": true,
+    "hot_keys": {
+      "HOT": 5000
+    },
+    "num_splits": {
+      "HOT": 4
+    },
+    "partition_loads_redistributed": [
+      1870,
+      620,
+      1830,
+      800,
+      620,
+      1810,
+      1820,
+      630
+    ],
+    "partition_loads_unsplit": [
+      620,
+      620,
+      580,
+      800,
+      5620,
+      560,
+      570,
+      630
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 5000,
+        "key": "HOT",
+        "merged_count": 5000
+      },
+      {
+        "baseline_count": 10,
+        "key": "c000",
+        "merged_count": 10
+      },
+      {
+        "baseline_count": 10,
+        "key": "c001",
+        "merged_count": 10
+      },
+      {
+        "baseline_count": 10,
+        "key": "c002",
+        "merged_count": 10
+      },
+      {
+        "baseline_count": 10,
+        "key": "c003",
+        "merged_count": 10
+      },
+      {
+        "baseline_count": 5000,
+        "key": "HOT",
+        "merged_count": 5000
+      }
+    ],
+    "shard_size_distribution": {
+      "HOT": [
+        1250,
+        1250,
+        1250,
+        1250
+      ]
+    },
+    "threshold": 1000,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 10000,
+    "worst_load_redistributed": 1870,
+    "worst_load_unsplit": 5620
+  },
+  "uniform": {
+    "diff_equal": true,
+    "hot_keys": {},
+    "num_splits": {},
+    "partition_loads_redistributed": [
+      1200,
+      700,
+      1900,
+      800,
+      900,
+      1300,
+      1500,
+      1700
+    ],
+    "partition_loads_unsplit": [
+      1200,
+      700,
+      1900,
+      800,
+      900,
+      1300,
+      1500,
+      1700
+    ],
+    "sample_diff_pairs": [
+      {
+        "baseline_count": 100,
+        "key": "k000",
+        "merged_count": 100
+      },
+      {
+        "baseline_count": 100,
+        "key": "k001",
+        "merged_count": 100
+      },
+      {
+        "baseline_count": 100,
+        "key": "k002",
+        "merged_count": 100
+      },
+      {
+        "baseline_count": 100,
+        "key": "k003",
+        "merged_count": 100
+      },
+      {
+        "baseline_count": 100,
+        "key": "k004",
+        "merged_count": 100
+      }
+    ],
+    "shard_size_distribution": {},
+    "threshold": 1000,
+    "threshold_rule": "count > max(ceil(total*ratio), abs_min), ratio=0.1, abs_min=1",
+    "total_rows": 10000,
+    "worst_load_redistributed": 1900,
+    "worst_load_unsplit": 1900
+  }
+}
