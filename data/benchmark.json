@@ -1,0 +1,10 @@
+{
+  "reconnects": 100000,
+  "seed": 20240601,
+  "schedule_seconds": 0.0644,
+  "per_reconnect_us": 0.644,
+  "tracemalloc_peak_bytes": 4781,
+  "tracemalloc_peak_kib": 4.7,
+  "state_object_sizeof_bytes": 120,
+  "python": "3.12.3"
+}

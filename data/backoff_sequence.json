@@ -1,0 +1,111 @@
+{
+  "seed": 20240601,
+  "policy": {
+    "base_delay_s": 1.0,
+    "multiplier": 2.0,
+    "max_delay_s": 30.0,
+    "request_timeout_s": 25.0,
+    "max_failures": 13,
+    "max_server_delay_s": 300.0
+  },
+  "virtual_clock_start_s": 1000.0,
+  "note": "sleep_s = jitter * min(base_delay*multiplier**(n-1), max_delay); reconnect_at 为虚拟时钟绝对时刻",
+  "sequence": [
+    {
+      "failure": 1,
+      "base_s": 1.0,
+      "jitter": 0.117996,
+      "sleep_s": 0.117996,
+      "reconnect_at": 1025.117996,
+      "state": "WAITING"
+    },
+    {
+      "failure": 2,
+      "base_s": 2.0,
+      "jitter": 0.420238,
+      "sleep_s": 0.840476,
+      "reconnect_at": 1050.958472,
+      "state": "WAITING"
+    },
+    {
+      "failure": 3,
+      "base_s": 4.0,
+      "jitter": 0.784976,
+      "sleep_s": 3.139903,
+      "reconnect_at": 1079.098375,
+      "state": "WAITING"
+    },
+    {
+      "failure": 4,
+      "base_s": 8.0,
+      "jitter": 0.584111,
+      "sleep_s": 4.672891,
+      "reconnect_at": 1108.771266,
+      "state": "WAITING"
+    },
+    {
+      "failure": 5,
+      "base_s": 16.0,
+      "jitter": 0.853042,
+      "sleep_s": 13.648677,
+      "reconnect_at": 1147.419943,
+      "state": "WAITING"
+    },
+    {
+      "failure": 6,
+      "base_s": 30.0,
+      "jitter": 0.423962,
+      "sleep_s": 12.718858,
+      "reconnect_at": 1185.138801,
+      "state": "WAITING"
+    },
+    {
+      "failure": 7,
+      "base_s": 30.0,
+      "jitter": 0.202122,
+      "sleep_s": 6.063654,
+      "reconnect_at": 1216.202455,
+      "state": "WAITING"
+    },
+    {
+      "failure": 8,
+      "base_s": 30.0,
+      "jitter": 0.434533,
+      "sleep_s": 13.035981,
+      "reconnect_at": 1254.238436,
+      "state": "WAITING"
+    },
+    {
+      "failure": 9,
+      "base_s": 30.0,
+      "jitter": 0.377992,
+      "sleep_s": 11.339748,
+      "reconnect_at": 1290.578184,
+      "state": "WAITING"
+    },
+    {
+      "failure": 10,
+      "base_s": 30.0,
+      "jitter": 0.076748,
+      "sleep_s": 2.302435,
+      "reconnect_at": 1317.880619,
+      "state": "WAITING"
+    },
+    {
+      "failure": 11,
+      "base_s": 30.0,
+      "jitter": 0.975149,
+      "sleep_s": 29.254481,
+      "reconnect_at": 1372.1351,
+      "state": "WAITING"
+    },
+    {
+      "failure": 12,
+      "base_s": 30.0,
+      "jitter": 0.892808,
+      "sleep_s": 26.784244,
+      "reconnect_at": 1423.919344,
+      "state": "WAITING"
+    }
+  ]
+}
