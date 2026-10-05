@@ -1,0 +1,90 @@
+{
+  "python": "3.12.3",
+  "sections": [
+    {
+      "name": "主场景：100万行 + 10万次混合变化(删3万/改3万/增4万)",
+      "baseline_rows": 1000000,
+      "changes": 100000,
+      "final_live_rows": 1010000,
+      "bulk_load_s": 1.6526,
+      "baseline_full_build_s": 0.3343,
+      "change_ingest_s(单独计时)": 0.2004,
+      "incremental_refresh": {
+        "best_s": 0.0873,
+        "avg_s": 0.0963,
+        "all_s": [
+          0.0873,
+          0.0981,
+          0.1035
+        ]
+      },
+      "full_recompute": {
+        "best_s": 0.392,
+        "avg_s": 0.4009,
+        "all_s": [
+          0.392,
+          0.4082,
+          0.4026
+        ]
+      },
+      "incremental_applied_changes": 100000,
+      "speedup_best": 4.5,
+      "rows_equal": true,
+      "view_sample_rows": [
+        {
+          "region": "east",
+          "cnt": 167772,
+          "sum_amount": 4275095,
+          "min_amount": 1,
+          "max_amount": 50
+        },
+        {
+          "region": "isle",
+          "cnt": 168232,
+          "sum_amount": 4286810,
+          "min_amount": 1,
+          "max_amount": 50
+        },
+        {
+          "region": "mid",
+          "cnt": 168637,
+          "sum_amount": 4308364,
+          "min_amount": 1,
+          "max_amount": 50
+        },
+        {
+          "region": "north",
+          "cnt": 168678,
+          "sum_amount": 4301707,
+          "min_amount": 1,
+          "max_amount": 50
+        },
+        {
+          "region": "south",
+          "cnt": 168444,
+          "sum_amount": 4291828,
+          "min_amount": 1,
+          "max_amount": 50
+        },
+        {
+          "region": "west",
+          "cnt": 168237,
+          "sum_amount": 4292968,
+          "min_amount": 1,
+          "max_amount": 50
+        }
+      ]
+    },
+    {
+      "name": "变化量大场景：10万行 + 8万次变化(删4万/增4万)",
+      "baseline_rows": 100000,
+      "changes": 80000,
+      "final_live_rows": 100000,
+      "chosen_mode": "full",
+      "fallback_reason": "成本判断：80000 条变化 > 存活行数 100000 × 0.60，增量不划算",
+      "refresh_latency_s": 0.0903,
+      "if_naive_incremental_full_scan_s": 0.0814,
+      "note": "增量不划算时自动退回全量；延迟即一次全量扫描成本"
+    }
+  ]
+}
