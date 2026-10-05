@@ -1,0 +1,21 @@
+{
+  "chains": 10000,
+  "max_hops_limit": 20,
+  "total_seconds": 1.8291,
+  "per_chain_us": {
+    "mean": 182.34,
+    "p50": 192.83,
+    "p95": 330.78,
+    "max": 34509.04
+  },
+  "depth": {
+    "max": 20,
+    "mean": 14.72
+  },
+  "terminal_status_counts": {
+    "loop": 712,
+    "too_many_redirects": 4224,
+    "invalid_url": 629,
+    "ok": 4435
+  }
+}

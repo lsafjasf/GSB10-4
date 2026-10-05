@@ -1,0 +1,95 @@
+[
+  {
+    "case": "same origin (identical URL)",
+    "from": "https://a.example/app",
+    "to": "https://a.example/app",
+    "kept": [
+      "Accept",
+      "Authorization",
+      "Cookie"
+    ],
+    "stripped": []
+  },
+  {
+    "case": "same origin, default port explicit",
+    "from": "https://a.example/app",
+    "to": "https://a.example/app",
+    "kept": [
+      "Accept",
+      "Authorization",
+      "Cookie"
+    ],
+    "stripped": []
+  },
+  {
+    "case": "same origin, different path",
+    "from": "https://a.example/app",
+    "to": "https://a.example/other",
+    "kept": [
+      "Accept",
+      "Authorization",
+      "Cookie"
+    ],
+    "stripped": []
+  },
+  {
+    "case": "cross host",
+    "from": "https://a.example/app",
+    "to": "https://b.example/app",
+    "kept": [
+      "Accept"
+    ],
+    "stripped": [
+      "Authorization",
+      "Cookie"
+    ]
+  },
+  {
+    "case": "cross subdomain",
+    "from": "https://a.example/app",
+    "to": "https://cdn.a.example/app",
+    "kept": [
+      "Accept"
+    ],
+    "stripped": [
+      "Authorization",
+      "Cookie"
+    ]
+  },
+  {
+    "case": "cross scheme downgrade https->http",
+    "from": "https://a.example/app",
+    "to": "http://a.example/app",
+    "kept": [
+      "Accept"
+    ],
+    "stripped": [
+      "Authorization",
+      "Cookie"
+    ]
+  },
+  {
+    "case": "cross scheme upgrade http->https",
+    "from": "http://a.example/app",
+    "to": "https://a.example/app",
+    "kept": [
+      "Accept"
+    ],
+    "stripped": [
+      "Authorization",
+      "Cookie"
+    ]
+  },
+  {
+    "case": "cross port",
+    "from": "https://a.example/app",
+    "to": "https://a.example:8443/app",
+    "kept": [
+      "Accept"
+    ],
+    "stripped": [
+      "Authorization",
+      "Cookie"
+    ]
+  }
+]

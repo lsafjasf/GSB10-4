@@ -1,0 +1,449 @@
+{
+  "direct_redirect_same_origin": {
+    "status": "ok",
+    "reason": "terminal status 200",
+    "depth": 2,
+    "final_url": "https://shop.example/home",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://shop.example/",
+        "scheme": "https",
+        "host": "shop.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://shop.example/home"
+      },
+      {
+        "seq": 1,
+        "url": "https://shop.example/home",
+        "scheme": "https",
+        "host": "shop.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 200,
+        "location": null
+      }
+    ]
+  },
+  "cross_protocol_downgrade": {
+    "status": "ok",
+    "reason": "terminal status 200",
+    "depth": 2,
+    "final_url": "http://pay.example/landing",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://pay.example/start",
+        "scheme": "https",
+        "host": "pay.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 301,
+        "location": "http://pay.example/landing"
+      },
+      {
+        "seq": 1,
+        "url": "http://pay.example/landing",
+        "scheme": "http",
+        "host": "pay.example",
+        "port": 80,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [],
+        "sensitive_headers_stripped": [
+          "Authorization",
+          "Cookie"
+        ],
+        "status": 200,
+        "location": null
+      }
+    ]
+  },
+  "cross_host_redirect": {
+    "status": "ok",
+    "reason": "terminal status 200",
+    "depth": 2,
+    "final_url": "https://cdn.b.example/asset",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://a.example/go",
+        "scheme": "https",
+        "host": "a.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://cdn.b.example/asset"
+      },
+      {
+        "seq": 1,
+        "url": "https://cdn.b.example/asset",
+        "scheme": "https",
+        "host": "cdn.b.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [],
+        "sensitive_headers_stripped": [
+          "Authorization",
+          "Cookie"
+        ],
+        "status": 200,
+        "location": null
+      }
+    ]
+  },
+  "redirect_loop": {
+    "status": "loop",
+    "reason": "redirect loop detected at https://loop.example/a",
+    "depth": 2,
+    "final_url": "https://loop.example/a",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://loop.example/a",
+        "scheme": "https",
+        "host": "loop.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "/b"
+      },
+      {
+        "seq": 1,
+        "url": "https://loop.example/b",
+        "scheme": "https",
+        "host": "loop.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "a"
+      }
+    ]
+  },
+  "overlong_chain": {
+    "status": "too_many_redirects",
+    "reason": "chain exceeded max_hops=10",
+    "depth": 10,
+    "final_url": "https://deep.example/10",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://deep.example/0",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/1"
+      },
+      {
+        "seq": 1,
+        "url": "https://deep.example/1",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/2"
+      },
+      {
+        "seq": 2,
+        "url": "https://deep.example/2",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/3"
+      },
+      {
+        "seq": 3,
+        "url": "https://deep.example/3",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/4"
+      },
+      {
+        "seq": 4,
+        "url": "https://deep.example/4",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/5"
+      },
+      {
+        "seq": 5,
+        "url": "https://deep.example/5",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/6"
+      },
+      {
+        "seq": 6,
+        "url": "https://deep.example/6",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/7"
+      },
+      {
+        "seq": 7,
+        "url": "https://deep.example/7",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/8"
+      },
+      {
+        "seq": 8,
+        "url": "https://deep.example/8",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/9"
+      },
+      {
+        "seq": 9,
+        "url": "https://deep.example/9",
+        "scheme": "https",
+        "host": "deep.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://deep.example/10"
+      }
+    ]
+  },
+  "relative_and_escaped": {
+    "status": "ok",
+    "reason": "terminal status 200",
+    "depth": 3,
+    "final_url": "https://web.example/final",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://web.example/dir/page",
+        "scheme": "https",
+        "host": "web.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "../%7Euser/./x"
+      },
+      {
+        "seq": 1,
+        "url": "https://web.example/~user/x",
+        "scheme": "https",
+        "host": "web.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "/final"
+      },
+      {
+        "seq": 2,
+        "url": "https://web.example/final",
+        "scheme": "https",
+        "host": "web.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 200,
+        "location": null
+      }
+    ]
+  },
+  "invalid_target_scheme": {
+    "status": "invalid_url",
+    "reason": "bad redirect target 'javascript:alert(1)': unsupported scheme: 'javascript'",
+    "depth": 1,
+    "final_url": "https://evil.example/",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://evil.example/",
+        "scheme": "https",
+        "host": "evil.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "javascript:alert(1)"
+      }
+    ]
+  },
+  "redirect_without_location": {
+    "status": "invalid_url",
+    "reason": "status 302 without Location header",
+    "depth": 1,
+    "final_url": "https://broken.example/",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://broken.example/",
+        "scheme": "https",
+        "host": "broken.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": null
+      }
+    ]
+  },
+  "url_credentials_start": {
+    "status": "ok",
+    "reason": "terminal status 200",
+    "depth": 2,
+    "final_url": "https://other.example/",
+    "hops": [
+      {
+        "seq": 0,
+        "url": "https://auth.example/login",
+        "scheme": "https",
+        "host": "auth.example",
+        "port": 443,
+        "url_has_credentials": true,
+        "sensitive_headers_sent": [
+          "Authorization",
+          "Cookie"
+        ],
+        "sensitive_headers_stripped": [],
+        "status": 302,
+        "location": "https://other.example/"
+      },
+      {
+        "seq": 1,
+        "url": "https://other.example/",
+        "scheme": "https",
+        "host": "other.example",
+        "port": 443,
+        "url_has_credentials": false,
+        "sensitive_headers_sent": [],
+        "sensitive_headers_stripped": [
+          "Authorization",
+          "Cookie"
+        ],
+        "status": 200,
+        "location": null
+      }
+    ]
+  }
+}
