@@ -1,0 +1,22 @@
+== 逐步更新路径与不变量校验 ==
+push A:5 -> 不变量 OK; heap=[A:5@0]
+push B:9 -> 不变量 OK; heap=[A:5@0, B:9@1]
+push C:7 -> 不变量 OK; heap=[A:5@0, B:9@1, C:7@2]
+push D:12 -> 不变量 OK; heap=[A:5@0, B:9@1, C:7@2, D:12@3]
+push E:3 -> 不变量 OK; heap=[E:3@0, A:5@1, C:7@2, D:12@3, B:9@4]
+push F:10 -> 不变量 OK; heap=[E:3@0, A:5@1, C:7@2, D:12@3, B:9@4, F:10@5]
+push G:8 -> 不变量 OK; heap=[E:3@0, A:5@1, C:7@2, D:12@3, B:9@4, F:10@5, G:8@6]
+push H:6 -> 不变量 OK; heap=[E:3@0, A:5@1, C:7@2, H:6@3, B:9@4, F:10@5, G:8@6, D:12@7]
+update D: 12->1; 定位 start=7; 路径=up; final=0; swaps=7->3, 3->1, 1->0; 不变量 OK; heap=[D:1@0, E:3@1, C:7@2, A:5@3, B:9@4, F:10@5, G:8@6, H:6@7]
+update A: 5->15; 定位 start=3; 路径=down; final=7; swaps=3->7; 不变量 OK; heap=[D:1@0, E:3@1, C:7@2, H:6@3, B:9@4, F:10@5, G:8@6, A:15@7]
+update B: 9->9; 定位 start=4; 路径=none; final=4; swaps=无交换; 不变量 OK; heap=[D:1@0, E:3@1, C:7@2, H:6@3, B:9@4, F:10@5, G:8@6, A:15@7]
+update H: 6->-1000000000000; 定位 start=3; 路径=up; final=0; swaps=3->1, 1->0; 不变量 OK; heap=[H:-1000000000000@0, D:1@1, C:7@2, E:3@3, B:9@4, F:10@5, G:8@6, A:15@7]
+update E: 3->1000000000000; 定位 start=3; 路径=down; final=7; swaps=3->7; 不变量 OK; heap=[H:-1000000000000@0, D:1@1, C:7@2, A:15@3, B:9@4, F:10@5, G:8@6, E:1000000000000@7]
+逐步场景结果: PASS
+== 键相等 / 更新为同值 ==
+同值更新 y:4->4: direction=none, 4 个元素位置不变, 无丢失/重复, 弹出顺序=x,y,z,w: PASS
+只减键场景: 64/64 次更新后不变量 OK: PASS
+只增键场景: 64/64 次更新后不变量 OK: PASS
+极端值/缺失元素/重复元素/NaN 边界: PASS
+随机小步数自测: 300/300 次操作后不变量与镜像一致: PASS
+SELF-TEST RESULT: PASS

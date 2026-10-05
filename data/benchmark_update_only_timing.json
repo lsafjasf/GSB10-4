@@ -1,0 +1,24 @@
+{
+  "workload": "update-only",
+  "seed": 341,
+  "operations": 1000000,
+  "initial_items": 1000001,
+  "final_items": 1000001,
+  "operation_counts": {
+    "push": 0,
+    "pop": 0,
+    "update": 1000000,
+    "update_up": 499469,
+    "update_down": 500531,
+    "update_equal": 0
+  },
+  "setup_seconds": 1.3909,
+  "operation_seconds": 4.209426,
+  "operations_per_second": 237562.08,
+  "max_rss_mib": 414.832,
+  "python_allocated_peak_mib": null,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cpu": "AMD Ryzen 7 9700X 8-Core Processor",
+  "invariant_after_workload": "PASS"
+}

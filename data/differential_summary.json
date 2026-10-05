@@ -1,0 +1,12 @@
+{
+  "seed": 20261005,
+  "operations": 1000,
+  "push_count": 410,
+  "update_count": 444,
+  "pop_count": 146,
+  "equal_value_update_count": 51,
+  "remaining_items": 264,
+  "min_after_every_operation": "match",
+  "final_pop_sequence": "match",
+  "result": "PASS"
+}
