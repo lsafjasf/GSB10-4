@@ -1,0 +1,52 @@
+# 精确周期对拍样本: 串 | naive | fast
+'' | 0 | 0
+'a' | 1 | 1
+'aa' | 1 | 1
+'ab' | 2 | 2
+'ababa' | 2 | 2
+'ababab' | 2 | 2
+'abcab' | 3 | 3
+'aaaaaa' | 1 | 1
+'abcdef' | 6 | 6
+'baaccaaacbcbcbcbcc' | 18 | 18
+'babcdccdccbabbccdbabdbdccbcaaadaadabdabacccccbaaccacbca' | 55 | 55
+'bbccccaadbcccbbd' | 16 | 16
+'adcbacbddcdccabcbacbcdcaddcdaaadacdadaacd' | 41 | 41
+'bcabcaccbbbcbcacccbbccbaa' | 25 | 25
+'aaaaaaaaaaaaa' | 1 | 1
+'abbababaabbabaaba' | 16 | 16
+'aababaabbbabaaaabaabbbbaaaaabbbababbbbabbbaaaaaabbbb' | 52 | 52
+'dddbdbdacddaadbddbbbabacbbdcca' | 30 | 30
+'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' | 1 | 1
+'abbbabaaacabcbaaacccaaccbabb' | 25 | 25
+'accacbccaacabcaaaa' | 17 | 17
+'bbcacc' | 6 | 6
+'abbaaabbbabababababbbbbababbabaabbabbbbaabbbaab' | 45 | 45
+'bbbbaaaabbaaabbaaaabaababbbbbabaaaaabaaaababbabbababaabba' | 57 | 57
+'dadadacaddababbcdccbaccadabadbbcdbddaaaabddddbcbabcbbbaaabdb' | 60 | 60
+'aaaaaaaaaaaaaaaaa' | 1 | 1
+'aaaaa' | 1 | 1
+'acabbcccbcabbcbbbbcaaabbaacaaa' | 29 | 29
+'bccbbbaacabcbac' | 15 | 15
+'aa' | 1 | 1
+'bbcdddcbacdabadbbaacdbccddcdddcacacbbabbbbdcadcccaabdba' | 55 | 55
+'baccacccacaabaaabaacbbabacacbcb' | 30 | 30
+'caaccbaacacbcaababaaacbcbcaabcccccaccabaababacc' | 46 | 46
+
+# 近似重复对拍样本: 串 | 容差k | naive(p,m) | fast(p,m) | 错配位置
+'caaggcaaacaaggcxaacaaggcaaacaaggcaaaxaagxcaaacaaggcaaa' | k=8 | p=9,m=6 | p=9,m=6 | [6, 15, 27, 31, 36, 40]
+'cgctcgctcgctcgctcxctxgct' | k=6 | p=4,m=3 | p=4,m=3 | [13, 16, 17]
+'atctatctaxctatctatctxtcxatct' | k=8 | p=4,m=6 | p=4,m=6 | [5, 9, 16, 19, 20, 23]
+'cttcttcttctxcttcttcttctt' | k=4 | p=3,m=2 | p=3,m=2 | [8, 11]
+'cgggacgggacgggaxgggacgxgacxgga' | k=8 | p=5,m=5 | p=5,m=5 | [10, 15, 17, 21, 22]
+'cccgcacccgcacccgcaccxgcacccgca' | k=4 | p=6,m=2 | p=6,m=2 | [14, 20]
+'taaccactxacxactaaccaxtaaccactaaccac' | k=8 | p=7,m=6 | p=7,m=6 | [1, 4, 8, 11, 13, 20]
+'ataacxcataacacataacxcataacxcataacacaxaacac' | k=10 | p=7,m=4 | p=7,m=4 | [5, 12, 26, 29]
+'gagagaxa' | k=4 | p=2,m=1 | p=2,m=1 | [4]
+'cagaxagacaxacagacaga' | k=6 | p=4,m=4 | p=4,m=4 | [0, 4, 6, 10]
+'actatactatacxatactatactatactaxactatactxx' | k=10 | p=5,m=6 | p=5,m=6 | [7, 12, 24, 29, 33, 34]
+'attxcxttaxattacattacxttac' | k=10 | p=5,m=6 | p=5,m=6 | [0, 3, 4, 5, 9, 15]
+'ataagataagataagatxagataagataagxtaagataagataag' | k=6 | p=5,m=4 | p=5,m=4 | [12, 17, 25, 30]
+'tgcaatgcaxtgxaatgcaa' | k=6 | p=5,m=4 | p=5,m=4 | [4, 7, 9, 12]
+'xtxtggatatggatatggatatggatatggaxatggatatgg' | k=8 | p=6,m=4 | p=6,m=4 | [0, 2, 25, 31]
+'acxxcaacaacaacaaxaxcaacaaca' | k=10 | p=3,m=7 | p=3,m=7 | [0, 2, 3, 13, 15, 16, 18]
