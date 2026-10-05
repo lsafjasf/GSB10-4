@@ -1,0 +1,68 @@
+{
+  "seed": 20261005,
+  "fixtures": [
+    {
+      "file": "text.txt.gzip",
+      "encoding": "gzip",
+      "plaintext_sha256": "b3a6b1a85c4afb323f29a5ec716dd92ad076f9209fbd39a0d33816a7a53eaa04",
+      "plaintext_size": 34800,
+      "body_size": 1196
+    },
+    {
+      "file": "text.txt.deflate",
+      "encoding": "deflate",
+      "plaintext_sha256": "b3a6b1a85c4afb323f29a5ec716dd92ad076f9209fbd39a0d33816a7a53eaa04",
+      "plaintext_size": 34800,
+      "body_size": 1184
+    },
+    {
+      "file": "text.txt.gzip+deflate",
+      "encoding": "gzip, deflate",
+      "plaintext_sha256": "b3a6b1a85c4afb323f29a5ec716dd92ad076f9209fbd39a0d33816a7a53eaa04",
+      "plaintext_size": 34800,
+      "body_size": 370
+    },
+    {
+      "file": "random.bin.gzip",
+      "encoding": "gzip",
+      "plaintext_sha256": "c7adbc955cc6a7b59269ecdbea604ce60d51c1bb91542aea3f1679c314fa707a",
+      "plaintext_size": 65536,
+      "body_size": 65574
+    },
+    {
+      "file": "random.bin.deflate",
+      "encoding": "deflate",
+      "plaintext_sha256": "c7adbc955cc6a7b59269ecdbea604ce60d51c1bb91542aea3f1679c314fa707a",
+      "plaintext_size": 65536,
+      "body_size": 65562
+    },
+    {
+      "file": "random.bin.gzip+deflate",
+      "encoding": "gzip, deflate",
+      "plaintext_sha256": "c7adbc955cc6a7b59269ecdbea604ce60d51c1bb91542aea3f1679c314fa707a",
+      "plaintext_size": 65536,
+      "body_size": 65600
+    },
+    {
+      "file": "zeros.bin.gzip",
+      "encoding": "gzip",
+      "plaintext_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "plaintext_size": 32768,
+      "body_size": 64
+    },
+    {
+      "file": "zeros.bin.deflate",
+      "encoding": "deflate",
+      "plaintext_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "plaintext_size": 32768,
+      "body_size": 52
+    },
+    {
+      "file": "zeros.bin.gzip+deflate",
+      "encoding": "gzip, deflate",
+      "plaintext_sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+      "plaintext_size": 32768,
+      "body_size": 40
+    }
+  ]
+}

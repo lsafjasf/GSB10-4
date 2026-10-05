@@ -1,0 +1,54 @@
+{
+  "stream_gzip_hard": {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 104889498,
+    "plain_size": 104857600,
+    "seconds": 0.1069,
+    "throughput_mib_s": 935.71,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 19156,
+    "sha256": "1f8fc8aee096fedd28701307346c77a30bd897fa7b337cb40aa4b899c339fdac",
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64
+  },
+  "stream_gzip_text": {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 7619403,
+    "plain_size": 104857600,
+    "seconds": 0.1124,
+    "throughput_mib_s": 890.02,
+    "tracemalloc_peak_kib": 411.7,
+    "rss_peak_kib": 19336,
+    "sha256": "5bbd05f8a5749f1ffb11b717cb8697d4f2af6fada0bc24aafea9efdffe00535d",
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64
+  },
+  "stream_chain_hard": {
+    "mode": "streaming",
+    "encoding": "gzip, deflate",
+    "body_size": 104921394,
+    "plain_size": 104857600,
+    "seconds": 0.161,
+    "throughput_mib_s": 621.04,
+    "tracemalloc_peak_kib": 336.8,
+    "rss_peak_kib": 19284,
+    "sha256": "1f8fc8aee096fedd28701307346c77a30bd897fa7b337cb40aa4b899c339fdac",
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64
+  },
+  "oneshot_gzip_hard": {
+    "mode": "one-shot",
+    "encoding": "gzip",
+    "body_size": 104889498,
+    "plain_size": 104857600,
+    "seconds": 0.2829,
+    "throughput_mib_s": 353.52,
+    "tracemalloc_peak_kib": 316784.7,
+    "rss_peak_kib": 326192,
+    "sha256": "1f8fc8aee096fedd28701307346c77a30bd897fa7b337cb40aa4b899c339fdac",
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64
+  }
+}

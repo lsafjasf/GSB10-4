@@ -1,0 +1,67 @@
+[
+  {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 1048914,
+    "plain_size": 1048576,
+    "seconds": 0.001,
+    "throughput_mib_s": 966.71,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 22260,
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64,
+    "hash_match": true
+  },
+  {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 8391181,
+    "plain_size": 8388608,
+    "seconds": 0.0054,
+    "throughput_mib_s": 1494.91,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 23452,
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64,
+    "hash_match": true
+  },
+  {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 33564655,
+    "plain_size": 33554432,
+    "seconds": 0.0212,
+    "throughput_mib_s": 1507.39,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 23460,
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64,
+    "hash_match": true
+  },
+  {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 67129287,
+    "plain_size": 67108864,
+    "seconds": 0.0418,
+    "throughput_mib_s": 1531.93,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 23556,
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64,
+    "hash_match": true
+  },
+  {
+    "mode": "streaming",
+    "encoding": "gzip",
+    "body_size": 104889498,
+    "plain_size": 104857600,
+    "seconds": 0.0691,
+    "throughput_mib_s": 1447.16,
+    "tracemalloc_peak_kib": 233.5,
+    "rss_peak_kib": 23560,
+    "in_chunk_kib": 64,
+    "out_chunk_kib": 64,
+    "hash_match": true
+  }
+]
