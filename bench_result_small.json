@@ -1,0 +1,1 @@
+{"tag": "small", "budget_mb": 8, "groups": 4280748, "total_count": 10000000, "total_sum": 2261922826, "checksum": 756159860649836, "wall_s": 37.51, "peak_rss_mb": 54.8, "spill_events": 1, "max_depth": 1, "leaf_partitions": 128, "fanout_by_level": {"0": 128}, "spill_mb": 207.2}
