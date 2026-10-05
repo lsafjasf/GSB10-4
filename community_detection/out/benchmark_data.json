@@ -1,0 +1,42 @@
+{
+  "ari_run1_run2": 1.0,
+  "ari_seed42_vs_seed999": 1.0,
+  "ari_vs_planted_truth": 0.912782,
+  "build_seconds": 1.07,
+  "communities": 246,
+  "community_size_max": 2527,
+  "community_size_median": 1,
+  "community_size_min": 1,
+  "config": {
+    "detect_seed": 42,
+    "intra_fraction": 0.9,
+    "m": 500000,
+    "n": 100000,
+    "n_clusters": 40,
+    "n_isolated": 100,
+    "n_selfloops": 50,
+    "order": "sorted",
+    "seed": 20261005
+  },
+  "coverage": 0.868982,
+  "detect_seconds_run1": 71.965,
+  "detect_seconds_run2": 16.933,
+  "edges": 499970.0,
+  "levels": 4,
+  "machine": "x86_64",
+  "mean_conductance": 0.02133,
+  "modularity": 0.84397,
+  "passes_per_level": [
+    17,
+    18,
+    3,
+    1
+  ],
+  "peak_python_alloc_mb": 136.4,
+  "peak_rss_mb": 437.5,
+  "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "run1_eq_run2": true,
+  "singleton_communities": 206,
+  "stop_reason": "no_merge_level"
+}
