@@ -1,0 +1,19 @@
+{
+  "edges_raw": 1000000,
+  "duplicates_removed": 4,
+  "nodes": 299601,
+  "chain_depth": 10000,
+  "max_depth": 10000,
+  "status": "cycle_detected",
+  "visited": 287679,
+  "truncated": 0,
+  "cycle_regions": 1,
+  "cycle_nodes_total": 275964,
+  "time_generate_s": 1.884,
+  "time_build_graph_s": 2.43,
+  "time_query_s": 5.719,
+  "time_total_s": 10.033,
+  "mem_python_peak_mb": 256.9,
+  "mem_rss_peak_mb": 780.5,
+  "mem_rss_delta_mb": 749.3
+}

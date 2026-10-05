@@ -1,0 +1,434 @@
+{
+  "cases": 9,
+  "all_match": true,
+  "report": [
+    {
+      "name": "acyclic_deep_chain",
+      "desc": "无环深链 1->2->...->10，max_depth=3",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "depth_limited",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 3
+        },
+        "truncated": [
+          4
+        ],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "actual": {
+        "status": "depth_limited",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 3
+        },
+        "truncated": [
+          4
+        ],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "match": true
+    },
+    {
+      "name": "acyclic_chain_full_depth",
+      "desc": "无环链放大深度后全部可达",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "ok",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 3,
+          "5": 4,
+          "6": 5,
+          "7": 6,
+          "8": 7,
+          "9": 8,
+          "10": 9
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "actual": {
+        "status": "ok",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 3,
+          "5": 4,
+          "6": 5,
+          "7": 6,
+          "8": 7,
+          "9": 8,
+          "10": 9
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "match": true
+    },
+    {
+      "name": "single_cycle_with_tail",
+      "desc": "单环 a->b->c->a，环尾 c->d",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "c",
+            "a"
+          ]
+        ]
+      },
+      "actual": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b",
+            "c"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "c",
+            "a"
+          ]
+        ]
+      },
+      "match": true
+    },
+    {
+      "name": "two_cycles_intersect",
+      "desc": "两环相交于 c：a-b-c-a 与 c-d-e-c",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3,
+          "e": 4
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "d",
+            "e",
+            "c"
+          ]
+        ]
+      },
+      "actual": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3,
+          "e": 4
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "c",
+            "a"
+          ],
+          [
+            "c",
+            "d",
+            "e",
+            "c"
+          ]
+        ]
+      },
+      "match": true
+    },
+    {
+      "name": "self_loop",
+      "desc": "自环 x->x，带出边 x->y",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "cycle_detected",
+        "visited": {
+          "x": 0,
+          "y": 1
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "x"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "x",
+            "x"
+          ]
+        ]
+      },
+      "actual": {
+        "status": "cycle_detected",
+        "visited": {
+          "x": 0,
+          "y": 1
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "x"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "x",
+            "x"
+          ]
+        ]
+      },
+      "match": true
+    },
+    {
+      "name": "duplicate_edges",
+      "desc": "重复边 (1,2) x3，去重后无环",
+      "duplicates_removed": 2,
+      "expected": {
+        "status": "ok",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "actual": {
+        "status": "ok",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "match": true
+    },
+    {
+      "name": "unreachable_cycle",
+      "desc": "起点 s 无出边，环 p-q-p 不可达",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "ok",
+        "visited": {
+          "s": 0,
+          "t": 1
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "actual": {
+        "status": "ok",
+        "visited": {
+          "s": 0,
+          "t": 1
+        },
+        "truncated": [],
+        "cycle_nodes": [],
+        "cycle_sequences": []
+      },
+      "match": true
+    },
+    {
+      "name": "depth_limit_and_cycle_both",
+      "desc": "环 2-3-2 与深链 3->4->5...，max_depth=2 同时触发",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "cycle_detected_and_depth_limited",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2
+        },
+        "truncated": [
+          3
+        ],
+        "cycle_nodes": [
+          [
+            2,
+            3
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            2,
+            3,
+            2
+          ]
+        ]
+      },
+      "actual": {
+        "status": "cycle_detected_and_depth_limited",
+        "visited": {
+          "1": 0,
+          "2": 1,
+          "3": 2
+        },
+        "truncated": [
+          3
+        ],
+        "cycle_nodes": [
+          [
+            2,
+            3
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            2,
+            3,
+            2
+          ]
+        ]
+      },
+      "match": true
+    },
+    {
+      "name": "two_disjoint_cycles",
+      "desc": "两个不相交环 a-b-a、d-e-d，经 a->d 相连",
+      "duplicates_removed": 0,
+      "expected": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "d": 1,
+          "e": 2
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "d",
+            "e"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "a"
+          ],
+          [
+            "d",
+            "e",
+            "d"
+          ]
+        ]
+      },
+      "actual": {
+        "status": "cycle_detected",
+        "visited": {
+          "a": 0,
+          "b": 1,
+          "d": 1,
+          "e": 2
+        },
+        "truncated": [],
+        "cycle_nodes": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "d",
+            "e"
+          ]
+        ],
+        "cycle_sequences": [
+          [
+            "a",
+            "b",
+            "a"
+          ],
+          [
+            "d",
+            "e",
+            "d"
+          ]
+        ]
+      },
+      "match": true
+    }
+  ]
+}
