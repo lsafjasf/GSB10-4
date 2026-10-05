@@ -1,0 +1,8 @@
+From: Alice <alice@example.com>
+To: bob@example.com
+Subject: Hello
+Content-Type: text/plain; charset=utf-8
+
+Hi Bob,
+see you at 10.
+-- Alice

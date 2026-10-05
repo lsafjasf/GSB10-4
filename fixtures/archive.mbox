@@ -1,0 +1,56 @@
+From alice@example.com Mon Oct  5 09:00:00 2026
+From: Alice <alice@example.com>
+To: bob@example.com
+Subject: Hello
+Content-Type: text/plain; charset=utf-8
+
+Hi Bob,
+see you at 10.
+-- Alice
+From carol@example.com Mon Oct  5 09:05:00 2026
+From: Carol <carol@example.com>
+Subject: A very long subject line that was folded by the sender's
+	mail user agent across two physical lines
+X-Custom-Long: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	continued here without losing a single byte
+Content-Type: text/plain; charset=utf-8
+
+folded headers must survive
+From dan@example.com Mon Oct  5 09:10:00 2026
+From: Dan <dan@example.com>
+Subject: no body
+
+From erin@example.com Mon Oct  5 09:15:00 2026
+From: Erin <erin@example.com>
+Subject: quoting a log
+Content-Type: text/plain; charset=utf-8
+
+The mbox file contained this line verbatim:
+>From mallory@evil.example Sat Nov  1 03:04:05 2025
+and this one too:
+>From nobody@nowhere.invalid Tue Dec 31 23:59:59 2030
+but both are just quoted log output, not boundaries.
+From frank@example.com Mon Oct  5 09:20:00 2026
+
+This message has no header section at all.
+It starts directly with a blank line.
+From gwen@example.com Mon Oct  5 09:25:00 2026
+From: Gwen <gwen@example.com>
+Subject: =?UTF-8?B?5L2g5aW977yM5LiW55WM?=
+Content-Type: text/plain; charset=utf-8
+
+你好，世界！附件是《拆分规则》终稿。
+From heidi@example.com Mon Oct  5 09:30:00 2026
+From: Heidi <heidi@example.com>
+Subject: declared utf-8 but actually latin-1
+Content-Type: text/plain; charset=utf-8
+
+caf� na�ve �
+From ivan@example.com Mon Oct  5 09:35:00 2026
+From: Ivan <ivan@example.com>
+Subject: CRLF + >From
+Content-Type: text/plain; charset=us-ascii
+
+>>From a previous quoted message
+>>>From doubly quoted
+done

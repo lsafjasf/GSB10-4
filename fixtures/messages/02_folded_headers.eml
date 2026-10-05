@@ -1,0 +1,8 @@
+From: Carol <carol@example.com>
+Subject: A very long subject line that was folded by the sender's
+	mail user agent across two physical lines
+X-Custom-Long: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	continued here without losing a single byte
+Content-Type: text/plain; charset=utf-8
+
+folded headers must survive

@@ -1,0 +1,5 @@
+From: Heidi <heidi@example.com>
+Subject: declared utf-8 but actually latin-1
+Content-Type: text/plain; charset=utf-8
+
+café naïve ÿ

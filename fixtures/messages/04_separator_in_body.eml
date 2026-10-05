@@ -1,0 +1,9 @@
+From: Erin <erin@example.com>
+Subject: quoting a log
+Content-Type: text/plain; charset=utf-8
+
+The mbox file contained this line verbatim:
+From mallory@evil.example Sat Nov  1 03:04:05 2025
+and this one too:
+From nobody@nowhere.invalid Tue Dec 31 23:59:59 2030
+but both are just quoted log output, not boundaries.

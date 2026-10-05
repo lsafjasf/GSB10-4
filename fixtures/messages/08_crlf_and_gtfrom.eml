@@ -1,0 +1,7 @@
+From: Ivan <ivan@example.com>
+Subject: CRLF + >From
+Content-Type: text/plain; charset=us-ascii
+
+>From a previous quoted message
+>>From doubly quoted
+done
