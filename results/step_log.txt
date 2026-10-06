@@ -1,0 +1,155 @@
+动态表逐步骤双端对拍（编码端 vs 解码端）
+============================================================
+空表查询检出: IndexOutOfBounds: 相对索引 0 越界（当前表内 0 条，有效区间 [0, 0))
+
+步骤 01 | 初始空表（容量 0）
+  [编码端] capacity=0 size=0 count=0 insert_count=0 dropped=0
+    (空表)
+  [解码端] capacity=0 size=0 count=0 insert_count=0 dropped=0
+    (空表)
+  对拍结果: 一致 OK
+
+步骤 02 | Set Dynamic Table Capacity = 220
+  [编码端] capacity=220 size=0 count=0 insert_count=0 dropped=0
+    (空表)
+  [解码端] capacity=220 size=0 count=0 insert_count=0 dropped=0
+    (空表)
+  对拍结果: 一致 OK
+
+步骤 03 | 插入 :path: /index.html (48B)
+  [编码端] capacity=220 size=48 count=1 insert_count=1 dropped=0
+    rel=0  abs=0   :path: /index.html
+  [解码端] capacity=220 size=48 count=1 insert_count=1 dropped=0
+    rel=0  abs=0   :path: /index.html
+  对拍结果: 一致 OK
+
+步骤 04 | 插入 custom-key: custom-value (54B)
+  [编码端] capacity=220 size=102 count=2 insert_count=2 dropped=0
+    rel=0  abs=1   custom-key: custom-value
+    rel=1  abs=0   :path: /index.html
+  [解码端] capacity=220 size=102 count=2 insert_count=2 dropped=0
+    rel=0  abs=1   custom-key: custom-value
+    rel=1  abs=0   :path: /index.html
+  对拍结果: 一致 OK
+
+步骤 05 | 插入 user-agent: gsb-client/1.0 (57B)
+  [编码端] capacity=220 size=158 count=3 insert_count=3 dropped=0
+    rel=0  abs=2   user-agent: gsb-client/1.0
+    rel=1  abs=1   custom-key: custom-value
+    rel=2  abs=0   :path: /index.html
+  [解码端] capacity=220 size=158 count=3 insert_count=3 dropped=0
+    rel=0  abs=2   user-agent: gsb-client/1.0
+    rel=1  abs=1   custom-key: custom-value
+    rel=2  abs=0   :path: /index.html
+  对拍结果: 一致 OK
+
+步骤 06 | 插入 accept-encoding: gzip, br (55B)
+  [编码端] capacity=220 size=213 count=4 insert_count=4 dropped=0
+    rel=0  abs=3   accept-encoding: gzip, br
+    rel=1  abs=2   user-agent: gsb-client/1.0
+    rel=2  abs=1   custom-key: custom-value
+    rel=3  abs=0   :path: /index.html
+  [解码端] capacity=220 size=213 count=4 insert_count=4 dropped=0
+    rel=0  abs=3   accept-encoding: gzip, br
+    rel=1  abs=2   user-agent: gsb-client/1.0
+    rel=2  abs=1   custom-key: custom-value
+    rel=3  abs=0   :path: /index.html
+  对拍结果: 一致 OK
+
+[往返#1] 头部块前缀: RIC=3 base=4 fields=[('indexed', 2), ('indexed', 1), ('literal', 'cache-control', 'no-cache')]
+[往返#1] 解码结果: [('custom-key', 'custom-value'), ('user-agent', 'gsb-client/1.0'), ('cache-control', 'no-cache')]
+[往返#1] 解码端回执 Known Received Count = 4
+
+步骤 07 | 头部块往返 #1（编码端记录 KRC=4）
+  [编码端] capacity=220 size=213 count=4 insert_count=4 dropped=0
+    rel=0  abs=3   accept-encoding: gzip, br
+    rel=1  abs=2   user-agent: gsb-client/1.0
+    rel=2  abs=1   custom-key: custom-value
+    rel=3  abs=0   :path: /index.html
+  [解码端] capacity=220 size=213 count=4 insert_count=4 dropped=0
+    rel=0  abs=3   accept-encoding: gzip, br
+    rel=1  abs=2   user-agent: gsb-client/1.0
+    rel=2  abs=1   custom-key: custom-value
+    rel=3  abs=0   :path: /index.html
+  对拍结果: 一致 OK
+
+步骤 08 | 插入 x-token: abcdef (45B)，FIFO 驱逐 abs=0
+  [编码端] capacity=220 size=210 count=4 insert_count=5 dropped=1
+    rel=0  abs=4   x-token: abcdef
+    rel=1  abs=3   accept-encoding: gzip, br
+    rel=2  abs=2   user-agent: gsb-client/1.0
+    rel=3  abs=1   custom-key: custom-value
+  [解码端] capacity=220 size=210 count=4 insert_count=5 dropped=1
+    rel=0  abs=4   x-token: abcdef
+    rel=1  abs=3   accept-encoding: gzip, br
+    rel=2  abs=2   user-agent: gsb-client/1.0
+    rel=3  abs=1   custom-key: custom-value
+  对拍结果: 一致 OK
+
+[往返#2] 头部块前缀: RIC=5 base=5 fields=[('indexed', 0)]
+[往返#2] 解码结果: [('x-token', 'abcdef')]
+[往返#2] 解码端回执 Known Received Count = 5
+
+步骤 09 | 头部块往返 #2（编码端记录 KRC=5）
+  [编码端] capacity=220 size=210 count=4 insert_count=5 dropped=1
+    rel=0  abs=4   x-token: abcdef
+    rel=1  abs=3   accept-encoding: gzip, br
+    rel=2  abs=2   user-agent: gsb-client/1.0
+    rel=3  abs=1   custom-key: custom-value
+  [解码端] capacity=220 size=210 count=4 insert_count=5 dropped=1
+    rel=0  abs=4   x-token: abcdef
+    rel=1  abs=3   accept-encoding: gzip, br
+    rel=2  abs=2   user-agent: gsb-client/1.0
+    rel=3  abs=1   custom-key: custom-value
+  对拍结果: 一致 OK
+
+步骤 10 | Set Dynamic Table Capacity = 60（强制驱逐已确认旧项）
+  [编码端] capacity=60 size=45 count=1 insert_count=5 dropped=4
+    rel=0  abs=4   x-token: abcdef
+  [解码端] capacity=60 size=45 count=1 insert_count=5 dropped=4
+    rel=0  abs=4   x-token: abcdef
+  对拍结果: 一致 OK
+
+步骤 11 | 插入 60B 表项，FIFO 驱逐 abs=4，容量恰好占满
+  [编码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  [解码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  对拍结果: 一致 OK
+
+溢出检出: EntryTooLarge: 表项大小 135 > 当前容量 60，插入指令无法执行
+
+步骤 12 | 尝试插入 132B 表项（被拒，表保持不变）
+  [编码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  [解码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  对拍结果: 一致 OK
+
+容量上限检出: CapacityExceeded: 容量 999 超出协商上限 256，指令无法执行
+
+步骤 13 | 尝试 Set Capacity = 999 > max 256（被拒）
+  [编码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  [解码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  对拍结果: 一致 OK
+
+索引越界检出: IndexOutOfBounds: 绝对索引 0 越界（有效区间 [5, 6)）
+
+步骤 14 | 查询已被驱逐的绝对索引 0（被拒）
+  [编码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  [解码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  对拍结果: 一致 OK
+
+不可驱逐检出: UnsafeEviction: 需要驱逐未确认表项（绝对索引 5，对端仅确认到 5），指令不能执行
+
+步骤 15 | 尝试驱逐未确认表项 abs=5（被拒，表保持不变）
+  [编码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  [解码端] capacity=60 size=60 count=1 insert_count=6 dropped=5
+    rel=0  abs=5   kkkkkkkkkkkkkk: vvvvvvvvvvvvvv
+  对拍结果: 一致 OK
+
