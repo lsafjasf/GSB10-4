@@ -1,0 +1,29 @@
+行数 n = 1000000，Python 3.12.3
+造数耗时 0.41 s，输入构造后进程 RSS 峰值 145.0 MB
+
+[正确性] 前 10000 行抽样对拍：
+  ROWS  UNBOUNDED PRECEDING..CURRENT ROW               对拍通过
+  ROWS  100 PRECEDING..100 FOLLOWING (min)             对拍通过
+  RANGE 1000 PRECEDING..CURRENT ROW (sum)              对拍通过
+  RANGE UNBOUNDED PRECEDING..CURRENT ROW (默认帧, sum)    对拍通过
+  GROUPS 5 PRECEDING..5 FOLLOWING (sum)                对拍通过
+  ROWS  UNBOUNDED PRECEDING..UNBOUNDED FOLLOWING (全帧, avg) 对拍通过
+
+[性能] n=1000000（耗时为 3 次最优值）
+  帧 / 聚合                                                  耗时(s)     增量峰值(MB)   吞吐(万行/s)
+  ROWS  UNBOUNDED PRECEDING..CURRENT ROW                   5.53        114.4       18.1
+  ROWS  100 PRECEDING..100 FOLLOWING (min)                 7.28        114.4       13.7
+  RANGE 1000 PRECEDING..CURRENT ROW (sum)                  7.94        114.4       12.6
+  RANGE UNBOUNDED PRECEDING..CURRENT ROW (默认帧, sum)        6.54        114.4       15.3
+  GROUPS 5 PRECEDING..5 FOLLOWING (sum)                   11.30        114.4        8.9
+  ROWS  UNBOUNDED PRECEDING..UNBOUNDED FOLLOWING (全帧, avg)     7.22        114.4       13.8
+
+[内存] 全部跑完后进程 RSS 高水位：520.1 MB
+
+[可复现] 同输入重复运行结果 SHA-256（前 16 位）：
+  ROWS  UNBOUNDED PRECEDING..CURRENT ROW               90b98f288c34a001  3 次一致
+  ROWS  100 PRECEDING..100 FOLLOWING (min)             d6a98486a91c3937  3 次一致
+  RANGE 1000 PRECEDING..CURRENT ROW (sum)              ce7a80116836946c  3 次一致
+  RANGE UNBOUNDED PRECEDING..CURRENT ROW (默认帧, sum)    264331a6c09b615a  3 次一致
+  GROUPS 5 PRECEDING..5 FOLLOWING (sum)                377acddb2113ae73  3 次一致
+  ROWS  UNBOUNDED PRECEDING..UNBOUNDED FOLLOWING (全帧, avg) 5adc06131bbed9ad  3 次一致
