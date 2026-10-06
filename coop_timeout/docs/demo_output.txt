@@ -1,0 +1,25 @@
+== scenario matrix: interrupt point -> outcome & cleanup ==
+scenario                     outcome   respond-stage    released signals          ovsh cleanup-observations
+A1-timeout-at-pre-acquire-R1 timeout   pre-acquire-R1   -        timeout          0    -
+A2-timeout-at-post-acquire-R1 timeout   post-acquire-R1  R1       timeout          0    -
+B-timeout-mid-acquire-R2     timeout   post-acquire-R2  R1,R2    timeout          1    -
+C-timeout-eq-post-acquire-R2 timeout   post-acquire-R2  R1,R2    timeout          0    -
+D-timeout-mid-w1             timeout   post-w1          R1,R2    timeout          3    -
+E-timeout-mid-w2             timeout   post-w2          R1,R2    timeout          5    -
+F-timeout-eq-post-w3         timeout   post-w3          R1,R2    timeout          0    -
+G0-cancel-at-pre-commit      cancelled pre-commit       R1,R2    cancel           -    -
+G-cancel-at-pre-w2           cancelled pre-w2           R1,R2    cancel           -    -
+H-cancel-mid-w1              cancelled post-w1          R1,R2    cancel           -    -
+I-fail-mid-w2                failed    w2               R1,R2    -                -    -
+J-reinterrupt-during-cleanup timeout   post-w2          R1,R2    timeout,cancel   5    cancel@post-release-R2
+K-success                    ok        commit           R1,R2    -                -    -
+K0-success-just-under-deadline ok        commit           R1,R2    -                -    -
+L-cancel-before-start        cancelled pre-acquire-R1   -        cancel           -    -
+M-timeout-during-cleanup     cancelled pre-w2           R1,R2    cancel,timeout   10   timeout@post-release-R2
+N-release-failure            ok        commit           R1,R2    -                -    -
+
+== A/B: cancel AFTER completion must not change the sealed result ==
+baseline        : ('ok', 'RESULT', None, 'commit', 0, 30, None, (), None)
+after-late-cancel: ('ok', 'RESULT', None, 'commit', 0, 30, None, (), None) (token.cancelled=True)
+result identical : True | cleanup identical: True | event log identical: True
+ALL SCENARIOS OK

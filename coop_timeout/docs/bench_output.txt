@@ -1,0 +1,24 @@
+== 100,000 cooperative timeout scenarios (time injected) ==
+wall-clock for 100000 tasks: best=705 ms  median=778 ms  worst=799 ms
+runner scheduling cost: median 7.782 us/task (128495 tasks/s)
+checkpoints hit: 1321594 total (13.22/task), resource releases: 200000 (2.00/task)
+
+-- cooperative response latency: overshoot = finished - deadline (virtual ns) --
+min=0  mean=5.825  stdev=3.884
+p50    6
+p90    11
+p95    13
+p99    14
+p99.9  15
+p100   15
+
+overshoot histogram (bucket width 4 virtual ns):
+  [ 0- 4)  32620 #######################################
+  [ 4- 8)  33706 ########################################
+  [ 8-12)  24375 #############################
+  [12-16)   9299 ###########
+
+responded-at stages: {'post-w3': 46935, 'post-w2': 42851, 'post-w4': 7912, 'post-w1': 2217, 'post-w5': 85}
+
+== idle checkpoint scheduling cost (no signal latched) ==
+102.8 ns/checkpoint (9.72 million checkpoints/s)
