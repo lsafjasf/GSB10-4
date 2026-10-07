@@ -1,0 +1,18 @@
+{
+  "variables": 10000,
+  "pairwise_edges": 100000,
+  "factors": 110000,
+  "damping": 0.3,
+  "tol": 1e-06,
+  "status": "converged",
+  "iterations": 146,
+  "final_residual": 9.391639534950258e-07,
+  "build_seconds": 0.34,
+  "inference_seconds": 422.25,
+  "seconds_per_iteration": 2.892,
+  "peak_rss_mb": 713.8,
+  "peak_rss_mb_incl_tracemalloc": 1380.9,
+  "tracemalloc_peak_mb_3iters": 349.1,
+  "python": "3.12.3",
+  "machine": "x86_64"
+}

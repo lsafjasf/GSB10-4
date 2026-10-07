@@ -1,0 +1,67 @@
+{
+  "tol": 1e-06,
+  "residual": "max over messages of |m_t - m_{t-1}|_inf",
+  "tree_chain": {
+    "variables": 25,
+    "factors": 49,
+    "edges": 24,
+    "iterations": 9,
+    "status": "converged",
+    "final_residual": 2.6461599855753803e-07,
+    "max_marginal_error": 2.303090662625351e-09
+  },
+  "loopy_grid_6x6": {
+    "variables": 36,
+    "factors": 96,
+    "edges": 60,
+    "iterations": 29,
+    "status": "converged",
+    "final_residual": 9.162296893405752e-07,
+    "max_marginal_error": 0.03684979738579586,
+    "mean_marginal_error": 0.021603506339250785,
+    "worst_variable": "x3_4"
+  },
+  "strong_coupling": {
+    "variables": 3,
+    "factors": 6,
+    "no_damping": {
+      "status": "oscillating",
+      "iterations": 24,
+      "final_residual": 0.013685002637617627,
+      "trustworthy": false,
+      "residual_window": [
+        0.013698678865635916,
+        0.016677923746154844,
+        0.013693712027722071,
+        0.013692468207648356,
+        0.016673383062775438,
+        0.01369246063395102,
+        0.013691217482994955,
+        0.016668840462679246,
+        0.013686254699256661,
+        0.013685011556752169,
+        0.016664302250759322,
+        0.013685002637617627
+      ]
+    },
+    "damping_0_5": {
+      "status": "converged",
+      "iterations": 89,
+      "final_residual": 6.835550957484671e-07,
+      "trustworthy": true,
+      "max_marginal_error": 0.005206939789926923
+    }
+  },
+  "degenerate_messages": {
+    "guard_triggered": true,
+    "exception": "zero-mass message belief(a): cannot normalize; likely contradictory hard evidence"
+  },
+  "negative_guard": {
+    "roundoff_clamped": [
+      0.7,
+      0.0,
+      0.3
+    ],
+    "hard_negative_blocked": true
+  }
+}
