@@ -1,0 +1,18 @@
+== Dynamic table benchmark: 1000000 header blocks ==
+headers per block      : 6 (6000000 header fields total)
+dynamic table capacity : 4096 bytes
+workload               : 12 names, 500-value hot pool (85% hits), 15% unique values
+
+encode time            : 82.372 s (block + stream chunk)
+decode time            : 55.658 s (chunk apply + block decode)
+total wall time        : 150.166 s
+encode throughput      : 12140 blocks/s (72840 fields/s)
+decode throughput      : 17967 blocks/s (107802 fields/s)
+python object peak     : 0.04 MiB (tracemalloc)
+process RSS peak       : 11.95 MiB (ru_maxrss, 0.0 MiB over baseline)
+wire volume            : 173.22 MiB (181.6 bytes/block)
+decode mismatches      : 0
+end states identical   : True
+table after run        : size=4092 inserts=5886795 dropped=5886713
+
+environment            : Python 3.12.3

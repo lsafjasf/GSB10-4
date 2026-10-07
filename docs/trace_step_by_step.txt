@@ -1,0 +1,97 @@
+== Dynamic table step-by-step cross-check ==
+protocol maximum capacity: 140 bytes; entry overhead: 32 bytes
+STEP 01 | op: initial state (empty table)
+  encoder: cap=140 size=0 inserts=0 dropped=0 entries=<empty>
+  decoder: cap=140 size=0 inserts=0 dropped=0 entries=<empty>
+  state : MATCH
+STEP 02 | op: set_capacity(140)
+  encoder: cap=140 size=0 inserts=0 dropped=0 entries=<empty>
+  decoder: cap=140 size=0 inserts=0 dropped=0 entries=<empty>
+  state : MATCH
+STEP 03 | op: insert h=0
+  encoder: cap=140 size=34 inserts=1 dropped=0 entries=#0[h=0]
+  decoder: cap=140 size=34 inserts=1 dropped=0 entries=#0[h=0]
+  state : MATCH
+STEP 04 | op: insert h=1
+  encoder: cap=140 size=68 inserts=2 dropped=0 entries=#1[h=1], #0[h=0]
+  decoder: cap=140 size=68 inserts=2 dropped=0 entries=#1[h=1], #0[h=0]
+  state : MATCH
+STEP 05 | op: insert h=2
+  encoder: cap=140 size=102 inserts=3 dropped=0 entries=#2[h=2], #1[h=1], #0[h=0]
+  decoder: cap=140 size=102 inserts=3 dropped=0 entries=#2[h=2], #1[h=1], #0[h=0]
+  state : MATCH
+STEP 06 | op: insert h=3
+  encoder: cap=140 size=136 inserts=4 dropped=0 entries=#3[h=3], #2[h=2], #1[h=1], #0[h=0]
+  decoder: cap=140 size=136 inserts=4 dropped=0 entries=#3[h=3], #2[h=2], #1[h=1], #0[h=0]
+  state : MATCH
+STEP 07 | op: insert h=4 (table full -> evict oldest h=0)
+  encoder: cap=140 size=136 inserts=5 dropped=1 entries=#4[h=4], #3[h=3], #2[h=2], #1[h=1]
+  decoder: cap=140 size=136 inserts=5 dropped=1 entries=#4[h=4], #3[h=3], #2[h=2], #1[h=1]
+  state : MATCH
+STEP 08 | op: header block [('h', '4'), ('h', '1'), ('x-new', '1')]
+  wire  : 26 bytes; decoded=[('h', '4'), ('h', '1'), ('x-new', '1')]
+  state : MATCH (headers + table)
+STEP 09 | op: set_capacity(70) (shrink triggers eviction)
+  encoder: cap=70 size=38 inserts=6 dropped=5 entries=#5[x-new=1]
+  decoder: cap=70 size=38 inserts=6 dropped=5 entries=#5[x-new=1]
+  state : MATCH
+STEP 10 | op: insert k=0 (continuous insertion)
+  encoder: cap=70 size=34 inserts=7 dropped=6 entries=#6[k=0]
+  decoder: cap=70 size=34 inserts=7 dropped=6 entries=#6[k=0]
+  state : MATCH
+STEP 11 | op: insert k=1 (continuous insertion)
+  encoder: cap=70 size=68 inserts=8 dropped=6 entries=#7[k=1], #6[k=0]
+  decoder: cap=70 size=68 inserts=8 dropped=6 entries=#7[k=1], #6[k=0]
+  state : MATCH
+STEP 12 | op: insert k=2 (continuous insertion)
+  encoder: cap=70 size=68 inserts=9 dropped=7 entries=#8[k=2], #7[k=1]
+  decoder: cap=70 size=68 inserts=9 dropped=7 entries=#8[k=2], #7[k=1]
+  state : MATCH
+STEP 13 | op: insert k=3 (continuous insertion)
+  encoder: cap=70 size=68 inserts=10 dropped=8 entries=#9[k=3], #8[k=2]
+  decoder: cap=70 size=68 inserts=10 dropped=8 entries=#9[k=3], #8[k=2]
+  state : MATCH
+STEP 14 | op: insert k=4 (continuous insertion)
+  encoder: cap=70 size=68 inserts=11 dropped=9 entries=#10[k=4], #9[k=3]
+  decoder: cap=70 size=68 inserts=11 dropped=9 entries=#10[k=4], #9[k=3]
+  state : MATCH
+STEP 15 | op: insert k=5 (continuous insertion)
+  encoder: cap=70 size=68 inserts=12 dropped=10 entries=#11[k=5], #10[k=4]
+  decoder: cap=70 size=68 inserts=12 dropped=10 entries=#11[k=5], #10[k=4]
+  state : MATCH
+STEP 16 | op: insert k=6 (continuous insertion)
+  encoder: cap=70 size=68 inserts=13 dropped=11 entries=#12[k=6], #11[k=5]
+  decoder: cap=70 size=68 inserts=13 dropped=11 entries=#12[k=6], #11[k=5]
+  state : MATCH
+STEP 17 | op: insert k=7 (continuous insertion)
+  encoder: cap=70 size=68 inserts=14 dropped=12 entries=#13[k=7], #12[k=6]
+  decoder: cap=70 size=68 inserts=14 dropped=12 entries=#13[k=7], #12[k=6]
+  state : MATCH
+STEP 18 | op: insert k=8 (continuous insertion)
+  encoder: cap=70 size=68 inserts=15 dropped=13 entries=#14[k=8], #13[k=7]
+  decoder: cap=70 size=68 inserts=15 dropped=13 entries=#14[k=8], #13[k=7]
+  state : MATCH
+STEP 19 | op: insert k=9 (continuous insertion)
+  encoder: cap=70 size=68 inserts=16 dropped=14 entries=#15[k=9], #14[k=8]
+  decoder: cap=70 size=68 inserts=16 dropped=14 entries=#15[k=9], #14[k=8]
+  state : MATCH
+STEP 20 | op: insert k=10 (continuous insertion)
+  encoder: cap=70 size=69 inserts=17 dropped=15 entries=#16[k=10], #15[k=9]
+  decoder: cap=70 size=69 inserts=17 dropped=15 entries=#16[k=10], #15[k=9]
+  state : MATCH
+STEP 21 | op: insert k=11 (continuous insertion)
+  encoder: cap=70 size=70 inserts=18 dropped=16 entries=#17[k=11], #16[k=10]
+  decoder: cap=70 size=70 inserts=18 dropped=16 entries=#17[k=11], #16[k=10]
+  state : MATCH
+STEP 22 | op: header block [('k', '11'), ('k', '5'), ('lit', 'v')]
+  wire  : 27 bytes; decoded=[('k', '11'), ('k', '5'), ('lit', 'v')]
+  state : MATCH (headers + table)
+STEP 23 | op: set_capacity(140) (grow)
+  encoder: cap=140 size=70 inserts=20 dropped=18 entries=#19[lit=v], #18[k=5]
+  decoder: cap=140 size=70 inserts=20 dropped=18 entries=#19[lit=v], #18[k=5]
+  state : MATCH
+STEP 24 | op: header block [(':status', '200'), ('k', '11'), ('x', '')]
+  wire  : 24 bytes; decoded=[(':status', '200'), ('k', '11'), ('x', '')]
+  state : MATCH (headers + table)
+
+summary: 24 steps, 0 mismatch(es)

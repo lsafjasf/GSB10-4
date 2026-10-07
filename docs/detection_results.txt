@@ -1,0 +1,28 @@
+== Decode-layer error detection results ==
+
+CASE: lost update chunk (seq 0 dropped, seq 1 arrives)
+  raised : LostUpdateError: expected chunk seq 0, got 1: 1 update chunk(s) lost
+  expect : LostUpdateError -> DETECTED
+CASE: duplicate/out-of-order chunk (seq 0 replayed)
+  raised : OutOfOrderUpdateError: expected chunk seq 1, got 0: duplicate or out-of-order update
+  expect : OutOfOrderUpdateError -> DETECTED
+CASE: header block precedes its table updates (RIC > KRC)
+  raised : BlockedHeaderBlock: block requires insert count 1, decoder only knows 0: encoder updates missing or not yet arrived
+  expect : BlockedHeaderBlock -> DETECTED
+CASE: index out of range (relative index 99, empty table)
+  raised : IndexOutOfRange: absolute index -100 out of range (insert_count=0)
+  expect : IndexOutOfRange -> DETECTED
+CASE: reference to evicted entry (abs 0, dropped_count 1)
+  raised : EvictedEntryReference: absolute index 0 already evicted (dropped_count=1)
+  expect : EvictedEntryReference -> DETECTED
+CASE: local capacity update above protocol limit (129 > 128)
+  raised : CapacityLimitExceeded: capacity update 129 exceeds protocol maximum 128
+  expect : CapacityLimitExceeded -> DETECTED
+CASE: wire capacity update above protocol limit (5000 > 128)
+  raised : CapacityLimitExceeded: capacity update 5000 exceeds protocol maximum 128
+  expect : CapacityLimitExceeded -> DETECTED
+CASE: insert instruction exceeding table capacity (72 > 64)
+  raised : InvalidInstruction: insert of 72-byte entry exceeds table capacity 64
+  expect : InvalidInstruction -> DETECTED
+
+summary: all 7 cases detected, 0 failure(s)
