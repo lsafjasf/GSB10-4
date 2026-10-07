@@ -1,0 +1,126 @@
+{
+  "说明": "手工逐条核对的对拍数据。字段：status=ok/missing/corrupt；level=命中级别(theme/exact 等)；hit=命中文件相对路径；bad=回退链上遇到的坏文件(不计为命中)；trace=回退链每一级的结果。",
+  "cases": {
+    "q01": {
+      "status": "ok", "level": "theme/exact",
+      "hit": "main/48/apps/ok-exact.png", "bad": [],
+      "trace": ["theme/exact:hit"]
+    },
+    "q02": {
+      "status": "ok", "level": "theme/scalable",
+      "hit": "main/scalable/apps/ok-scalable.svg", "bad": [],
+      "trace": ["theme/exact:miss", "theme/scalable:hit"]
+    },
+    "q03": {
+      "status": "ok", "level": "theme/nearest",
+      "hit": "main/16/apps/only-low.png", "bad": [],
+      "trace": ["theme/exact:miss", "theme/scalable:miss", "theme/nearest:hit"]
+    },
+    "q04": {
+      "status": "ok", "level": "theme/nearest",
+      "hit": "main/64/apps/tie.png", "bad": [],
+      "trace": ["theme/exact:miss", "theme/scalable:miss", "theme/nearest:hit"]
+    },
+    "q05": {
+      "status": "ok", "level": "theme/exact",
+      "hit": "main/48/apps/case-ext.PNG", "bad": [],
+      "trace": ["theme/exact:hit"]
+    },
+    "q06": {
+      "status": "ok", "level": "theme/exact",
+      "hit": "main/48/apps/mixed-case.Png", "bad": [],
+      "trace": ["theme/exact:hit"]
+    },
+    "q07": {
+      "status": "ok", "level": "theme/scalable",
+      "hit": "main/scalable/apps/case-svg.SVG", "bad": [],
+      "trace": ["theme/exact:miss", "theme/scalable:hit"]
+    },
+    "q08": {
+      "status": "ok", "level": "parent:base/exact",
+      "hit": "base/48/apps/parent-hit.png", "bad": [],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:hit"
+      ]
+    },
+    "q09": {
+      "status": "ok", "level": "parent:hicolor/exact",
+      "hit": "hicolor/48/apps/hicolor-hit.png", "bad": [],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:hit"
+      ]
+    },
+    "q10": {
+      "status": "ok", "level": "parent:base/exact",
+      "hit": "base/48/apps/bad-png.png",
+      "bad": ["main/48/apps/bad-png.png"],
+      "trace": [
+        "theme/exact:bad", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:hit"
+      ]
+    },
+    "q11": {
+      "status": "corrupt", "level": null, "hit": null,
+      "bad": ["main/48/apps/bad-only.png"],
+      "trace": [
+        "theme/exact:bad", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:miss", "parent:hicolor/scalable:miss", "parent:hicolor/nearest:miss"
+      ]
+    },
+    "q12": {
+      "status": "corrupt", "level": null, "hit": null,
+      "bad": ["main/scalable/apps/broken.svg"],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:bad", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:miss", "parent:hicolor/scalable:miss", "parent:hicolor/nearest:miss"
+      ]
+    },
+    "q13": {
+      "status": "missing", "level": null, "hit": null, "bad": [],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:miss", "parent:hicolor/scalable:miss", "parent:hicolor/nearest:miss"
+      ]
+    },
+    "q14": {
+      "status": "missing", "level": null, "hit": null, "bad": [],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:miss", "parent:hicolor/scalable:miss", "parent:hicolor/nearest:miss"
+      ]
+    },
+    "q15": {
+      "status": "ok", "level": "theme/exact",
+      "hit": "main/48/apps/dup.png", "bad": [],
+      "trace": ["theme/exact:hit"]
+    },
+    "q16": {
+      "status": "missing", "level": null, "hit": null, "bad": [],
+      "trace": [
+        "theme/exact:miss", "theme/scalable:miss", "theme/nearest:miss",
+        "parent:base/exact:miss", "parent:base/scalable:miss", "parent:base/nearest:miss",
+        "parent:hicolor/exact:miss", "parent:hicolor/scalable:miss", "parent:hicolor/nearest:miss"
+      ]
+    }
+  },
+  "violations": [
+    ["ambiguous-name", "main/48/apps/dup.PNG"],
+    ["bad-context-dir", "main/48/Apps"],
+    ["bad-context-dir", "main/48/unknownctx"],
+    ["bad-toplevel", "main/notes.txt"],
+    ["file-in-size-dir", "main/48/stray.png"],
+    ["nonstandard-size", "main/20"]
+  ],
+  "bad_files": [
+    "main/48/apps/bad-only.png",
+    "main/48/apps/bad-png.png",
+    "main/scalable/apps/broken.svg"
+  ]
+}
