@@ -1,0 +1,286 @@
+{
+ "cells": {
+  "A1": {
+   "kind": "str",
+   "value": "alpha"
+  },
+  "A2": {
+   "kind": "empty",
+   "value": null
+  },
+  "A3": {
+   "kind": "bool",
+   "value": "1"
+  },
+  "A4": {
+   "kind": "str",
+   "value": "  前后空格  "
+  },
+  "B1": {
+   "kind": "str",
+   "value": "beta"
+  },
+  "B2": {
+   "kind": "number",
+   "value": "42"
+  },
+  "B3": {
+   "kind": "bool",
+   "value": "0"
+  },
+  "B4": {
+   "kind": "str",
+   "value": {
+    "runs": [
+     [
+      "总计",
+      {
+       "b": {},
+       "sz": {
+        "val": "14"
+       }
+      }
+     ],
+     [
+      "（",
+      {}
+     ],
+     [
+      "含税",
+      {
+       "color": {
+        "rgb": "FF0070C0"
+       },
+       "i": {}
+      }
+     ],
+     [
+      "）",
+      {}
+     ]
+    ]
+   }
+  },
+  "C1": {
+   "kind": "str",
+   "value": "alpha"
+  },
+  "C2": {
+   "kind": "number",
+   "value": "3.14159"
+  },
+  "C4": {
+   "kind": "str",
+   "value": "unicode 表格 🎉"
+  },
+  "D7": {
+   "kind": "str",
+   "value": "末行"
+  },
+  "E10": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E11": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E12": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E13": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E14": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E15": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E16": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E17": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E18": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E19": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E20": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E21": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E22": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E23": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E24": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E25": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E26": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E27": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E28": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E29": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E30": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E31": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E32": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E33": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E34": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E35": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E36": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E37": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E38": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E39": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E40": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E41": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E42": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E43": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E44": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E45": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E46": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E47": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E48": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E49": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E50": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E51": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E52": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E53": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E54": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E55": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E56": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E57": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E58": {
+   "kind": "str",
+   "value": "整列同文本"
+  },
+  "E59": {
+   "kind": "str",
+   "value": "整列同文本"
+  }
+ },
+ "merges": [
+  "A6:C6",
+  "B8:B9"
+ ],
+ "sheet": "对拍表"
+}

@@ -1,0 +1,68 @@
+out-of-range / missing shared-string index report
+==============================================================
+
+[1] corrupt packages - each MUST be rejected
+
+package: edge_empty_sst_bad.xlsx (empty table, index 0)
+  rejected : yes
+  type     : OUT-OF-RANGE INDEX
+  sheet    : 空表越界
+  cell     : C3
+  index    : 0 (table size 0)
+  message  : shared string index 0 out of range: table has 0 entries (sheet='空表越界', cell=C3)
+
+package: edge_missing_sst.xlsx (no sharedStrings part)
+  rejected : yes
+  type     : MISSING SHARED TABLE
+  sheet    : 缺共享表
+  cell     : B2
+  message  : cell references shared string table (t="s") but xl/sharedStrings.xml is absent from the package (sheet='缺共享表', cell=B2)
+
+package: edge_oor_index.xlsx (index past end (7 in 1-entry table))
+  rejected : yes
+  type     : OUT-OF-RANGE INDEX
+  sheet    : 越界表
+  cell     : D4
+  index    : 7 (table size 1)
+  message  : shared string index 7 out of range: table has 1 entry (sheet='越界表', cell=D4)
+
+package: edge_negative_index.xlsx (negative index (-2))
+  rejected : yes
+  type     : OUT-OF-RANGE INDEX
+  sheet    : 负索引表
+  cell     : Z10
+  index    : -2 (table size 2)
+  message  : shared string index -2 out of range: table has 2 entries (sheet='负索引表', cell=Z10)
+
+[2] valid packages - each MUST parse and contain no blanks
+
+package: edge_empty_sst_ok.xlsx (empty table, no string cells)
+  parse    : ok
+  sheet    : 空共享表
+  cells    : 2 (sparse; only explicit <c>)
+  merges   : 0 explicit range(s): -
+  bad blank string cells: 0
+
+package: edge_single_cell.xlsx (single cell sheet)
+  parse    : ok
+  sheet    : 单格表
+  cells    : 1 (sparse; only explicit <c>)
+  merges   : 0 explicit range(s): -
+  bad blank string cells: 0
+
+package: edge_whole_column.xlsx (1000 rows sharing one string)
+  parse    : ok
+  sheet    : 整列同文本
+  cells    : 1000 (sparse; only explicit <c>)
+  merges   : 0 explicit range(s): -
+  bad blank string cells: 0
+
+package: edge_sparse_merged.xlsx (sparse coords + explicit merges)
+  parse    : ok
+  sheet    : 稀疏合并
+  cells    : 3 (sparse; only explicit <c>)
+  merges   : 2 explicit range(s): C3:D4, F1:F3
+  bad blank string cells: 0
+
+==============================================================
+VERDICT: PASS

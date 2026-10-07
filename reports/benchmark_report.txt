@@ -1,0 +1,31 @@
+benchmark: shared-string parse time and peak memory
+==============================================================
+machine python: 3.12.3
+
+[1] dense 100,000 cells (1000 rows x 100 cols, 200 unique shared strings)
+  file size        : 0.30 MB (built in 0.25s)
+  parse time       : 0.844 s
+  tracemalloc peak : 16.1 MB
+  process RSS peak : 56.1 MB
+  cells restored   : 100000
+
+[2] same 100,000 cells, uncompressed inline strings
+  file size        : 0.34 MB
+  parse time       : 1.211 s
+  tracemalloc peak : 20.3 MB
+  process RSS peak : 72.4 MB
+
+[3] sparse sheet: dimension A1:XFD1048576 (~1.7e10 grid cells), 1,000 explicit cells
+  parse time       : 0.009 s
+  tracemalloc peak : 0.4 MB
+  process RSS peak : 46.7 MB
+  -> memory tracks explicit cells, NOT rows*cols
+
+[4] scaling check (dense, cells vs peak memory)
+    25000 cells: 0.204s, tracemalloc peak 4.2 MB
+    50000 cells: 0.368s, tracemalloc peak 8.2 MB
+   100000 cells: 0.801s, tracemalloc peak 16.1 MB
+  growth           : linear (PASS)
+
+==============================================================
+VERDICT: PASS

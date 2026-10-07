@@ -1,0 +1,8 @@
+cross-check: compressed shared-string vs uncompressed inline
+==============================================================
+sheet: 对拍表
+  cells compared : 62
+  result: identical cell-by-cell (compressed == inline == expectation)
+  merges: A6:C6, B8:B9
+==============================================================
+VERDICT: PASS
