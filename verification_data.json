@@ -1,0 +1,18 @@
+{
+  "phase": "concurrent reads during 1000 switches",
+  "stats": {
+    "switch_seconds": 0.3275,
+    "switch_ops_per_sec": 3054,
+    "consistent_views": 18605,
+    "keys_checked": 2381440,
+    "mixed_reads": 0
+  },
+  "sample_view": [
+    {
+      "view_version": 1001,
+      "first": "v1001-d0",
+      "last": "v1001-d127",
+      "keys": 128
+    }
+  ]
+}

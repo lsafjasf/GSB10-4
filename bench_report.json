@@ -1,0 +1,33 @@
+{
+  "reads_1m": {
+    "ops": 1000000,
+    "seconds": 1.4346,
+    "ops_per_sec": 697069,
+    "tracemalloc_peak_bytes": 265
+  },
+  "reads_1m_4threads": {
+    "ops": 1000000,
+    "seconds": 0.203,
+    "ops_per_sec": 4927138
+  },
+  "switches_1000_inmemory": {
+    "ops": 1000,
+    "seconds": 0.3927,
+    "switches_per_sec": 2546,
+    "tracemalloc_peak_bytes": 15610744
+  },
+  "switches_durable_200_fsync": {
+    "ops": 200,
+    "seconds": 0.9353,
+    "switches_per_sec": 213.8
+  },
+  "concurrent_1000_switches_4_readers": {
+    "switch_seconds": 0.3275,
+    "switch_ops_per_sec": 3054,
+    "consistent_views": 18605,
+    "keys_checked": 2381440,
+    "mixed_reads": 0
+  },
+  "process_rss_peak_kb": 71604,
+  "python": "3.12.3"
+}

@@ -1,0 +1,19 @@
+{
+  "v1_id": 1,
+  "v2_id": 2,
+  "keys_per_version": 128,
+  "hash_v1_before_rollback": "98afaba070e4231a",
+  "hash_v2_before_rollback": "6bbda7b7462e01cc",
+  "hash_v1_after_rollback": "98afaba070e4231a",
+  "hash_v2_after_rollforward": "6bbda7b7462e01cc",
+  "v1_diff_keys_after_rollback": 0,
+  "v2_diff_keys_after_rollforward": 0,
+  "v1_unchanged": true,
+  "v2_recoverable_after_rollback": true,
+  "samples": {
+    "v1_before": "A-data-0",
+    "v1_after": "A-data-0",
+    "v2_before": "B-data-0",
+    "v2_after": "B-data-0"
+  }
+}
