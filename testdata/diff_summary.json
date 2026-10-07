@@ -1,0 +1,83 @@
+{
+  "script_bytes": 6328,
+  "statement_total": 94,
+  "chunk_total": 10,
+  "chunk_size_bytes": 700,
+  "chunks": [
+    {
+      "index": 0,
+      "statements": 9,
+      "bytes": 688,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 1,
+      "statements": 10,
+      "bytes": 643,
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "index": 2,
+      "statements": 11,
+      "bytes": 691,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 3,
+      "statements": 10,
+      "bytes": 650,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 4,
+      "statements": 10,
+      "bytes": 650,
+      "status": "done",
+      "attempts": 2
+    },
+    {
+      "index": 5,
+      "statements": 11,
+      "bytes": 695,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 6,
+      "statements": 10,
+      "bytes": 652,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 7,
+      "statements": 9,
+      "bytes": 651,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 8,
+      "statements": 10,
+      "bytes": 640,
+      "status": "done",
+      "attempts": 1
+    },
+    {
+      "index": 9,
+      "statements": 4,
+      "bytes": 245,
+      "status": "done",
+      "attempts": 1
+    }
+  ],
+  "crashed_after_chunks": [
+    1,
+    4
+  ],
+  "dumps_identical": true
+}

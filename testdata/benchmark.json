@@ -1,0 +1,50 @@
+{
+  "statements": 100000,
+  "script_bytes": 7755626,
+  "generate_seconds": 0.043,
+  "runs": [
+    {
+      "chunk_size_bytes": 65536,
+      "chunk_count": 117,
+      "split_and_chunk_seconds": 1.183,
+      "checkpoint_bytes_fresh": 39277,
+      "checkpoint_bytes_all_done": 42148,
+      "checkpoint_bytes_per_chunk": 360.2
+    },
+    {
+      "chunk_size_bytes": 262144,
+      "chunk_count": 30,
+      "split_and_chunk_seconds": 1.0737,
+      "checkpoint_bytes_fresh": 10304,
+      "checkpoint_bytes_all_done": 11048,
+      "checkpoint_bytes_per_chunk": 368.3
+    },
+    {
+      "chunk_size_bytes": 1048576,
+      "chunk_count": 8,
+      "split_and_chunk_seconds": 1.0744,
+      "checkpoint_bytes_fresh": 2940,
+      "checkpoint_bytes_all_done": 3140,
+      "checkpoint_bytes_per_chunk": 392.5
+    },
+    {
+      "chunk_size_bytes": 4194304,
+      "chunk_count": 2,
+      "split_and_chunk_seconds": 1.0466,
+      "checkpoint_bytes_fresh": 922,
+      "checkpoint_bytes_all_done": 971,
+      "checkpoint_bytes_per_chunk": 485.5
+    }
+  ],
+  "worst_case_one_stmt_per_chunk": {
+    "chunk_count": 100002,
+    "split_and_chunk_seconds": 1.274,
+    "checkpoint_bytes_fresh": 33037933
+  },
+  "execution": {
+    "chunk_size_bytes": 1048576,
+    "execute_seconds": 1.343,
+    "rows_committed": 100000,
+    "checkpoint_bytes_final": 3136
+  }
+}
