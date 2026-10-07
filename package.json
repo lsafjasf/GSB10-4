@@ -1,0 +1,13 @@
+{
+  "name": "polymul-eval",
+  "version": "1.0.0",
+  "private": true,
+  "description": "多项式乘法（朴素/FFT/分块FFT）与多点求值（Horner/乘积树+余数树/NTT），纯标准库",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/selftest.js",
+    "bench:1m": "node --expose-gc bench/bench_1m.js",
+    "bench:scaling": "node --expose-gc bench/bench_scaling.js",
+    "bench:eval": "node --expose-gc bench/bench_eval.js"
+  }
+}
