@@ -1,0 +1,9 @@
+----MAIL-SEPARATOR----
+
+body of a message that has no headers at all
+second line
+
+----MAIL-SEPARATOR----
+
+another headerless body
+

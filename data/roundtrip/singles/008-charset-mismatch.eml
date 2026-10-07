@@ -1,0 +1,7 @@
+From: ivan@example.com
+Date: Tue, 07 Oct 2026 09:07:00 +0800
+Subject: declares utf-8 but is latin-1 (expect charset-decode-error)
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+café naïve

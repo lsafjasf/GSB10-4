@@ -1,0 +1,108 @@
+----MAIL-SEPARATOR----
+From: alice@example.com
+To: bob@example.com
+Date: Tue, 07 Oct 2026 09:00:00 +0800
+Subject: plain ascii message
+Content-Type: text/plain; charset=us-ascii
+
+Hello Bob,
+this is a plain message.
+
+----MAIL-SEPARATOR----
+From: carol@example.com
+Date: Tue, 07 Oct 2026 09:01:00 +0800
+Subject: a very long subject line that must be folded because it
+ exceeds seventy eight characters by quite a bit and keeps going to
+ prove unfolding loses nothing
+X-Custom: one
+X-Long: word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word 
+Content-Type: text/plain; charset=utf-8
+
+正文包含中文与 emoji 😀，验证 utf-8 解码。
+
+----MAIL-SEPARATOR----
+From: dave@example.com
+Date: Tue, 07 Oct 2026 09:02:00 +0800
+Subject: no body at all
+Content-Type: text/plain; charset=utf-8
+
+
+----MAIL-SEPARATOR----
+From: erin@example.com
+Date: Tue, 07 Oct 2026 09:03:00 +0800
+Subject: body contains separator-like lines
+Content-Type: text/plain; charset=utf-8
+
+Here is a line, then the marker text appears inside the body:
+----MAIL-SEPARATOR----
+and text continues right after it.
+
+----MAIL-SEPARATOR----
+not a header line at all
+
+----MAIL-SEPARATOR----
+Note: single header-like line is not enough (min_headers=2)
+trailing text
+
+----MAIL-SEPARATOR----
+Looks: like headers
+And: two of them
+but then plain text with no blank line terminator
+
+----MAIL-SEPARATOR----
+From: frank@example.com
+Date: Tue, 07 Oct 2026 09:04:00 +0800
+Subject: quoted printable
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+quoted-printable =E4=B8=AD=E6=96=87=E5=86=85=E5=AE=B9
+=E7=AC=AC=E4=BA=8C=E8=A1=8C
+
+----MAIL-SEPARATOR----
+From: grace@example.com
+Date: Tue, 07 Oct 2026 09:05:00 +0800
+Subject: base64 body
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+YmFzZTY0IOe8lueggeeahOS4reaWh+ato+aWhwo=
+
+----MAIL-SEPARATOR----
+From: heidi@example.com
+Date: Tue, 07 Oct 2026 09:06:00 +0800
+Subject: charset not declared (expect charset-missing diagnostic)
+
+Body without any Content-Type header.
+
+----MAIL-SEPARATOR----
+From: ivan@example.com
+Date: Tue, 07 Oct 2026 09:07:00 +0800
+Subject: declares utf-8 but is latin-1 (expect charset-decode-error)
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+caf� na�ve
+
+----MAIL-SEPARATOR----
+From: judy@example.com
+Date: Tue, 07 Oct 2026 09:08:00 +0800
+Subject: body ends with a blank line
+Content-Type: text/plain; charset=us-ascii
+
+body text
+
+
+----MAIL-SEPARATOR----
+From: mallory@example.com
+Date: Tue, 07 Oct 2026 09:09:00 +0800
+Subject: tabs and trailing spaces	 
+Content-Type: text/plain; charset=us-ascii
+
+indented	line
+trailing spaces   
+

@@ -1,0 +1,14 @@
+From: carol@example.com
+Date: Tue, 07 Oct 2026 09:01:00 +0800
+Subject: a very long subject line that must be folded because it
+ exceeds seventy eight characters by quite a bit and keeps going to
+ prove unfolding loses nothing
+X-Custom: one
+X-Long: word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word word word word word word word word word
+ word word word word word word 
+Content-Type: text/plain; charset=utf-8
+
+正文包含中文与 emoji 😀，验证 utf-8 解码。
