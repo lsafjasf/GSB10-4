@@ -1,0 +1,32 @@
+=== 1. 边界情形 ===
+[PASS] 常数×常数 info=None
+[PASS] 单项式相乘 x^5*3 * x^7*(-2) -> x^12*(-6)
+[PASS] 0次×5000次 residual=9.67e-04
+[PASS] 1次×10000次 residual=3.74e-08
+[PASS] 零多项式 
+[PASS] 空输入 
+
+=== 2. 随机对拍（FFT vs 朴素精确）===
+随机对拍 30 组: 最大系数误差(取整后)=0, 最大取整残差=1.094e-01
+[PASS] 随机对拍全部精确 
+
+=== 3. 精度不足 -> 回退（不得静默出错）===
+[PASS] 巨系数触发回退 bound=1.994e+34 > 2^53=9.007e+15
+[PASS] 回退后结果仍精确 
+回退记录: {'stage': 'a_priori', 'deg_a': 200, 'deg_b': 200, 'nfft': 512, 'bound': 19939819646090880167939470834367760, 'safe_int': 9007199254740992, 'expected_rounding_error': None, 'residual': None}
+[PASS] 禁止回退时抛 PrecisionError stage=a_priori
+[PASS] bound>2^53 回退 
+[PASS] 临界系数仍精确(残差超阈则后置回退) path=naive bound=1.0e+14 residual=2.97e-01
+[PASS] 临界用例触发后置(a_posteriori)回退 
+[PASS] bound=1e12 直接走 FFT 且精确 residual=2.93e-03
+
+=== 4. 多点求值 vs 逐点 Horner 对拍 ===
+[PASS] 多点求值 n=1 deg=0 
+[PASS] 多点求值 n=2 deg=5 
+[PASS] 多点求值 n=17 deg=30 
+[PASS] 多点求值 n=100 deg=200 
+[PASS] 多点求值 n=300 deg=500 
+[PASS] 大系数多点求值 期间回退次数=5
+
+=== 汇总 ===
+全部通过。fallback_log 共 5 条。
