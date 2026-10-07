@@ -1,0 +1,10607 @@
+{
+ "seed": 20261007,
+ "shuffles_per_case": 25,
+ "cases": [
+  {
+   "name": "same_type_int",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "int",
+      "v": "3"
+     }
+    ],
+    [
+     {
+      "t": "int",
+      "v": "3"
+     },
+     {
+      "t": "int",
+      "v": "4"
+     },
+     {
+      "t": "int",
+      "v": "5"
+     }
+    ],
+    [
+     {
+      "t": "int",
+      "v": "5"
+     },
+     {
+      "t": "int",
+      "v": "6"
+     }
+    ]
+   ],
+   "reference_digest": "12cff8a5aa63f3f7",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "INT",
+    "values": [
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "int",
+      "v": "3"
+     },
+     {
+      "t": "int",
+      "v": "4"
+     },
+     {
+      "t": "int",
+      "v": "5"
+     },
+     {
+      "t": "int",
+      "v": "6"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "6"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "4"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "6"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "4"
+       },
+       {
+        "t": "int",
+        "v": "5"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "12cff8a5aa63f3f7",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "same_type_string",
+   "op": "intersection",
+   "base_collections": [
+    [
+     {
+      "t": "string",
+      "v": "a"
+     },
+     {
+      "t": "string",
+      "v": "b"
+     },
+     {
+      "t": "string",
+      "v": "c"
+     }
+    ],
+    [
+     {
+      "t": "string",
+      "v": "b"
+     },
+     {
+      "t": "string",
+      "v": "c"
+     },
+     {
+      "t": "string",
+      "v": "d"
+     }
+    ],
+    [
+     {
+      "t": "string",
+      "v": "c"
+     },
+     {
+      "t": "string",
+      "v": "b"
+     }
+    ]
+   ],
+   "reference_digest": "69155ef1d6b89357",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "STRING",
+    "values": [
+     {
+      "t": "string",
+      "v": "b"
+     },
+     {
+      "t": "string",
+      "v": "c"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "d"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "69155ef1d6b89357",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "promotable_bool_int_float",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "bool",
+      "v": true
+     },
+     {
+      "t": "bool",
+      "v": false
+     },
+     {
+      "t": "int",
+      "v": "7"
+     }
+    ],
+    [
+     {
+      "t": "float",
+      "v": "2.5"
+     },
+     {
+      "t": "int",
+      "v": "1"
+     }
+    ],
+    [
+     {
+      "t": "int",
+      "v": "0"
+     },
+     {
+      "t": "float",
+      "v": "2.5"
+     }
+    ]
+   ],
+   "reference_digest": "29399a38f7753bfb",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "float",
+      "v": "0.0"
+     },
+     {
+      "t": "float",
+      "v": "1.0"
+     },
+     {
+      "t": "float",
+      "v": "2.5"
+     },
+     {
+      "t": "float",
+      "v": "7.0"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "bool",
+        "v": false
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "7"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "0"
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "0"
+       },
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bool",
+        "v": false
+       },
+       {
+        "t": "int",
+        "v": "7"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ]
+     ],
+     "digest": "29399a38f7753bfb",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "promotable_int_decimal",
+   "op": "intersection",
+   "base_collections": [
+    [
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "int",
+      "v": "3"
+     }
+    ],
+    [
+     {
+      "t": "decimal",
+      "v": "2"
+     },
+     {
+      "t": "decimal",
+      "v": "3.5"
+     }
+    ]
+   ],
+   "reference_digest": "085c385cb852fd68",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "DECIMAL",
+    "values": [
+     {
+      "t": "decimal",
+      "v": "2"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2"
+       },
+       {
+        "t": "decimal",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "3.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "085c385cb852fd68",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "promotable_float_decimal",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "float",
+      "v": "0.5"
+     },
+     {
+      "t": "float",
+      "v": "1.5"
+     }
+    ],
+    [
+     {
+      "t": "decimal",
+      "v": "2.25"
+     },
+     {
+      "t": "float",
+      "v": "1.5"
+     }
+    ]
+   ],
+   "reference_digest": "064aaebb66167284",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "float",
+      "v": "0.5"
+     },
+     {
+      "t": "float",
+      "v": "1.5"
+     },
+     {
+      "t": "float",
+      "v": "2.25"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "decimal",
+        "v": "2.25"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "2.25"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "064aaebb66167284",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "with_nulls",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "null"
+     },
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "null"
+     }
+    ],
+    [
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "null"
+     }
+    ],
+    [
+     {
+      "t": "null"
+     },
+     {
+      "t": "float",
+      "v": "3.5"
+     }
+    ]
+   ],
+   "reference_digest": "a5735a42a54ba77a",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "null"
+     },
+     {
+      "t": "float",
+      "v": "1.0"
+     },
+     {
+      "t": "float",
+      "v": "2.0"
+     },
+     {
+      "t": "float",
+      "v": "3.5"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "3.5"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "float",
+        "v": "3.5"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "a5735a42a54ba77a",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "all_nulls",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "null"
+     },
+     {
+      "t": "null"
+     }
+    ],
+    [
+     {
+      "t": "null"
+     }
+    ]
+   ],
+   "reference_digest": "2a93c86aaf8245a6",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "NULL",
+    "values": [
+     {
+      "t": "null"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "2a93c86aaf8245a6",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "difference_mixed",
+   "op": "difference",
+   "base_collections": [
+    [
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     },
+     {
+      "t": "int",
+      "v": "3"
+     },
+     {
+      "t": "bool",
+      "v": true
+     },
+     {
+      "t": "null"
+     }
+    ],
+    [
+     {
+      "t": "float",
+      "v": "2.0"
+     }
+    ],
+    [
+     {
+      "t": "null"
+     },
+     {
+      "t": "int",
+      "v": "10"
+     }
+    ]
+   ],
+   "reference_digest": "f3a9b80995c28439",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "float",
+      "v": "1.0"
+     },
+     {
+      "t": "float",
+      "v": "3.0"
+     }
+    ],
+    "precision": {}
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "null"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "10"
+       },
+       {
+        "t": "null"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "3"
+       },
+       {
+        "t": "bool",
+        "v": true
+       },
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.0"
+       }
+      ],
+      [
+       {
+        "t": "null"
+       },
+       {
+        "t": "int",
+        "v": "10"
+       }
+      ]
+     ],
+     "digest": "f3a9b80995c28439",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "incomparable_str_int",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "string",
+      "v": "a"
+     },
+     {
+      "t": "string",
+      "v": "b"
+     }
+    ],
+    [
+     {
+      "t": "int",
+      "v": "1"
+     },
+     {
+      "t": "int",
+      "v": "2"
+     }
+    ],
+    [
+     {
+      "t": "string",
+      "v": "c"
+     }
+    ]
+   ],
+   "reference_digest": "f33851863f434d17",
+   "reference_result": {
+    "status": "error",
+    "type_a": "INT",
+    "type_b": "STRING"
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "b"
+       },
+       {
+        "t": "string",
+        "v": "a"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "1"
+       },
+       {
+        "t": "int",
+        "v": "2"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "2"
+       },
+       {
+        "t": "int",
+        "v": "1"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "c"
+       }
+      ],
+      [
+       {
+        "t": "string",
+        "v": "a"
+       },
+       {
+        "t": "string",
+        "v": "b"
+       }
+      ]
+     ],
+     "digest": "f33851863f434d17",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "incomparable_bytes_float",
+   "op": "intersection",
+   "base_collections": [
+    [
+     {
+      "t": "bytes",
+      "v": "78"
+     },
+     {
+      "t": "float",
+      "v": "1.5"
+     }
+    ],
+    [
+     {
+      "t": "float",
+      "v": "2.5"
+     }
+    ]
+   ],
+   "reference_digest": "0bb361d9e8cc2bfe",
+   "reference_result": {
+    "status": "error",
+    "type_a": "FLOAT",
+    "type_b": "BYTES"
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "bytes",
+        "v": "78"
+       },
+       {
+        "t": "float",
+        "v": "1.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "2.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.5"
+       },
+       {
+        "t": "bytes",
+        "v": "78"
+       }
+      ]
+     ],
+     "digest": "0bb361d9e8cc2bfe",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "precision_big_int_float",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "int",
+      "v": "9007199254740993"
+     },
+     {
+      "t": "int",
+      "v": "8"
+     }
+    ],
+    [
+     {
+      "t": "float",
+      "v": "0.5"
+     },
+     {
+      "t": "int",
+      "v": "9007199254740995"
+     }
+    ]
+   ],
+   "reference_digest": "9a72082985e9e0d7",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "float",
+      "v": "0.5"
+     },
+     {
+      "t": "float",
+      "v": "8.0"
+     },
+     {
+      "t": "float",
+      "v": "9007199254740992.0"
+     },
+     {
+      "t": "float",
+      "v": "9007199254740996.0"
+     }
+    ],
+    "precision": {
+     "INT>FLOAT": 2
+    }
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "8"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "0.5"
+       },
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "int",
+        "v": "9007199254740995"
+       },
+       {
+        "t": "float",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "int",
+        "v": "9007199254740993"
+       },
+       {
+        "t": "int",
+        "v": "8"
+       }
+      ]
+     ],
+     "digest": "9a72082985e9e0d7",
+     "matches_reference": true
+    }
+   ]
+  },
+  {
+   "name": "precision_decimal_float",
+   "op": "union",
+   "base_collections": [
+    [
+     {
+      "t": "decimal",
+      "v": "0.1"
+     },
+     {
+      "t": "decimal",
+      "v": "0.5"
+     }
+    ],
+    [
+     {
+      "t": "float",
+      "v": "1.0"
+     }
+    ]
+   ],
+   "reference_digest": "9081b266e797d343",
+   "reference_result": {
+    "status": "ok",
+    "unified_type": "FLOAT",
+    "values": [
+     {
+      "t": "float",
+      "v": "0.1"
+     },
+     {
+      "t": "float",
+      "v": "0.5"
+     },
+     {
+      "t": "float",
+      "v": "1.0"
+     }
+    ],
+    "precision": {
+     "DECIMAL>FLOAT": 1
+    }
+   },
+   "variants": [
+    {
+     "variant": 0,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 1,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 2,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 3,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 4,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 5,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 6,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 7,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 8,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 9,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 10,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 11,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 12,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 13,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 14,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 15,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 16,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 17,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 18,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 19,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 20,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 21,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.5"
+       },
+       {
+        "t": "decimal",
+        "v": "0.1"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 22,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 23,
+     "collections": [
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ],
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    },
+    {
+     "variant": 24,
+     "collections": [
+      [
+       {
+        "t": "decimal",
+        "v": "0.1"
+       },
+       {
+        "t": "decimal",
+        "v": "0.5"
+       }
+      ],
+      [
+       {
+        "t": "float",
+        "v": "1.0"
+       }
+      ]
+     ],
+     "digest": "9081b266e797d343",
+     "matches_reference": true
+    }
+   ]
+  }
+ ],
+ "all_match": true
+}
