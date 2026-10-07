@@ -1,0 +1,206 @@
+{
+  "n_vars": 1200,
+  "n_constraints": 10030,
+  "mus_count": 6,
+  "all_verified_minimal": true,
+  "conflicts": [
+    {
+      "cids": [
+        "X6_1",
+        "X6_2",
+        "X6_3",
+        "X6_4",
+        "X6_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X6_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X6_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X6_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X6_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X6_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    },
+    {
+      "cids": [
+        "X5_1",
+        "X5_2",
+        "X5_3",
+        "X5_4",
+        "X5_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X5_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X5_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X5_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X5_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X5_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    },
+    {
+      "cids": [
+        "X4_1",
+        "X4_2",
+        "X4_3",
+        "X4_4",
+        "X4_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X4_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X4_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X4_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X4_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X4_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    },
+    {
+      "cids": [
+        "X3_1",
+        "X3_2",
+        "X3_3",
+        "X3_4",
+        "X3_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X3_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X3_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X3_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X3_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X3_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    },
+    {
+      "cids": [
+        "X2_1",
+        "X2_2",
+        "X2_3",
+        "X2_4",
+        "X2_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X2_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X2_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X2_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X2_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X2_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    },
+    {
+      "cids": [
+        "X1_1",
+        "X1_2",
+        "X1_3",
+        "X1_4",
+        "X1_5"
+      ],
+      "cycle_weight": -1,
+      "verified_minimal": true,
+      "deletion_checks": [
+        {
+          "removed": "X1_1",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X1_2",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X1_3",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X1_4",
+          "remainder_satisfiable": true
+        },
+        {
+          "removed": "X1_5",
+          "remainder_satisfiable": true
+        }
+      ]
+    }
+  ]
+}

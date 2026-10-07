@@ -1,0 +1,106 @@
+{
+  "1_无冲突": {
+    "status": "SAT",
+    "n_constraints": 3,
+    "enumeration_complete": true,
+    "self_contradictory": [],
+    "conflicts": []
+  },
+  "2_单一最小冲突": {
+    "status": "UNSAT",
+    "n_constraints": 3,
+    "enumeration_complete": true,
+    "self_contradictory": [],
+    "conflicts": [
+      {
+        "cids": [
+          "deadline",
+          "order"
+        ],
+        "size": 2,
+        "cycle_weight": -1,
+        "verified_minimal": true,
+        "deletion_checks": [
+          {
+            "removed": "deadline",
+            "remainder_satisfiable": true
+          },
+          {
+            "removed": "order",
+            "remainder_satisfiable": true
+          }
+        ]
+      }
+    ]
+  },
+  "3_多个最小冲突": {
+    "status": "UNSAT",
+    "n_constraints": 5,
+    "enumeration_complete": true,
+    "self_contradictory": [],
+    "conflicts": [
+      {
+        "cids": [
+          "b1",
+          "b2"
+        ],
+        "size": 2,
+        "cycle_weight": -1,
+        "verified_minimal": true,
+        "deletion_checks": [
+          {
+            "removed": "b1",
+            "remainder_satisfiable": true
+          },
+          {
+            "removed": "b2",
+            "remainder_satisfiable": true
+          }
+        ]
+      },
+      {
+        "cids": [
+          "a1",
+          "a2"
+        ],
+        "size": 2,
+        "cycle_weight": -1,
+        "verified_minimal": true,
+        "deletion_checks": [
+          {
+            "removed": "a1",
+            "remainder_satisfiable": true
+          },
+          {
+            "removed": "a2",
+            "remainder_satisfiable": true
+          }
+        ]
+      }
+    ]
+  },
+  "4_约束自相矛盾": {
+    "status": "UNSAT",
+    "n_constraints": 2,
+    "enumeration_complete": true,
+    "self_contradictory": [
+      "bad"
+    ],
+    "conflicts": [
+      {
+        "cids": [
+          "bad"
+        ],
+        "size": 1,
+        "cycle_weight": -1,
+        "verified_minimal": true,
+        "deletion_checks": [
+          {
+            "removed": "bad",
+            "remainder_satisfiable": true
+          }
+        ]
+      }
+    ]
+  }
+}
