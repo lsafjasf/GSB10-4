@@ -1,0 +1,24 @@
+params: window=10s threshold=4 damp_quiet=10s
+t(s)  raw_advertised  unsuppressed  suppressed
+   0  UP              UP            UP
+   1  DOWN            DOWN          DOWN
+   2  UP              UP            UP
+   3  DOWN            DOWN          DOWN
+   4  UP              UP            DAMPED
+   5  DOWN            DOWN          DAMPED
+   6  UP              UP            DAMPED
+   7  DOWN            DOWN          DAMPED
+   8  UP              UP            DAMPED
+   9  DOWN            DOWN          DAMPED
+  10  UP              UP            DAMPED
+  11  DOWN            DOWN          DAMPED
+  12  UP              UP            DAMPED
+  13  DOWN            DOWN          DAMPED
+  14  UP              UP            DAMPED
+  15  DOWN            DOWN          DAMPED
+  16  UP              UP            DAMPED
+  17  DOWN            DOWN          DAMPED
+  18  UP              UP            DAMPED
+  19  DOWN            DOWN          DAMPED
+
+effective state changes: unsuppressed=19, suppressed=4

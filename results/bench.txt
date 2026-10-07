@@ -1,0 +1,7 @@
+nodes=1000, updates=1,000,000, python=3.12.3
+wall time (clean run):        3.92s (254,942 updates/s)
+wall time (tracemalloc run):  13.61s (instrumented)
+tracemalloc peak (1M run):    7.9 MiB
+process peak RSS (ru_maxrss): 221.1 MiB
+merge stats: accepted=960,989 duplicate=18,845 stale=18,833 conflict=1,333
+node records retained: 1000, updates/node <= 64 (bounded)

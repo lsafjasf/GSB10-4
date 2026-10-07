@@ -1,0 +1,12 @@
+batch size=2100, nodes=50, evaluated at t=20.0
+seq_asc    snapshot_sha256=e2dfb450067c70b9f24bfb72cd503439aa1ffb22af120c789bfaad7f9e84efe4
+seq_desc   snapshot_sha256=e2dfb450067c70b9f24bfb72cd503439aa1ffb22af120c789bfaad7f9e84efe4
+shuffle_1  snapshot_sha256=e2dfb450067c70b9f24bfb72cd503439aa1ffb22af120c789bfaad7f9e84efe4
+shuffle_2  snapshot_sha256=e2dfb450067c70b9f24bfb72cd503439aa1ffb22af120c789bfaad7f9e84efe4
+verdict: all four arrival orders converge to IDENTICAL state
+sample (node -> effective, held, raw, max_seq):
+  n000: ('DAMPED', 'DOWN', 'DOWN', 39)
+  n001: ('DAMPED', 'DOWN', 'DOWN', 39)
+  n002: ('DAMPED', 'DOWN', 'DOWN', 39)
+  n003: ('DAMPED', 'DOWN', 'DOWN', 39)
+  n004: ('DAMPED', 'DOWN', 'DOWN', 39)

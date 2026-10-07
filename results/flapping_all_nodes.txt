@@ -1,0 +1,5 @@
+nodes=1000, 40 rounds of whole-cluster UP<->DOWN flips (1 flip/s/node), window=10s threshold=4
+propagated effective-state changes without suppression: 39000
+propagated effective-state changes with suppression:    4000
+changes after DAMPED engaged: 0 (unbounded flapping causes zero further upstream churn)
+nodes held DAMPED at t=39s: 1000/1000
